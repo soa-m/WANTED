@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "GENERATE_SOURCEMAP=false react-scripts build",
+    "build": "next build",
     "dev": "next dev",
     "start": "next start"
   },
