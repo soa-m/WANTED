@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <div>
-      <h1 className="{styles.title}">Hello Next.js!</h1>
+      <h1 className={styles.heading}>Hello Next.js!</h1>
       <ul>
         <li>
           <Link href="/about">
