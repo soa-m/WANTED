@@ -1,19 +1,18 @@
 import { useState } from "react";
 import styles from '../styles/Home.module.css';
-
-
+import {SearchData} from '../components/MainProgram';
 export default function Home() {
-    const SearchData = {
-        "第一の返し" : "窓を見る",
-        "第二の返し" : "237124",
-        "第三の返し" : "Xの正体",
-        };
+
+
+    //サーチボタンが押されたらテキストボックスの値に対応する返しを行う。該当する返しがない場合は "検索した内容"に関連する内容はみつかりませんでしたと表示。 
+    // setTextは検索ボックス内の内容
+    //SearchedWordは検索ボタンが押されたときの検索ボックス内の内容
+    //ReturnWord1は表示する返しの言葉を格納
     var [text, setText] = useState("");
     const [SearchedWord, setAddText] = useState("");
-    //サーチボタンが押されたらテキストボックスの値に対応する返しを行う。該当する返しがない場合は "検索した内容"に関連する内容はみつかりませんでしたと表示。 
-    var [ReturnWord1,setReturnWord] = useState("");
+    var [ReturnWord1,setReturnWord1] = useState("");
     function OnSearch(){
-        var ReturnWord = "";
+        var ReturnWord = ""; //返する言葉 
         setAddText(text);
         var SearchData_keys = Object.keys(SearchData)
         SearchData_keys.find(function(value){
@@ -21,15 +20,11 @@ export default function Home() {
                 ReturnWord = SearchData[SearchedWord];
             }
         })
-        
+        setReturnWord1(ReturnWord);
          if(ReturnWord == "") ReturnWord = "検索結果はみつかりませんでした";
-        setReturnWord(ReturnWord);
+        
          
-       
- 
 
-    
-    
     };
 
 
