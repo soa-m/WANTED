@@ -1,17 +1,26 @@
 import '../components/MainProgram';
 import styles from '../styles/Home.module.css';
-
+import Link from 'next/link';
+import Image from 'next/image';
+import { useContext } from 'react'
+import { createClient } from '@vercel/kv';
+import {NextResponse} from 'next/server';
+import {Init} from '../components/start'
+import { Suspense } from 'react'
 
 export default function Home() {
+  
   return (
-    <div>
-
-      <a href="/Information" className={styles.btnInformation}>　情報　</a>
-      <a href="/Serch" className={styles.btnSearch}>　検索　</a>
-      <a href="/Relations" className={styles.btnRelations}>　関係図　</a>
-      <a href="/Missions" className={styles.btnMissions}>ミッション</a>
-      <a href="/PastInformation" className={styles.btnPastInformation}>過去の情報</a>
+    <>
+    <div className={styles.container}>
+        <button type="button" onClick={() => Init()} className={styles.Initbtn}>
+          <Image 
+            src='/start.png'
+            fill
+          />
+        </button>
     </div>
+    </>
   );
 }
 
