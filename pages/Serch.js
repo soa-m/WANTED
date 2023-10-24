@@ -5,6 +5,7 @@ export default function Home() {
 
 
     //サーチボタンが押されたらテキストボックスの値に対応する返しを行う。該当する返しがない場合は "検索した内容"に関連する内容はみつかりませんでしたと表示。 
+
     // textは検索ボックス内の内容
     //SearchedWordは検索ボタンが押されたときの検索ボックス内の内容
     //ReturnWord1は表示する返しの言葉を格納
@@ -12,6 +13,7 @@ export default function Home() {
     var [ReturnWord1,setReturnWord1] = useState("");
     function OnSearch(){
         var ReturnWord; //返する言葉 
+
         var SearchData_keys = Object.keys(SearchData)
         var check1 = false;
         SearchData_keys.find(function(value){

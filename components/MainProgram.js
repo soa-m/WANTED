@@ -13,6 +13,7 @@ let kv = createClient({
 //次の謎がアンロックさらた場合は更にその謎から派生する謎のチェックを行う。
 
 
+
 import {Set,GetID} from './func';
 let id=GetID();
 
@@ -42,6 +43,7 @@ var bgraph= await kv.get("bgraph");
 
 
 
+
 //アンロックされた会話文のキューリスト
 //一つのキューに、[会話文の識別ID、[会話してくる人、会話文の内容]] の二次元配列を入れ込む)。
 //情報の右上に、キューリストに入っている会話文の量を表示する。
@@ -57,6 +59,7 @@ export var messageque = [
 
 ];
 
+
 export var messageData = [
 [0, //識別番号
   
@@ -66,6 +69,7 @@ export var messageData = [
 ],
 
 ];
+
 //メッセージ開放に必要な謎一覧
 
 export var messageUnlock = [
@@ -73,7 +77,10 @@ export var messageUnlock = [
 ]
 
 //メッセージが追加済みかのデータ
+
 var IsmessageUnlocked= await kv.get(id+"IsmessageUnlocked");
+ageUnlocked = [false,false,false];
+
 
 //メッセージが解放されたかを決定する関数。開放されていた場合、messagequeに追加する
 export function messageUnlockChecker() {
@@ -85,7 +92,9 @@ export function messageUnlockChecker() {
         if(IsmessageUnlocked[i] == false){
             messageque.push(messageData[i]);
             IsmessageUnlocked[i] = true;
+
             kv.Set("IsmessageUnlocked",IsmessageUnlocked);
+
         }
     }
 }
@@ -97,3 +106,4 @@ export  var SearchData = {
     "第二の返し" : "237124",
     "第三の返し" : "Xの正体",
     }
+
