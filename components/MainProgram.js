@@ -79,7 +79,6 @@ export var messageUnlock = [
 //メッセージが追加済みかのデータ
 
 var IsmessageUnlocked= await kv.get(id+"IsmessageUnlocked");
-ageUnlocked = [false,false,false];
 
 
 //メッセージが解放されたかを決定する関数。開放されていた場合、messagequeに追加する
