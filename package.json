@@ -6,7 +6,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@vercel/kv": "^0.2.3",
     "next": "latest",
+    "nookies": "^2.5.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
