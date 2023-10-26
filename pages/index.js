@@ -8,8 +8,8 @@ import {NextResponse} from 'next/server';
 import {Init} from '../components/start'
 import { Suspense } from 'react'
 
+
 export default function Home() {
-  
   return (
     <>
     <div className={styles.container}>

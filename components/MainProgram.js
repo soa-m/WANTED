@@ -62,7 +62,6 @@ export var messageData = [
   
    ['捜査員','こんにちは'],
    ['プレイヤー','おはようございます'],   //会話文を追加していく
-  
 ],
 
 ];
@@ -74,6 +73,7 @@ export var messageUnlock = [
 
 //メッセージが追加済みかのデータ
 var IsmessageUnlocked= await kv.get(id+"IsmessageUnlocked");
+
 
 //メッセージが解放されたかを決定する関数。開放されていた場合、messagequeに追加する
 export function messageUnlockChecker() {
