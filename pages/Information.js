@@ -11,7 +11,7 @@ var messagetext;
   
 var nowmessage = 0;
 export default function Home() {
-
+  
   if(Object.keys(messageque).length != 0)var [messagetext, setText] = useState((messageque[0][nowmessage+1][0] + ":  " + messageque[0][nowmessage+1][1]));
 
   function nextmessage() {
@@ -21,7 +21,7 @@ export default function Home() {
     nowmessage++;
     if(nowmessage == (Object.keys(messageque[0]).length)-1){
       nowmessage = 0;
-      messageque.pop();
+      messageque.shift();
     }
   if(Object.keys(messageque).length == 0){
     setText("現在進行中の会話はありません");
@@ -76,6 +76,7 @@ export default function Home() {
             <div className={styles.infoemp1}></div>
 
             <div className={styles.messagebox}>
+              
               <p className = {styles.messagetext}>{messagetext}</p>
             </div>
 

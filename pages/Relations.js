@@ -1,17 +1,52 @@
-
+import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 
 
 export default function Home() {
     return (
-      <div>
-  
-        <a href="/Information" className={styles.btnInformation}>　情報　</a>
-        <a href="/Serch" className={styles.btnSearch}>　検索　</a>
-        <a href="/Relations" className={styles.btnRelations}>　関係図　</a>
-        <a href="/Missions" className={styles.btnMissions}>ミッション</a>
-        <a href="/PastInformation" className={styles.btnPastInformation}>過去の情報</a>
-        <img src={"関係図.jpg"}　alt="関係図" />
+      <>
+      <div className={styles.container}>
+        <div className={styles.buttons}>
+
+          <div className={styles.empty}></div>
+          
+          <div className={styles.btnbox}>
+            <Link href="/Information" className={styles.btn}>
+              <div class={styles.btnname}>　情報　</div>
+              <div class={styles.btncolor}></div>
+            </Link>
+          </div>
+
+          <div className={styles.btnbox}>
+            <Link href="/Serch" className={styles.btn}>
+              <div class={styles.btnname}>　検索　</div>
+              <div class={styles.btncolor}></div>
+            </Link>
+          </div>
+          <div className={styles.btnbox}>
+            <Link href="/Relations" className={styles.selectedbtn}>
+              <div class={styles.btnname}>　関係図　</div>
+              <div class={styles.btncolor}></div>
+            </Link>
+          </div>
+          <div className={styles.btnbox}>
+            <Link href="/Missions" className={styles.btn}>
+              <div class={styles.btnname}>　ミッション　</div>
+              <div class={styles.btncolor}></div>
+            </Link>
+          </div>
+          <div className={styles.btnbox}>
+            <Link href="/PastInformation" className={styles.btn}>
+              <div class={styles.btnname}>　過去の情報　</div>
+              <div class={styles.btncolor}></div>
+            </Link>
+          </div>
+        </div>
+
+       
+         
+              
       </div>
+      </>
     );
   }
