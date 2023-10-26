@@ -276,6 +276,31 @@
   background-repeat: no-repeat;
 }
 
-#canvas {
-  width: 100%;
+canvas {
+  position: absolute;
+  width: 20%;
+  height: 40%;
+  top: 45%;
+  left: 17%;
+}
+
+.SearchReturn{
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  font-size : 130%;
+}
+
+.Camerabtn{
+  position:absolute;
+  top:90%;
+  width :6%;
+  left: 25%;
+  height: 10%;
+}
+.qrmsg{
+  position: absolute;
+  top: 84%;
+  left: 25%;
+  
 }
