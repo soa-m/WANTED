@@ -4,33 +4,33 @@ import { useState } from "react";
 import {SearchData,messageque,messageData} from '../components/MainProgram';
 
 
-var messagetext;
+var nowmessage = 0;
+
+
 // 表示するテキストをmessagetextで表示
 
-
-  
-var nowmessage = 0;
-export default function Home() {
-  
-  if(Object.keys(messageque).length != 0)var [messagetext, setText] = useState((messageque[0][nowmessage+1][0] + ":  " + messageque[0][nowmessage+1][1]));
-
-  function nextmessage() {
-    if(Object.keys(messageque).length == 0){
-      return;
-    }
+export function nextmessage() {
+  // document.getElementById("messagename");
+  // document.getElementById("messagetext");
+  if(Object.keys(messageque).length == 0){
+    document.getElementById("messagename").textContent=""
+    document.getElementById("messagetext").textContent="会話がありません"
+  }
+  else{
     nowmessage++;
-    if(nowmessage == (Object.keys(messageque[0]).length)-1){
+    if(nowmessage == (Object.keys(messageque[0]).length)){
       nowmessage = 0;
       messageque.shift();
     }
-  if(Object.keys(messageque).length == 0){
-    setText("現在進行中の会話はありません");
+    else{
+      console.log(nowmessage);
+      document.getElementById("messagename").textContent=messageque[0][nowmessage][0];
+      document.getElementById("messagetext").textContent=messageque[0][nowmessage][1];
+    }
   }
-  else setText(messageque[0][nowmessage+1][0] + ":  " + messageque[0][nowmessage+1][1])
 }
   
-
-
+export default function Home() {
     return (
       <>
       <div className={styles.container}>
@@ -40,47 +40,51 @@ export default function Home() {
           
           <div className={styles.btnbox}>
             <Link href="/Information" className={styles.selectedbtn}>
-              <div class={styles.btnname}>　情報　</div>
-              <div class={styles.btncolor}></div>
+              <div className={styles.btnname}>　情報　</div>
+              <div className={styles.btncolor}></div>
             </Link>
           </div>
 
           <div className={styles.btnbox}>
             <Link href="/Serch" className={styles.btn}>
-              <div class={styles.btnname}>　検索　</div>
-              <div class={styles.btncolor}></div>
+              <div className={styles.btnname}>　検索　</div>
+              <div className={styles.btncolor}></div>
             </Link>
           </div>
           <div className={styles.btnbox}>
             <Link href="/Relations" className={styles.btn}>
-              <div class={styles.btnname}>　関係図　</div>
-              <div class={styles.btncolor}></div>
+              <div className={styles.btnname}>　関係図　</div>
+              <div className={styles.btncolor}></div>
             </Link>
           </div>
           <div className={styles.btnbox}>
             <Link href="/Missions" className={styles.btn}>
-              <div class={styles.btnname}>　ミッション　</div>
-              <div class={styles.btncolor}></div>
+              <div className={styles.btnname}>　ミッション　</div>
+              <div className={styles.btncolor}></div>
             </Link>
           </div>
           <div className={styles.btnbox}>
             <Link href="/PastInformation" className={styles.btn}>
-              <div class={styles.btnname}>　過去の情報　</div>
-              <div class={styles.btncolor}></div>
+              <div className={styles.btnname}>　過去の情報　</div>
+              <div className={styles.btncolor}></div>
             </Link>
           </div>
         </div>
 
         <div className={styles.main} onClick = {nextmessage}>
             <div className={styles.infoemp0}></div>
+            <div className={styles.infoemp01}></div>
+            <div className={styles.infoemp02}><div className={styles.infoemp022} id="messagename"></div></div>
+            <div className={styles.infoemp03}></div>
             <div className={styles.infoemp1}></div>
 
             <div className={styles.messagebox}>
-              
-              <p className = {styles.messagetext}>{messagetext}</p>
+            <div className={styles.messagebox2}>
+              <p className = {styles.messagetext} id="messagetext">新しい会話を見る</p>
+            </div>
             </div>
 
-            <div className={styles.infoemp1}></div>
+            <div className={styles.infoemp12}></div>
             <div className={styles.infoemp2}></div>
 
           </div>
