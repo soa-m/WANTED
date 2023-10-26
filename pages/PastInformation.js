@@ -10,7 +10,7 @@ export default function Home() {
 
 
     return (
-      <>
+   
       <div className={styles.container}>
         <div className={styles.buttons}>
 
@@ -48,8 +48,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        
-      </>
-      
+    </div>
+     
     );
   }
