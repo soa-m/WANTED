@@ -13,23 +13,23 @@ let kv = createClient({
 //次の謎がアンロックさらた場合は更にその謎から派生する謎のチェックを行う。
 
 
-import {Set,GetID} from './func';
-let id=GetID();
+import { Set, GetID } from './func';
+let id = GetID();
 
 
-export  function UnlockChecker(Soloved){
-    
-    for(nxMystery in fgraph[Soloved]){
+export function UnlockChecker(Soloved) {
+
+    for (nxMystery in fgraph[Soloved]) {
         Unlocked = true;
-        for(UnlockNeeded in bgraph[nxMystery]){
-            if(mysteryBool[UnlockNeeded] == false) Unlocked = false;
+        for (UnlockNeeded in bgraph[nxMystery]) {
+            if (mysteryBool[UnlockNeeded] == false) Unlocked = false;
         }
-        if(Unlocked) {
+        if (Unlocked) {
             mysteryBool[nxMystery] = true;
             UnlockCheker(nxMystery);
         }
     }
-    
+
 };
 
 
@@ -105,8 +105,16 @@ export function messageUnlockChecker() {
 
 
 //検索ワード
-export  var SearchData = {
-    "第一の返し" : "窓を見る",
-    "第二の返し" : "237124",
-    "第三の返し" : "Xの正体",
+export var SearchData = {
+    "第一の返し": "窓を見る",
+    "第二の返し": "237124",
+    "第三の返し": "Xの正体",
+}
+
+export var FirstMissionNazo = {
+    "しんぶんし": 1,
+    "トマト": 2,
+    "オレンジ": 3,
+
+
 }

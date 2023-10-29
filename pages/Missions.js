@@ -3,13 +3,13 @@ import styles from '../styles/Home.module.css';
 
 
 export default function Home() {
-    return (
-      <>
+  return (
+    <>
       <div className={styles.container}>
         <div className={styles.buttons}>
 
           <div className={styles.empty}></div>
-          
+
           <div className={styles.btnbox}>
             <Link href="/Information" className={styles.btn}>
               <div class={styles.btnname}>　情報　</div>
@@ -43,9 +43,9 @@ export default function Home() {
           </div>
         </div>
 
-       
-              
+
+
       </div>
-      </>
-    );
-  }
+    </>
+  );
+}

@@ -172,7 +172,7 @@
 }
 .search_submit {
   width: 5%; /*ボタン部分の長さ*/
-  background: #f883db; /*ボタン部分の背景色*/
+  background: #fd30ca; /*ボタン部分の背景色*/
   color: #ffffff; /*アイコンの色*/
   position: absolute;
 
@@ -185,7 +185,7 @@
   cursor: pointer;
   line-height: 20px; /*検索窓の高さ*/
   border-radius: 0 50px 50px 0; /*右上、右下のみ角丸*/
-  padding: 27%;
+  padding: 0%;
 }
 
 .messagebox{
@@ -307,11 +307,27 @@
 }
 
 .Camerabtn{
-  position:absolute;
-  top:90%;
-  width :6%;
-  left: 25%;
-  height: 10%;
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 120px;
+	margin: auto;
+	padding: 1rem 0rem;
+	font-weight: bold;
+	border-radius: 0.3rem;
+	border-bottom: 7px solid #0686b2;
+	background: #27acd9;
+	color: #fff;
+  position : absolute;
+  top : 90%;
+  left : 23%;
+
+}
+.Camerabtn:hover {
+	margin-top: 6px;
+	border-bottom: 1px solid #0686b2;
+	color: #fff;
 }
 .qrmsg{
   position: absolute;
@@ -379,4 +395,41 @@
   top : 50%;
   box-shadow: black;
   left : 20%;
+}
+
+
+
+.modal1{
+  display : none;
+  position : absolute;
+  height: 50%;
+  width: 30%;
+  top: 30%;
+  left: 35%;
+  background-image: url(../public/frame.png);
+  background-size : cover;
+}
+.closeModal{
+  display: block;
+  font-size : 30px;
+  position : relative;
+  top : 10%;
+  left : 10%;
+
+}
+.Model_text{
+  
+  text-align: center;
+  position:relative;
+  top:70%;
+  
+ 
+}
+
+.mystery{
+  display : block;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+
 }
