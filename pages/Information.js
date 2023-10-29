@@ -1,39 +1,75 @@
 import Link from 'next/link';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/info.module.css';
 import { useState } from "react";
-import {SearchData,messageque,messageData} from '../components/MainProgram';
+//import {SearchData,messageque} from '../components/MainProgram';
+import { createClient } from '@vercel/kv';
 
+let kv = createClient({
+  url: process.env.NEXT_PUBLIC_KV_REST_API_URL,
+  token: process.env.NEXT_PUBLIC_KV_REST_API_TOKEN
+});
 
-var nowmessage = 0;
+import {Set,GetID} from '../components/func';
+let id=GetID();
 
 
 // 表示するテキストをmessagetextで表示
+var nowmessage= await kv.get(id+"nowmessage");
+var messagenum= await kv.get(id+"messagenum");
+var IsmessageUnlocked= await kv.get(id+"IsmessageUnlocked");
+var messageData=await kv.get("messageData");
+var displayfl=true;
 
-export function nextmessage() {
+export async function nextmessage() {
   // document.getElementById("messagename");
   // document.getElementById("messagetext");
-  if(Object.keys(messageque).length == 0){
-    document.getElementById("messagename").textContent=""
-    document.getElementById("messagetext").textContent="会話がありません"
+  let fl=true;
+  if (displayfl){
+    displayfl=false;
   }
   else{
-    nowmessage++;
-    if(nowmessage == (Object.keys(messageque[0]).length)){
-      nowmessage = 0;
-      messageque.shift();
+    return;
+  }
+  /*
+  var nowmessage= await kv.get(id+"nowmessage");
+  var messagenum= await kv.get(id+"massagenum");
+  var IsmessageUnlocked= await kv.get(id+"IsmessageUnlocked");
+  var messageData=await kv.get("messageData");
+  */
+  if ((messageData[messagenum].length)-1==nowmessage){
+    if (messagenum==IsmessageUnlocked){
+      document.getElementById("messagename").textContent=""
+      document.getElementById("messagetext").textContent="会話がありません"
+      fl=false;
+      displayfl=true;
     }
     else{
-      console.log(nowmessage);
-      document.getElementById("messagename").textContent=messageque[0][nowmessage][0];
-      document.getElementById("messagetext").textContent=messageque[0][nowmessage][1];
+      messagenum+=1;
+      nowmessage=1;
+      Set("messagenum",messagenum);
+      Set("nowmessage",0);
     }
+  }
+  else{
+    nowmessage+=1;
+  }
+  if (fl){
+    document.getElementById("messagename").textContent=messageData[messagenum][nowmessage][0];
+    var thistext=messageData[messagenum][nowmessage][1];
+    var s="";
+    for(let i=0; i<thistext.length;i++){
+      s+=thistext[i];
+      await new Promise(resolve => setTimeout(resolve, 50))
+      document.getElementById("messagetext").textContent=s;
+    }
+    displayfl=true;
   }
 }
   
 export default function Home() {
     return (
       <>
-      <div className={styles.container}>
+      <div className={styles.infocontainer}>
         <div className={styles.buttons}>
 
           <div className={styles.empty}></div>
@@ -71,16 +107,20 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={styles.main} onClick = {nextmessage}>
+        <div className={styles.infomain} onClick = {nextmessage}>
             <div className={styles.infoemp0}></div>
             <div className={styles.infoemp01}></div>
-            <div className={styles.infoemp02}><div className={styles.infoemp022} id="messagename"></div></div>
+            <div className={styles.infoemp02}>
+              <div className={styles.messagename} id="messagename"></div>
+              <div className={styles.infoemp022}>
+              </div>
+            </div>
             <div className={styles.infoemp03}></div>
             <div className={styles.infoemp1}></div>
 
             <div className={styles.messagebox}>
+              <div className = {styles.messagetext} id="messagetext">新しい会話を見る</div>
             <div className={styles.messagebox2}>
-              <p className = {styles.messagetext} id="messagetext">新しい会話を見る</p>
             </div>
             </div>
 

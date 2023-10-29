@@ -1,0 +1,215 @@
+.container{
+  display:flex;
+  width:100vw;
+  height:100vh;
+  flex-direction: row;
+  background-image: url('/uselocker.png');
+  background-position: 50% 100%;
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+.buttons{
+  width:12vw;
+  height:100vh;
+  position:relative;
+  /*background-color: red;*/
+}
+.main{
+  width:88vw;
+  height:100vh;
+  position:relative;
+  /*background-image:url("/character-A-1.png");*/
+  background-size: 80vw;
+  background-position:-40% 5%;
+  background-repeat: no-repeat;
+}
+.letter{
+    display: flex;
+    position: absolute;
+    left:34%;
+    top:63%;
+    width:30%;
+    height:30%;
+    background-image: url('/letter.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-color: #000;
+}
+.letter:hover{
+    transform:scale(1.1);
+}
+.baggage{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    position:relative;
+    width:60vw;
+    height:20vh;
+    top:20%;
+    left:20%;
+}
+.mail{
+    width:10vw;
+    height:20vh;
+    background-color: blue;
+}
+.mail:hover{
+    transform:scale(1.1);
+
+}
+#mail1{
+    position:relative;
+    position:relative;
+    background-image:url("/message_unlock.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position:bottom;
+}
+#mail2{
+    display:none;
+    position:relative;
+    background-image:url("/message_unlock.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position:bottom;
+}
+#mail3{
+    display:none;
+    position:relative;
+    background-image:url("/message_unlock.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position:bottom;
+}
+#mail2_locked{
+    position:relative;
+    background-image:url("/message_locked.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position:bottom;
+}
+#mail3_locked{
+    position:relative;
+    background-image:url("/message_locked.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position:bottom;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+#Modal2{
+  display: none;
+}
+
+.modalcontent {
+  background-color: #f4f4f4;
+  margin: 10% auto;
+  width: 70%;
+  height:70%;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+  animation-name: modalopen;
+  animation-duration: 1s;
+}
+
+@keyframes modalopen {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+.modalheader h1 {
+  margin: 1rem 0;
+}
+
+.modalheader {
+  background: #f4f4f4;
+  height:10%;
+  padding: 3px 15px;
+  text-align: right;
+}
+
+.modalClose {
+  font-size: 2rem;
+}
+
+.modalClose:hover {
+  cursor: pointer;
+}
+
+.modalbody{
+  position:relative;
+  width:100%;
+  height:90%;
+  color: black;
+}
+.modaltitle{
+    position:relative;
+    text-align: center;
+    width:100%;
+    height:30%;
+    color:black;
+    font-size:32px;
+}
+.modalinput{
+    position:relative;
+    text-align: center;
+    height:30%;
+	margin: 40px 10%;
+    
+}
+.modalinput input[type='text'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 60%;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: #aaaaaa;
+	border: none;
+	border-bottom: 2px solid #1b2538;
+	background: transparent;
+}
+.modalinput input[type='text']:focus {
+	border-bottom: 2px solid #da3c41;
+	outline: none;
+}
+
+/*主な共通部分は省略*/
+
+.submit {
+  font-size: large;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin:5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+  border: 2px solid #000;
+  border-radius: 0;
+  background: #fff;
+}
+
+.submit:hover {
+  color: #da3c41;
+  border: 2px solid #da3c41;
+}
