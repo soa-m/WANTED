@@ -48,10 +48,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div id="loading">📱 ブラウザのカメラの使用を許可してください。</div>
-          <button onClick={a}></button>
-          <canvas id="canvas" hidden></canvas>
-        <p id="qr-msg"></p>
+        
        
          
               

@@ -1,17 +1,21 @@
 import { useRef,useState,useEffect } from "react"
 import React from "react";
 import styles from '../styles/Home.module.css';
-import {SearchData,FirstItems} from '../components/MainProgram';
+import {SearchData} from '../components/MainProgram';
 import Link from 'next/link';
 import jsQR from "jsqr";
 export default function Home() {
+
 
  
     //サーチボタンが押されたらテキストボックスの値に対応する返しを行う。該当する返しがない場合は "検索した内容"に関連する内容はみつかりませんでしたと表示。 
     // textは検索ボックス内の内容
     //SearchedWordは検索ボタンが押されたときの検索ボックス内の内容
     //ReturnWord1は表示する返しの言葉を格納
-    
+   
+
+
+
     function OnSearch(){
         var SearchedWord = document.getElementById("SearchBox").value;
         console.log(SearchedWord);
@@ -21,7 +25,7 @@ export default function Home() {
         })
         
         if(ReturnWord == undefined) ReturnWord =  SearchedWord + "に関する内容は見つかりませんでした";
-        else ReturnWord = FirstSearchData[SearchedWord];
+        else ReturnWord = SearchData[SearchedWord];
         document.getElementById("SearchResult").innerHTML = ReturnWord;
         console.log(ReturnWord);
 
@@ -81,37 +85,7 @@ export default function Home() {
 
           <div className={styles.empty}></div>
           
-          <div className={styles.btnbox}>
-            <Link href="/Information" className={styles.btn}>
-              <div class={styles.btnname}>　情報　</div>
-              <div class={styles.btncolor}></div>
-            </Link>
-          </div>
-
-          <div className={styles.btnbox}>
-            <Link href="/Serch" className={styles.selectedbtn}>
-              <div class={styles.btnname}>　検索　</div>
-              <div class={styles.btncolor}></div>
-            </Link>
-          </div>
-          <div className={styles.btnbox}>
-            <Link href="/Relations" className={styles.btn}>
-              <div class={styles.btnname}>　関係図　</div>
-              <div class={styles.btncolor}></div>
-            </Link>
-          </div>
-          <div className={styles.btnbox}>
-            <Link href="/Missions" className={styles.btn}>
-              <div class={styles.btnname}>　ミッション　</div>
-              <div class={styles.btncolor}></div>
-            </Link>
-          </div>
-          <div className={styles.btnbox}>
-            <Link href="/PastInformation" className={styles.btn}>
-              <div class={styles.btnname}>　過去の情報　</div>
-              <div class={styles.btncolor}></div>
-            </Link>
-          </div>
+          
         </div>
         <div id="loading">📱 ブラウザのカメラの使用を許可してください。</div>
             <button id = "camerabutton"onClick={a} className = {styles.Camerabtn}>カメラを起動する</button>
