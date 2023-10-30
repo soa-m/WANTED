@@ -10,6 +10,10 @@ let kv = createClient({
   token: process.env.NEXT_PUBLIC_KV_REST_API_TOKEN
 });
 
+var clickednum = 0;
+function plus(){
+    clickednum += 1;
+}
 
 import { Set, GetID } from '../components/func';
 let id = GetID();
@@ -26,11 +30,13 @@ function close() {
   var x = document.getElementById("mystery");
   x.style.display = 'none'
 }
-function open() {
+function open(num) {
 
   var x = document.getElementById("mystery");
   var y = document.getElementById("mysteryimg");
-  y.src = "/01.png";
+  console.log("/" + num + ".png");
+  y.src =  "/" + num + ".png";
+ clickednum += 1;
   x.style.display = 'block';
 }
 
@@ -79,7 +85,7 @@ export default function Home() {
     console.log(ReturnWord);
 
   };
-  var clickednum = 0;
+
   function a() {
     clickednum++;
     const video = document.createElement('video');
@@ -111,8 +117,8 @@ export default function Home() {
         });
         if (code && !isReadQR) {
           document.getElementById('qr-msg').textContent = `QRコード：${code.data}`;
-          if (code.data == 1) {
-            open();
+          if (code.data > 0 && code.data <= 45) {
+            open(code.data);
           }
           isReadQR = false;
         }
@@ -140,20 +146,20 @@ export default function Home() {
             <div className={styles.empty}></div>
 
             <div className={styles.btnbox}>
-              <Link href="/TornPaper" className={styles.btn}>
+              <Link href="/TornPaper" onClick = {plus} className={styles.btn}>
                 <div class={styles.btnname}>　キーコード　</div>
                 <div class={styles.btncolor}></div>
               </Link>
             </div>
 
-            <div className={styles.btnbox}>
-              <Link href="/fuse" className={styles.btn}>
+            <div className={styles.btnbox} >
+              <Link href="/fuse" onClick = {plus} className={styles.btn}>
                 <div class={styles.btnname}>　回路　</div>
                 <div class={styles.btncolor}></div>
               </Link>
             </div>
             <div className={styles.btnbox}>
-              <Link href="/DigitalKey" className={styles.btn}>
+              <Link href="/DigitalKey" onClick = {plus} className={styles.btn}>
                 <div class={styles.btnname}>　電子キー　</div>
                 <div class={styles.btncolor}></div>
               </Link>
