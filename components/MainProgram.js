@@ -42,6 +42,7 @@ export function UnlockChecker(Soloved) {
 
 
 
+
 //アンロックされた会話文のキューリスト
 //一つのキューに、[会話文の識別ID、[会話してくる人、会話文の内容]] の二次元配列を入れ込む)。
 //情報の右上に、キューリストに入っている会話文の量を表示する。
@@ -57,6 +58,7 @@ export var messageque = [
 ],
 
 ];
+
 
 export var messageData = [
 [0, //識別番号
@@ -97,7 +99,9 @@ export function messageUnlockChecker() {
         if(IsmessageUnlocked[i] == false){
             messageque.push(messageData[i]);
             IsmessageUnlocked[i] = true;
+
             kv.Set("IsmessageUnlocked",IsmessageUnlocked);
+
         }
     }
 }
