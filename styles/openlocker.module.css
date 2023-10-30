@@ -24,76 +24,24 @@
   background-repeat: no-repeat;
 }
 .letter{
-    display: flex;
-    position: absolute;
-    left:34%;
-    top:63%;
-    width:30%;
-    height:30%;
-    background-image: url('/letter.png');
-    background-size:contain;
-    background-repeat: no-repeat;
-    background-color: #000;
+    display: inline-block;
+    position:absolute;
+    left:27%;
+    top:71%;
 }
-.letter:hover{
-    transform:scale(1.1);
-}
-.baggage{
-    display:flex;
-    flex-direction: row;
-    justify-content:space-between;
-    position:relative;
-    width:60vw;
-    height:20vh;
-    top:20%;
-    left:20%;
-}
-.mail{
-    width:10vw;
-    height:20vh;
-    background-color: blue;
-}
-.mail:hover{
-    transform:scale(1.1);
 
+
+.recoder{
+    display: flex;
+    position:absolute;
+    left:50%;
+    top:80%;
 }
-#mail1{
-    position:relative;
-    position:relative;
-    background-image:url("/message_unlock.png");
-    background-size:contain;
-    background-repeat: no-repeat;
-    background-position:bottom;
+.letter :hover{
+    transform:scale(1.1);
 }
-#mail2{
-    display:none;
-    position:relative;
-    background-image:url("/message_unlock.png");
-    background-size:contain;
-    background-repeat: no-repeat;
-    background-position:bottom;
-}
-#mail3{
-    display:none;
-    position:relative;
-    background-image:url("/message_unlock.png");
-    background-size:contain;
-    background-repeat: no-repeat;
-    background-position:bottom;
-}
-#mail2_locked{
-    position:relative;
-    background-image:url("/message_locked.png");
-    background-size:contain;
-    background-repeat: no-repeat;
-    background-position:bottom;
-}
-#mail3_locked{
-    position:relative;
-    background-image:url("/message_locked.png");
-    background-size:contain;
-    background-repeat: no-repeat;
-    background-position:bottom;
+.recoder :hover{
+    transform:scale(1.1);
 }
 
 .modal {
@@ -110,65 +58,129 @@
   display: none;
 }
 
+
 .modalcontent {
-  background-color: #f4f4f4;
-  margin: 10% auto;
-  width: 70%;
-  height:70%;
-  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+  background-image: url("/letterdisplay.png");
+  background-size:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  margin: 5vh auto;
+  width: 90vw;
+  height:90vh;
   animation-name: modalopen;
   animation-duration: 1s;
 }
+
 
 @keyframes modalopen {
   from {opacity: 0}
   to {opacity: 1}
 }
 
-.modalheader h1 {
-  margin: 1rem 0;
-}
 
-.modalheader {
-  background: #f4f4f4;
-  height:10%;
-  padding: 3px 15px;
-  text-align: right;
-}
-
-.modalClose {
-  font-size: 2rem;
-}
-
-.modalClose:hover {
-  cursor: pointer;
-}
 
 .modalbody{
+  display:flex;
+  flex-direction: row;
   position:relative;
   width:100%;
   height:90%;
   color: black;
 }
-.modaltitle{
+.modalmails{
     position:relative;
-    text-align: center;
-    width:100%;
-    height:30%;
-    color:black;
-    font-size:32px;
+    top:20%;
+    left:4%;
+    width:8%;
+    height:70%;
 }
-.modalinput{
-    position:relative;
-    text-align: center;
-    height:30%;
-	margin: 40px 10%;
-    
+
+.mailicon{
+  position:relative;
+  width:100%;
+  height:25%;
+  background-image: url("/mail1.png");
+  background-size:150%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.modalinput input[type='text'] {
+.mailicon:hover{
+  transform: scale(1.1);
+}
+.lock{
+  position:relative;
+  width:100%;
+  height:100%;
+  background-image: url("/lock.png");
+  background-size:150%;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+.lock1{
+  display:block;
+}
+.lock2{
+  display:block;
+}
+.lock3{
+  display:block;
+}
+
+.modalmailcont{
+  position:relative;
+  top:20%;
+  left:13%;
+  width:62%;
+  height:70%;
+  overflow: auto;
+}
+.modalmailcont::-webkit-scrollbar{
+  display:none;
+}
+.modalmailcont a{
+  color : #0000EE;
+}
+.modalmailcont a:visited{
+  color : #551A8B;
+}
+
+.mailcont1{
+  display:block;
+}
+.nomailcont1{
+  display:block;
+}
+.mailcont2{
+  display:block;
+}
+.nomailcont2{
+  display:block;
+}
+.mailcont3{
+  display:block;
+}
+.nomailcont3{
+  display:block;
+}
+.mailcont4{
+  display:block;
+}
+.nomailcont4{
+  display:block;
+}
+
+.inputline {
+	position: relative;
+	width: 80%;
+	margin: 40px 3%;
+}
+
+.inputline input[type='text'] {
 	font: 15px/24px sans-serif;
 	box-sizing: border-box;
-	width: 60%;
+	width: 70%;
 	padding: 0.3em;
 	transition: 0.3s;
 	letter-spacing: 1px;
@@ -177,39 +189,36 @@
 	border-bottom: 2px solid #1b2538;
 	background: transparent;
 }
-.modalinput input[type='text']:focus {
+
+.inputline input[type='text']:focus {
 	border-bottom: 2px solid #da3c41;
 	outline: none;
 }
 
-/*主な共通部分は省略*/
-
-.submit {
-  font-size: large;
-  font-weight: 700;
-  position: relative;
+.inputline input[type='submit']{
+  position:relative;
   display: inline-block;
-  margin:5px;
-  padding: 5px 10px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  color: #212529;
-  border-radius: 0.5rem;
-  border: 2px solid #000;
-  border-radius: 0;
-  background: #fff;
+	vertical-align: middle;
+	margin: 0 10px;
+	padding: 6px 25px;
+	color: #F15A24;
+	font-weight: bold;
+	letter-spacing: 0.5pt;
+	text-decoration: none;
+	background-color: #ffffff;
+	border: 1px solid #F15A24;
+	cursor: pointer;
+	transition-duration:0.3s;
 }
-
-.submit:hover {
-  color: #da3c41;
-  border: 2px solid #da3c41;
+.inputline input[type='submit']:hover{
+  position:relative;
+  display: inline-block;
+  color: #ffffff;
+  background-color: #F15A24;
+}
+.judge{
+	position: relative;
+	width: 80%;
+	margin: 40px 3%;
+  font-size:large;
 }
