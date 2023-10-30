@@ -10,6 +10,7 @@ let kv = createClient({
   token: process.env.NEXT_PUBLIC_KV_REST_API_TOKEN
 });
 
+
 import { Set, GetID } from '../components/func';
 let id = GetID();
 
@@ -33,7 +34,7 @@ function open() {
   x.style.display = 'block';
 }
 
-var ITEMUNLCOKED = [false,false,false];
+var ITEMUNLCOKED = [false, false, false];
 /* */
 
 /*var CLEAREDFUZE = false;
@@ -64,7 +65,7 @@ export default function Home() {
 
     open1();
 
-   
+
     var SearchedWord = document.getElementById("SearchBox").value;
     console.log(SearchedWord);
     var SearchData_keys = Object.keys(FirstMissionNazo);
@@ -122,47 +123,48 @@ export default function Home() {
       } else {
         canvasElement.hidden = true;
         document.getElementById("camerabutton").innerHTML = "カメラを起動する";
+        return;
       }
     }
 
   }
- 
+
   return (
-      
-      
+
+
     <div>
       <>
-      <div className={styles.container}>
-        <div className={styles.buttons}>
+        <div className={styles.container}>
+          <div className={styles.buttons}>
 
-          <div className={styles.empty}></div>
+            <div className={styles.empty}></div>
 
-          <div className={styles.btnbox}>
-            <Link href="/TornPaper" className={styles.btn}>
-              <div class={styles.btnname}>　キーコード　</div>
-              <div class={styles.btncolor}></div>
-            </Link>
+            <div className={styles.btnbox}>
+              <Link href="/TornPaper" className={styles.btn}>
+                <div class={styles.btnname}>　キーコード　</div>
+                <div class={styles.btncolor}></div>
+              </Link>
+            </div>
+
+            <div className={styles.btnbox}>
+              <Link href="/fuse" className={styles.btn}>
+                <div class={styles.btnname}>　回路　</div>
+                <div class={styles.btncolor}></div>
+              </Link>
+            </div>
+            <div className={styles.btnbox}>
+              <Link href="/DigitalKey" className={styles.btn}>
+                <div class={styles.btnname}>　電子キー　</div>
+                <div class={styles.btncolor}></div>
+              </Link>
+            </div>
+
           </div>
 
-          <div className={styles.btnbox}>
-            <Link href="/fuse" className={styles.btn}>
-              <div class={styles.btnname}>　回路　</div>
-              <div class={styles.btncolor}></div>
-            </Link>
-          </div>
-          <div className={styles.btnbox}>
-            <Link href="/DigitalKey" className={styles.btn}>
-              <div class={styles.btnname}>　電子キー　</div>
-              <div class={styles.btncolor}></div>
-            </Link>
-          </div>
-          
+
+
         </div>
-
-
-
-      </div>
-    </>
+      </>
 
       <div className={styles.container}>
         <div className={styles.buttons}>
