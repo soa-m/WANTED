@@ -406,7 +406,7 @@
   width: 30%;
   top: 30%;
   left: 35%;
-  background-image: url(../public/frame.png);
+  background-image: url("/frame.png");
   background-size : cover;
 }
 .closeModal{
