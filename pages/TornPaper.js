@@ -53,13 +53,13 @@ export default function Home() {
     document.getElementById('btn5').style.left = "25%";
     document.getElementById('btn6').style.left = "45%";
 
-    document.getElementById('btn0').style.top = "200px";
-    document.getElementById('btn1').style.top = "200px";
+    document.getElementById('btn0').style.top = "180px";
+    document.getElementById('btn1').style.top = "210px";
     document.getElementById('btn2').style.top = "200px";
-    document.getElementById('btn3').style.top = "200px";
-    document.getElementById('btn4').style.top = "200px";
-    document.getElementById('btn5').style.top = "200px";
-    document.getElementById('btn6').style.top = "200px";
+    document.getElementById('btn3').style.top = "170px";
+    document.getElementById('btn4').style.top = "190px";
+    document.getElementById('btn5').style.top = "230px";
+    document.getElementById('btn6').style.top = "220px";
   }
 
 

@@ -15,6 +15,7 @@ let id = GetID();
 /*
 fuzecleared = await kv.get(id + "CLEAREDIGITALKEY");
 console.log(fuzecleared);
+
 */
 export default function Home() {
 
@@ -43,6 +44,7 @@ export default function Home() {
     var trynum = 0;
     var digitalcleared = false;
     function start() {
+        
         if (digitalcleared) return;
         trynum = 3;
         started = true;
@@ -188,6 +190,7 @@ export default function Home() {
         }
         if (started == false || trynum == 0 || digitalcleared) {
             if (started == false) return;
+
             if (trynum == 0 && digitalcleared == false) {
                 start();
             }

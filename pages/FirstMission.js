@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react"
 import React from "react";
 import styles from '../styles/First.module.css';
-import { SearchData} from '../components/MainProgram';
+import { SearchData } from '../components/MainProgram';
 import Link from 'next/link';
 import jsQR from "jsqr";
 import { createClient } from '@vercel/kv';
@@ -20,6 +20,8 @@ let id = GetID();
 
 function open1() {
   var x = document.getElementById("modal1");
+  document.getElementById("ItemImage").src = "/fuse.png";
+
   x.style.display = 'block';
 }
 function close1() {
@@ -40,7 +42,8 @@ function open(num) {
   clickednum += 1;
   x.style.display = 'block';
 }
-
+//PlayerIDで解くべき問題と結びつける。
+var PlayerID = 5;
 var ITEMUNLCOKED = [false, false, false];
 /* */
 
@@ -53,16 +56,117 @@ Set("CLEAREDTORNPAPER", CLEAREDTORNPAPER);
 Set("ITEMUNLCOKED",ITEMUNCLOKED);
 */
 
-var Item = ["紙切れ","ヒューズ","ドット絵"];
+var Item = ["紙切れ", "ヒューズ", "ドット絵"];
 
 var FirstMissionNazo = {
-  "しんぶんし": 0,
-  "トマト": 1,
-  "オレンジ": 2,
+  "アメリカ": 1,
+  "水やり": 2,
+  "浮き輪": 3,
+  "葡萄": 1,
+  "卵": 2,
+  "笑顔": 1,
+  "かいし": 1,
+  "夜空": 3,
+  "まこと": 2,
+  "新聞紙": 1,
+  "ドア": 3,
+  "東京都庁": 2,
+  "甘口": 1,
+  "家康": 3,
+  "正解": 1,
+  "オムライス": 2,
+  "仏": 1,
+  "大きな木": 3,
+  "かいし": 2,
+  "イエス": 3,
+  "お見事": 2,
+  "代々木": 1,
+  "275": 3,
+  "ウクライナ": 2,
+  "TKFES": 1,
+  "キト": 3,
+  "月日": 2,
+  "寝坊": 1,
+  "シャドウ": 3,
+  "勉強": 1,
+  "駆け引き": 2,
+  "景色": 3,
+  "天才": 2,
+  "雷": 1,
+  "spin": 3,
+  "真実": 2,
+  "平等": 1,
+
+  "王国": 2,
+
+  "睡眠": 3,
+
+  "磁石": 2,
+  "深海": 3,
+  "言葉": 3,
 
 
 }
+var FirstMissionNazoID = {
+  "アメリカ": 1,
+  "水やり": 2,
+  "浮き輪": 3,
+  "葡萄": 4,
+  "卵": 5,
+  "笑顔": 6,
+  "かいし": 7,
+  "夜空": 8,
+  "まこと": 9,
+  "新聞紙": 10,
+  "ドア": 11,
+  "東京都庁": 12,
+  "甘口": 13,
+  "家康": 14,
+  "正解": 15,
+  "オムライス": 16,
+  "仏": 17,
+  "大きな木": 18,
+  "かいし": 19,
+  "イエス": 20,
+  "お見事": 21,
+  "代々木": 22,
+  "275": 23,
+  "ウクライナ": 24,
+  "TKFES": 25,
+  "キト": 26,
+  "月日": 27,
+  "寝坊": 28,
+  "シャドウ": 29,
+  "勉強": 30,
+  "駆け引き": 31,
+  "景色": 32,
+  "天才": 33,
+  "雷": 34,
+  "spin": 35,
+  "真実": 36,
+  "平等": 37,
+  "王国": 39,
+  "睡眠": 41,
+  "磁石": 43,
+  "深海": 44,
+  "言葉": 45,
+}
 
+var groups = [
+  [1, 2, 3],
+  [4, 5, 8],
+  [7, 9, 11],
+  [10, 12, 14],
+  [13, 16, 18],
+  [17, 21, 23],
+  [22, 24, 26],
+  [25, 27, 29],
+  [30, 31, 32],
+  [28, 33, 35],
+  [6, 36, 45],
+  [34, 43, 44],
+  [15, 19, 20]
+]
 export default function Home() {
 
 
@@ -83,15 +187,36 @@ export default function Home() {
 
     var SearchedWord = document.getElementById("SearchBox").value;
     console.log(SearchedWord);
-    var SearchData_keys = Object.keys(FirstMissionNazo);
+    var SearchData_keys = Object.keys(FirstMissionNazoID);
     var ReturnWord = SearchData_keys.find(function (value) {
       return value == SearchedWord;
     })
 
-    if (ReturnWord == undefined) document.getElementById("searchresult").innerHTML = "アイテムが見つかりませんでした";
-    else document.getElementById("searchresult").innerHTML =  Item[FirstMissionNazo[SearchedWord]] + "が見つかりました" ;
+    if (ReturnWord == undefined) {
+      document.getElementById("topmodal").innerHTML = "";
+      document.getElementById("searchresult").innerHTML = "アイテムが見つかりませんでした";
+      document.getElementById("ItemImage").src = "/sonzaisinai.png";
+      return;
+    }
+    var IsYourProb = false;
+    for (var i = 0; i < 3; i++) {
+      if (groups[PlayerID][i] == FirstMissionNazoID[ReturnWord]) IsYourProb = true;
+    }
+    if (IsYourProb == false) {
+      document.getElementById("topmodal").innerHTML = "";
+      document.getElementById("searchresult").innerHTML = "アイテムが見つかりませんでした";
+      document.getElementById("ItemImage").src = "/sonzaisinai.png";
+      return;
+    }
+
+    document.getElementById("topmodal").innerHTML = "==アイテム発見==";
+    document.getElementById("searchresult").innerHTML = Item[FirstMissionNazo[SearchedWord]] + "が見つかりました";
+    if (FirstMissionNazo[SearchedWord] == 1) document.getElementById("ItemImage").src = "/KEYCODES.png";
+    if (FirstMissionNazo[SearchedWord] == 2) document.getElementById("ItemImage").src = "/fuse.png";
+    if (FirstMissionNazo[SearchedWord] == 3) document.getElementById("ItemImage").src = "/DotPic.png";
+
     ITEMUNLCOKED[FirstMissionNazo[SearchedWord]] = true;
-    Set("ITEMUNLCOKED",ITEMUNLCOKED);
+    Set("ITEMUNLCOKED", ITEMUNLCOKED);
 
   };
 
@@ -185,7 +310,7 @@ export default function Home() {
 
       <div className={styles.wrap}>
         <div className={styles.search}>
-          <input id="SearchBox" type="text" className={styles.searchTerm} placeholder="What are you looking for?" />
+          <input id="SearchBox" type="text" className={styles.searchTerm} placeholder="答えを入力" />
           <button onClick={OnSearch} type="submit" className={styles.searchButton}>🔍
           </button>
         </div>
@@ -200,8 +325,10 @@ export default function Home() {
       </div>
 
       <div id="modal1" className={styles.modal1}>
+        <p id="topmodal" className={styles.Model_text1}>＝＝アイテム発見＝＝</p>
+        <img id="ItemImage" className={styles.ItemImage} />
         <span id="closeModal" className={styles.closeModal} onClick={close1}>&times;</span>
-        <img id="itempic" />
+
         <p id="searchresult" className={styles.Model_text}>Some text in the Modal..</p>
       </div>
 

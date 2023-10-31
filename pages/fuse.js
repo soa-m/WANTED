@@ -241,7 +241,7 @@ export default function Home() {
       <img className = {styles.fuseput} id  = "fuse" />
       <button onClick={start} type="ansbtn" className={styles.Camerabtn}>ヒューズを置く</button>
       <p id="cleared" className = {styles.LOCKED}>　Locked</p>
-      <img className = {styles.destination} src = "/destination"/>
+      <img className = {styles.destination} src = "/destination.png"/>
     </div>
 
 
