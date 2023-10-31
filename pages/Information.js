@@ -57,6 +57,7 @@ export async function nextmessage() {
     document.getElementById("messagename").textContent = messageData[messagenum][nowmessage][0];
     var thistext = messageData[messagenum][nowmessage][1];
     var s = "";
+    
     for (let i = 0; i < thistext.length; i++) {
       s += thistext[i];
       await new Promise(resolve => setTimeout(resolve, 50))

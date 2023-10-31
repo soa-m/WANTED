@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react"
 import React from "react";
-import styles from '../styles/Home.module.css';
+import styles from '../styles/DigitalKey.module.css';
 import { SearchData } from '../components/MainProgram';
 import Link from 'next/link';
 import { createClient } from '@vercel/kv';
@@ -19,29 +19,29 @@ console.log(fuzecleared);
 export default function Home() {
 
     var DigitalKeybool = [
-        [true, true, true, false, false],
-        [false, true, false, false, false],
-        [false, true, true, false, true],
-        [false, false, true, true, false],
+        [false, true, true, true, true],
+        [true, false, true, false, true],
+        [true, false, false, true, true],
+        [false, false, false, true, false],
         [false, false, true, false, true],
     ]
     var DigitalKeybool1 = [
+        [false, true, true, true, true],
+        [true, false, true, false, true],
+        [true, false, false, true, true],
+        [false, false, false, true, false],
+        [false, false, true, false, true],
+    ]
+    var DigitalKeyAns = [
         [true, true, true, false, false],
         [false, true, false, false, false],
         [false, true, true, false, true],
         [false, false, true, true, false],
         [false, false, true, false, true],
     ]
-    var DigitalKeyAns = [
-        [true, true, true, true, true],
-        [true, true, false, false, true],
-        [true, false, false, false, true],
-        [true, true, false, false, false],
-        [false, false, false, false, true],
-    ]
     var started = false;
     var trynum = 0;
-    var digtalcleared = false;
+    var digitalcleared = false;
     function start() {
         if (digitalcleared) return;
         trynum = 3;
@@ -72,7 +72,9 @@ export default function Home() {
     function Ontap(place) {
         if (digitalcleared || started == false) return;
         trynum--;
-        document.getElementById("tries").InnerHTML = "残りの操作回数 : " + trynum;
+        
+   
+        
         var x, y;
         var s = place.target.id;
         y = s[4];
@@ -180,6 +182,8 @@ export default function Home() {
 
             document.getElementById("succes").innerHTML = "UNLOCKED";
             digitalcleared = true;
+            document.getElementById("succes").style.color = "green";
+            document.getElementById("startbtn").innerHTML = "解読済み";
             /*Set("CLEAREDDIGITAL",digitalcleared)*/
         }
         if (started == false || trynum == 0 || digitalcleared) {
@@ -236,9 +240,9 @@ export default function Home() {
                 <button onClick={Ontap} id="btn44" className={styles.Kchildbtn}> </button>
             </div>
             <div>
-                <button id="startbtn" onClick={start}>暗号解読を始める</button>
-                <p id="succes">LOCKED</p>
-                <p id="tries">残りの操作回数 : </p>
+            <button onClick={start} id="startbtn" className={styles.Camerabtn}>暗号解読を始める</button>
+                <p id="succes" className = {styles.LOCKED}>LOCKED</p>
+
             </div>
         </div>
 

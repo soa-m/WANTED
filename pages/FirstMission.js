@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react"
 import React from "react";
-import styles from '../styles/Home.module.css';
-import { SearchData, FirstMissionNazo } from '../components/MainProgram';
+import styles from '../styles/First.module.css';
+import { SearchData} from '../components/MainProgram';
 import Link from 'next/link';
 import jsQR from "jsqr";
 import { createClient } from '@vercel/kv';
@@ -11,8 +11,8 @@ let kv = createClient({
 });
 
 var clickednum = 0;
-function plus(){
-    clickednum += 1;
+function plus() {
+  clickednum += 1;
 }
 
 import { Set, GetID } from '../components/func';
@@ -34,9 +34,10 @@ function open(num) {
 
   var x = document.getElementById("mystery");
   var y = document.getElementById("mysteryimg");
-  console.log("/" + num + ".png");
-  y.src =  "/" + num + ".png";
- clickednum += 1;
+
+
+  y.src = "/" + num + ".png";
+  clickednum += 1;
   x.style.display = 'block';
 }
 
@@ -49,10 +50,18 @@ var CLEAREDTORNPAPER = false;
 Set("CLEAREDFUZE", CLEAREDFUZE);
 Set("CLEAREDDIGITALKEY", CLEAREDDIGITALKEY);
 Set("CLEAREDTORNPAPER", CLEAREDTORNPAPER);
-
+Set("ITEMUNLCOKED",ITEMUNCLOKED);
 */
 
+var Item = ["紙切れ","ヒューズ","ドット絵"];
 
+var FirstMissionNazo = {
+  "しんぶんし": 0,
+  "トマト": 1,
+  "オレンジ": 2,
+
+
+}
 
 export default function Home() {
 
@@ -79,10 +88,10 @@ export default function Home() {
       return value == SearchedWord;
     })
 
-    if (ReturnWord == undefined) ReturnWord = SearchedWord + "に関する内容は見つかりませんでした";
-    else ReturnWord = FirstMissionNazo[SearchedWord];
-    document.getElementById("searchresult").innerHTML = ReturnWord;
-    console.log(ReturnWord);
+    if (ReturnWord == undefined) document.getElementById("searchresult").innerHTML = "アイテムが見つかりませんでした";
+    else document.getElementById("searchresult").innerHTML =  Item[FirstMissionNazo[SearchedWord]] + "が見つかりました" ;
+    ITEMUNLCOKED[FirstMissionNazo[SearchedWord]] = true;
+    Set("ITEMUNLCOKED",ITEMUNLCOKED);
 
   };
 
@@ -116,7 +125,6 @@ export default function Home() {
           inversionAttempts: 'dontInvert',
         });
         if (code && !isReadQR) {
-          document.getElementById('qr-msg').textContent = `QRコード：${code.data}`;
           if (code.data > 0 && code.data <= 45) {
             open(code.data);
           }
@@ -138,78 +146,66 @@ export default function Home() {
   return (
 
 
-    <div>
-      <>
-        <div className={styles.container}>
-          <div className={styles.buttons}>
-
-            <div className={styles.empty}></div>
-
-            <div className={styles.btnbox}>
-              <Link href="/TornPaper" onClick = {plus} className={styles.btn}>
-                <div class={styles.btnname}>　キーコード　</div>
-                <div class={styles.btncolor}></div>
-              </Link>
-            </div>
-
-            <div className={styles.btnbox} >
-              <Link href="/fuse" onClick = {plus} className={styles.btn}>
-                <div class={styles.btnname}>　回路　</div>
-                <div class={styles.btncolor}></div>
-              </Link>
-            </div>
-            <div className={styles.btnbox}>
-              <Link href="/DigitalKey" onClick = {plus} className={styles.btn}>
-                <div class={styles.btnname}>　電子キー　</div>
-                <div class={styles.btncolor}></div>
-              </Link>
-            </div>
-
-          </div>
-
-
-
-        </div>
-      </>
-
+    <div className={styles.FirstMission}>
       <div className={styles.container}>
         <div className={styles.buttons}>
 
           <div className={styles.empty}></div>
 
+          <div className={styles.btnbox}>
+            <Link href="/TornPaper" onClick={plus} className={styles.btn}>
+              <div class={styles.btnname}>　キーコード　</div>
+              <div class={styles.btncolor}></div>
+            </Link>
+          </div>
+
+          <div className={styles.btnbox} >
+            <Link href="/fuse" onClick={plus} className={styles.btn}>
+              <div class={styles.btnname}>　回路　</div>
+              <div class={styles.btncolor}></div>
+            </Link>
+          </div>
+          <div className={styles.btnbox}>
+            <Link href="/DigitalKey" onClick={plus} className={styles.btn}>
+              <div class={styles.btnname}>　電子キー　</div>
+              <div class={styles.btncolor}></div>
+            </Link>
+          </div>
 
         </div>
-        <div id="loading">📱 ブラウザのカメラの使用を許可してください。</div>
-        <button id="camerabutton" onClick={a} className={styles.Camerabtn}>カメラを起動する</button>
-        <canvas id="canvas" className={styles.canvas} hidden></canvas>
-        <p id="qr-msg" className={styles.qrmsg}></p>
 
 
 
       </div>
-      <div >
-
-        <input className={styles.search_bar} id="SearchBox" type="text" placeholder="キーワードを入力"></input>
-
-
-
-
-        <input className={styles.search_submit} type="button" value="検索" onClick={OnSearch} /><br />
+      <div id="loading">📱 ブラウザのカメラの使用を許可してください。</div>
+      <button id="camerabutton" onClick={a} className={styles.Camerabtn}>カメラを起動する</button>
+      <canvas id="canvas" className={styles.canvas} hidden></canvas>
 
 
 
-
-
-        <div id="mystery" className={styles.mystery}>
-          <span id="closeModal" className={styles.closeModal} onClick={close}>&times;</span>
-          <img id="mysteryimg" />
-        </div>
-
-        <div id="modal1" className={styles.modal1}>
-          <span id="closeModal" className={styles.closeModal} onClick={close1}>&times;</span>
-          <p id="searchresult" className={styles.Model_text}>Some text in the Modal..</p>
+      <div className={styles.wrap}>
+        <div className={styles.search}>
+          <input id="SearchBox" type="text" className={styles.searchTerm} placeholder="What are you looking for?" />
+          <button onClick={OnSearch} type="submit" className={styles.searchButton}>🔍
+          </button>
         </div>
       </div>
+
+
+
+
+      <div id="mystery" className={styles.mystery}>
+        <span id="closeModal" className={styles.closeModal} onClick={close}>&times;</span>
+        <img id="mysteryimg" />
+      </div>
+
+      <div id="modal1" className={styles.modal1}>
+        <span id="closeModal" className={styles.closeModal} onClick={close1}>&times;</span>
+        <img id="itempic" />
+        <p id="searchresult" className={styles.Model_text}>Some text in the Modal..</p>
+      </div>
+
+
 
 
 

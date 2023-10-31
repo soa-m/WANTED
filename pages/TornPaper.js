@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react"
 import React from "react";
-import styles from '../styles/Home.module.css';
+import styles from '../styles/TornPaper.module.css';
 import { SearchData } from '../components/MainProgram';
 import Link from 'next/link';
 import Draggable from 'react-draggable';
@@ -23,6 +23,7 @@ export default function Home() {
     if (ans == "714283") {
       document.getElementById("cleared").innerHTML = "UNLOCKED";
       /* Set("CLEAREDTORN",clearedtorn); */
+      document.getElementById("cleared").style.color = "green";
     }
   }
 
@@ -44,13 +45,13 @@ export default function Home() {
     document.getElementById('btn5').style.postion = "absolute";
     document.getElementById('btn6').style.postion = "absolute";
 
-    document.getElementById('btn0').style.left = "70%";
-    document.getElementById('btn1').style.left = "90%";
-    document.getElementById('btn2').style.left = "80%";
-    document.getElementById('btn3').style.left = "30%";
-    document.getElementById('btn4').style.left = "50%";
-    document.getElementById('btn5').style.left = "40%";
-    document.getElementById('btn6').style.left = "60%";
+    document.getElementById('btn0').style.left = "55%";
+    document.getElementById('btn1').style.left = "75%";
+    document.getElementById('btn2').style.left = "65%";
+    document.getElementById('btn3').style.left = "15%";
+    document.getElementById('btn4').style.left = "35%";
+    document.getElementById('btn5').style.left = "25%";
+    document.getElementById('btn6').style.left = "45%";
 
     document.getElementById('btn0').style.top = "200px";
     document.getElementById('btn1').style.top = "200px";
@@ -65,9 +66,9 @@ export default function Home() {
   return (
 
 
-    <div>
+    <div >
 
-      <div>
+      <div >
         <Draggable>
           <div  >
             <img className={styles.KEYCODE} id="btn0" src="" />
@@ -111,12 +112,17 @@ export default function Home() {
 
       </div>
       <div>
-        <button id="start" onClick={start}>アイテム１を置く</button>
+        <button id="start" onClick={start} className={styles.start}>アイテム１を置く</button>
       </div>
       <div>
-        <input id="inputbox" type="text"></input>
-        <button id="ansbtn" onClick={answer}>ENTER</button>
-        <p id="cleared">locked</p>
+
+        <div className={styles.wrap}>
+          <div className={styles.search}>
+            <input id="inputbox" type="text" className={styles.searchTerm} placeholder="What are you looking for?" />
+            <button onClick={answer} type="ansbtn" className={styles.searchButton}>🔑</button>
+            <p id="cleared" className = {styles.LOCKED}>　Locked</p>
+          </div>
+        </div>
       </div>
 
     </div>

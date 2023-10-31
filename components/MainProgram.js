@@ -111,10 +111,3 @@ export var SearchData = {
     "第三の返し": "Xの正体",
 }
 
-export var FirstMissionNazo = {
-    "しんぶんし": 1,
-    "トマト": 2,
-    "オレンジ": 3,
-
-
-}
