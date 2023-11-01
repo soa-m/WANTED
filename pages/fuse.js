@@ -133,7 +133,7 @@ export default function Home() {
         if (Keytype[i][j] == 1) Kairo.src = '/KAIRO1.png';
         if (Keytype[i][j] == 2) Kairo.src = '/KAIRO2.png';
         if (Keytype[i][j] == 3) Kairo.src = '/KAIRO3.png';
-        if (Keytype[i][j] == 4) Kairo.src = '/KAIRO4.png';
+        if (Keytype[i][j] == 4) Kairo.src = '/KAIRO0.png';
 
         Kairo.style.backgroundSize = "cover";
         for (var k = 0; k < KeyRotate[i][j]; k++) {
