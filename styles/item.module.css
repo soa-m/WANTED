@@ -1,0 +1,444 @@
+.container{
+    width:100vw;
+    height:100vh;
+    background-image: url("/itemback2.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:50% 50%;
+    position:relative;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.buttons{
+  width:12%;
+  height:100vh;
+  position:relative;
+  /*background-color: red;*/
+}
+.items{
+    width:52%;
+    height:100vh;
+    position:relative;
+}
+
+.itemtab{
+    top:22%;
+    left:5%;
+    width:95%;
+    height:50%;
+    position:absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10% 0%;
+    overflow: hidden scroll;
+}
+.itemtab::-webkit-scrollbar{
+  width: 10px;
+}
+.itemtab::-webkit-scrollbar-track{
+  background-color: #ccc;
+  border-radius: 20px;
+}
+.itemtab::-webkit-scrollbar-thumb{
+  background-color: #17585d;
+  width: 10px;
+  height:2px;
+  border-radius: 20px;
+}
+.item{
+  background-image: url("/waku.png");
+  background-repeat: no-repeat;
+  background-size:100%;
+    width:23%;
+    height:45%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.itemm:hover{
+    transform: scale(1.1);
+}
+.discription{
+    width: 36%;
+    height:100vh;
+    position:relative;
+}
+.name{
+    text-align: center;
+    font-size: 30px;
+    position:absolute;
+    top:16%;
+    left:17%;
+    width:65%;
+    height:10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nameeng{
+    text-align: center;
+    font-size: 25px;
+    position:absolute;
+    top:23%;
+    left:35%;
+    width:30%;
+    height:5%;
+    color:#BDAB96;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pic{
+    position:absolute;
+    top:30%;
+    left:20%;
+    width:60%;
+    height:20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#pic{
+    position:relative;
+    display:none;
+}
+.text{
+    text-align: center;
+    position:absolute;
+    top:65%;
+    left:15%;
+    width:70%;
+    height:20%;
+}
+
+.letterbtn{
+    text-align: center;
+    position:absolute;
+    top:80%;
+    left:70%;
+    width:20%;
+    height:10%;
+    display:none;
+}
+
+.letternobtn{
+  display: inline-block;
+  width: 100%;
+  height:40%;
+  color: #4D9BC1; /* 文字色 */
+  border: 2px solid #4D9BC1; /* 線幅・種類・色 */
+  background: #fff; /* 背景色 */
+  font-weight: bold; /* 文字の太さ */
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+}
+
+/* マウスオーバーした際のデザイン */
+.letternobtn:hover {
+  color: #fff; /* 文字色 */
+  background: #4D9BC1; /* 背景色 */
+}
+
+
+
+.buttons{
+    width:12vw;
+    height:100vh;
+    position:relative;
+    /*background-color: red;*/
+  }
+  
+  .buttons .empty{
+    position:relative;
+    height:20%;
+  }
+  .buttons .btnbox{
+    position:relative;
+    height:13%;
+  }
+  
+  .btn {
+    height:8vh;
+    width:10.5vw;
+    position: absolute;
+    text-decoration: none;
+    display:flex; 
+    flex-direction: row;
+  }
+  .btn:hover {
+    transform-origin: 0% 50%;
+    transform:scale(1.1);
+  }
+  #story{
+    background-image: url("/story2.png");
+    background-repeat: no-repeat;
+    background-size:contain;
+  }
+  #connection{
+    background-image: url("/connection2.png");
+    background-repeat: no-repeat;
+    background-size:contain;
+  }
+  #item{
+    background-image: url("/item2.png");
+    background-repeat: no-repeat;
+    background-size:contain;
+  }
+  
+  
+  .selectedbtn{
+    height:10vh;
+    width:12vw;
+    position: absolute;
+    text-decoration: none;
+  
+    display:flex; 
+    flex-direction: row;
+    
+  }
+  
+  
+
+
+
+  .modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+  }
+  #Modal2{
+    display: none;
+  }
+  
+  
+  .modalcontent {
+    background-image: url("/letterdisplay.png");
+    background-size:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    margin: 5vh auto;
+    width: 90vw;
+    height:90vh;
+    animation-name: modalopen;
+    animation-duration: 1s;
+  }
+  
+  
+  @keyframes modalopen {
+    from {opacity: 0}
+    to {opacity: 1}
+  }
+  
+  
+  
+  .modalbody{
+    display:flex;
+    flex-direction: row;
+    position:relative;
+    width:100%;
+    height:90%;
+    color: black;
+  }
+  .modalmails{
+      position:relative;
+      top:20%;
+      left:4%;
+      width:8%;
+      height:70%;
+      overflow: hidden scroll;
+  }
+  
+  .modalmails::-webkit-scrollbar{
+    width: 10px;
+  }
+  .modalmails::-webkit-scrollbar-track{
+    background-color: #ccc;
+    border-radius: 20px;
+  }
+  .modalmails::-webkit-scrollbar-thumb{
+    background-color: #17585d;
+    width: 10px;
+    height:2px;
+    border-radius: 20px;
+  }
+  .mailicon{
+    position:relative;
+    width:100%;
+    height:23%;
+  }
+  .mailicon:hover{
+    transform: scale(1.1);
+  }
+#mailicon1{
+    background-image: url("/mail1.png");
+    background-size:150%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+  #mailicon2{
+    background-image: url("/mail2.png");
+    background-size:150%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #mailicon3{
+    background-image: url("/mail3.png");
+    background-size:150%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #mailicon4{
+    background-image: url("/mail4.png");
+    background-size:150%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #mailicon5{
+    background-image: url("/mail5.png");
+    background-size:110%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #mailicon6{
+    background-image: url("/mail6.png");
+    background-size:110%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #mailicon7{
+    background-image: url("/mail7.png");
+    background-size:110%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #mailicon8{
+    background-image: url("/mail8.png");
+    background-size:110%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .lock{
+    position:relative;
+    width:100%;
+    height:100%;
+    background-image: url("/lock.png");
+    background-size:150%;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+  }
+  .lock1{
+    display:block;
+  }
+  .lock2{
+    display:block;
+  }
+  .lock3{
+    display:block;
+  }
+  
+  .modalmailcont{
+    position:relative;
+    top:20%;
+    left:13%;
+    width:62%;
+    height:70%;
+    overflow: auto;
+  }
+  .modalmailcont::-webkit-scrollbar{
+    display:none;
+  }
+  .modalmailcont a{
+    color : #0000EE;
+  }
+  .modalmailcont a:visited{
+    color : #551A8B;
+  }
+  
+  .mailcont1{
+    display:block;
+  }
+  .mailcont2{
+    display:block;
+  }
+  .mailcont3{
+    display:block;
+  }
+  .mailcont4{
+    display:block;
+  }
+  .mailcont5{
+    display:block;
+  }
+  .mailcont6{
+    display:block;
+  }
+  .mailcont7{
+    display:block;
+  }
+  .mailcont8{
+    display:block;
+  }
+  
+  .inputline {
+      position: relative;
+      width: 80%;
+      margin: 40px 3%;
+  }
+  
+  .inputline input[type='text'] {
+      font: 15px/24px sans-serif;
+      box-sizing: border-box;
+      width: 70%;
+      padding: 0.3em;
+      transition: 0.3s;
+      letter-spacing: 1px;
+      color: #aaaaaa;
+      border: none;
+      border-bottom: 2px solid #1b2538;
+      background: transparent;
+  }
+  
+  .inputline input[type='text']:focus {
+      border-bottom: 2px solid #da3c41;
+      outline: none;
+  }
+  
+  .inputline input[type='submit']{
+    position:relative;
+    display: inline-block;
+      vertical-align: middle;
+      margin: 0 10px;
+      padding: 6px 25px;
+      color: #F15A24;
+      font-weight: bold;
+      letter-spacing: 0.5pt;
+      text-decoration: none;
+      background-color: #ffffff;
+      border: 1px solid #F15A24;
+      cursor: pointer;
+      transition-duration:0.3s;
+  }
+  .inputline input[type='submit']:hover{
+    position:relative;
+    display: inline-block;
+    color: #ffffff;
+    background-color: #F15A24;
+  }
+  .judge{
+      position: relative;
+      width: 80%;
+      margin: 40px 3%;
+    font-size:large;
+  }
