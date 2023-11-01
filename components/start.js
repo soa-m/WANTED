@@ -20,18 +20,38 @@ export async function Init() {
     //uuidをこのページ,ゲームのidとする cookieに保存
 
     let mysteryBool = {
-        "第一の謎" : true,
-        "第二の謎" : true,
-        "第三の謎" : true,
+        "第一の謎" : false,
+        "第二の謎" : false,
+        "第三の謎" : false,
     }
 
-    let IsmessageUnlocked = [false,false,false];
+    let IsmessageUnlocked = 1;//解放されてるメッセージのお尻
+    var messagenum=0;//今いる識別番号
+    var nowmessage=0;//識別番号のうち何番目にいるか
+    var messageData = [
+        [0, //識別番号
     
+            ['捜査員','こんにちは'],
+            ['プレイヤー','おはようございます'],   //会話文を追加していく
+        ],
+        [1, //識別番号
+        
+            ['捜査員','こんにちは2あああああああああああああああああああああああああ'],
+            ['プレイヤー','おはようございます2ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ'],   //会話文を追加していく
+        ],
+    ];
+    //await kv.set("messageData",messageData);
+
+    /*
     let status={
         "mysteryBool" :mysteryBool,
         "IsmessageUnlocked"  :IsmessageUnlocked,
     }
-    Set("status",status);
+    */
+    Set("IsmessageUnlocked",IsmessageUnlocked);
+    Set("mysteryBool",mysteryBool);
+    Set("messagenum",messagenum);
+    Set("nowmessage",nowmessage);
     //埋め込みなので最終的に消す
     /*
     let SearchData = {

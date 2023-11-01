@@ -1,0 +1,47 @@
+.container{
+    width:100vw;
+    height:100vh;
+    background-image: url("/playername.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    overflow:hidden;
+    position:relative;
+}
+.text{
+    position:absolute;
+    width:42vw;
+    height:10vh;
+    top:27%;
+    left:31%;
+    margin:0 4vw;
+    font-size:42px;
+    font-weight: 700;
+}
+.nametext{
+    position:absolute;
+    width:42vw;
+    height:10vh;
+    top:50%;
+    left:30%;
+    margin:0 4vw;
+    font-size:large;
+}
+.inputtext{
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 60%;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	border: none;
+	border-bottom: 2px solid gray;
+	background: transparent;
+}
+.inputtext::placeholder{
+	color: #aaaaaa;
+
+}
+.inputtext:focus {
+	border-bottom: 2px solid #da3c41;
+	outline: none;
+}

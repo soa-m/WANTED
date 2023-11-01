@@ -13,34 +13,32 @@ let kv = createClient({
 //次の謎がアンロックさらた場合は更にその謎から派生する謎のチェックを行う。
 
 
+import { Set, GetID } from './func';
+let id = GetID();
 
-import {Set,GetID} from './func';
-let id=GetID();
 
+export function UnlockChecker(Soloved) {
 
-export  function UnlockChecker(Soloved){
-    
-    for(nxMystery in fgraph[Soloved]){
+    for (nxMystery in fgraph[Soloved]) {
         Unlocked = true;
-        for(UnlockNeeded in bgraph[nxMystery]){
-            if(mysteryBool[UnlockNeeded] == false) Unlocked = false;
+        for (UnlockNeeded in bgraph[nxMystery]) {
+            if (mysteryBool[UnlockNeeded] == false) Unlocked = false;
         }
-        if(Unlocked) {
+        if (Unlocked) {
             mysteryBool[nxMystery] = true;
             UnlockCheker(nxMystery);
         }
     }
-    
+
 };
 
 
-var mysteryBool= await kv.get(id+"mysteryBool");
+//var mysteryBool= await kv.get(id+"mysteryBool");
 
 //謎データの有向グラフ。謎からその謎の解決後アンロック謎への有向グラフと逆の有向グラフの二種類。
 
-var fgraph= await kv.get("fgraph");
-var bgraph= await kv.get("bgraph");
-
+//var fgraph= await kv.get("fgraph");
+//var bgraph= await kv.get("bgraph");
 
 
 
@@ -49,6 +47,7 @@ var bgraph= await kv.get("bgraph");
 //情報の右上に、キューリストに入っている会話文の量を表示する。
 //会話文は最後までみられた場合、キューリストからpopする。
 
+/*
 export var messageque = [
     [0, //識別番号
   
@@ -59,29 +58,36 @@ export var messageque = [
 
 ];
 
-
 export var messageData = [
 [0, //識別番号
   
    ['捜査員','こんにちは'],
    ['プレイヤー','おはようございます'],   //会話文を追加していく
+],
+[1, //識別番号
   
+   ['捜査員','こんにちは2'],
+   ['プレイヤー','おはようございます2'],   //会話文を追加していく
 ],
 
 ];
+*/
 
 //メッセージ開放に必要な謎一覧
-
+/*
 export var messageUnlock = [
-    ["第一の謎","第二の謎"],
+    [true,0],
+    [false,1],
+    [false,2]
 ]
-
+*/
 //メッセージが追加済みかのデータ
+//識別番号だけつければいいか。
 
-var IsmessageUnlocked= await kv.get(id+"IsmessageUnlocked");
+//var IsmessageUnlocked= await kv.get(id+"IsmessageUnlocked");
 
 
-//メッセージが解放されたかを決定する関数。開放されていた場合、messagequeに追加する
+/*
 export function messageUnlockChecker() {
     for (i = 0; i< length(messageUnlock); i++){
         var check = true; //一つでもアンロックされていなかったらfalseにする。 
@@ -91,18 +97,17 @@ export function messageUnlockChecker() {
         if(IsmessageUnlocked[i] == false){
             messageque.push(messageData[i]);
             IsmessageUnlocked[i] = true;
-
             kv.Set("IsmessageUnlocked",IsmessageUnlocked);
-
         }
     }
 }
+*/
 
 
 //検索ワード
-export  var SearchData = {
-    "第一の返し" : "窓を見る",
-    "第二の返し" : "237124",
-    "第三の返し" : "Xの正体",
-    }
+export var SearchData = {
+    "第一の返し": "窓を見る",
+    "第二の返し": "237124",
+    "第三の返し": "Xの正体",
+}
 
