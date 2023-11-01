@@ -181,15 +181,40 @@ export default function Home() {
         console.log(DigitalKeybool);
         console.log(did);
         if (did) {
-
+            var x = document.getElementById("succes");
             document.getElementById("succes").innerHTML = "UNLOCKED";
             digitalcleared = true;
             document.getElementById("succes").style.color = "green";
             document.getElementById("startbtn").innerHTML = "解読済み";
+            x.animate(
+                [
+                  { opacity: 1 },
+                  { opacity: 0 }
+                ],
+                {
+                  duration: 100,
+                  iterations : 3,
+                  
+                  direction: 'alternate'
+                }
+              );
             /*Set("CLEAREDDIGITAL",digitalcleared)*/
         }
         if (started == false || trynum == 0 || digitalcleared) {
             if (started == false) return;
+            var x = document.getElementById("succes");
+            x.animate(
+                [
+                  { opacity: 1 },
+                  { opacity: 0 }
+                ],
+                {
+                  duration: 100,
+                  iterations : 3,
+                  
+                  direction: 'alternate'
+                }
+              );
 
             if (trynum == 0 && digitalcleared == false) {
                 start();
@@ -206,7 +231,7 @@ export default function Home() {
     return (
 
 
-        <div>
+        <div className = {styles.Iron}>
             <div className={styles.Kparentsbtn0}>
                 <button onClick={Ontap} id="btn00" className={styles.Kchildbtn}> </button>
                 <button onClick={Ontap} id="btn01" className={styles.Kchildbtn}> </button>

@@ -43,182 +43,55 @@
 .recoder :hover{
     transform:scale(1.1);
 }
-
-.modal {
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
-}
-#Modal2{
-  display: none;
-}
+.modal1{
+  position : absolute;
+  display : none;
+  background-image: url("/itemget.png");
+  background-size : cover;
+  width: 90%;
+  left : 7%;
+  top :-5%;
+  background-repeat : norepeat;
+  height : 100%;
+  
 
 
-.modalcontent {
-  background-image: url("/letterdisplay.png");
-  background-size:100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  margin: 5vh auto;
-  width: 90vw;
-  height:90vh;
-  animation-name: modalopen;
-  animation-duration: 1s;
 }
+.ItemImage{
+  position : absolute;
+  width : 50%;
+  top : 22%;
+  left : 29.5%;
+}
+.Model_text{
+  position : absolute;
+  top : 80%;
+  left : 40.5%;
+  font-size : 200%;
+  text-align: center;
+}
+.closeModal{
+  font-size: 300%;
+  left : 67.5%;
+  top : 8%;
+  position : absolute;
 
+}
+.ItemImage1{
+  position : absolute;
+  width : 100%;
+  top : 0%;
+  left : -0%;
+}
+.Model_text1{
+  position : absolute;
+  top : 80%;
+  left : 37.5%;
+  font-size : 200%;
+  text-align: center;
+}
+.letter{
+  position : absolute;
+  top : 50%; 
 
-@keyframes modalopen {
-  from {opacity: 0}
-  to {opacity: 1}
-}
-
-
-
-.modalbody{
-  display:flex;
-  flex-direction: row;
-  position:relative;
-  width:100%;
-  height:90%;
-  color: black;
-}
-.modalmails{
-    position:relative;
-    top:20%;
-    left:4%;
-    width:8%;
-    height:70%;
-}
-
-.mailicon{
-  position:relative;
-  width:100%;
-  height:25%;
-  background-image: url("/mail1.png");
-  background-size:150%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.mailicon:hover{
-  transform: scale(1.1);
-}
-.lock{
-  position:relative;
-  width:100%;
-  height:100%;
-  background-image: url("/lock.png");
-  background-size:150%;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.8;
-}
-.lock1{
-  display:block;
-}
-.lock2{
-  display:block;
-}
-.lock3{
-  display:block;
-}
-
-.modalmailcont{
-  position:relative;
-  top:20%;
-  left:13%;
-  width:62%;
-  height:70%;
-  overflow: auto;
-}
-.modalmailcont::-webkit-scrollbar{
-  display:none;
-}
-.modalmailcont a{
-  color : #0000EE;
-}
-.modalmailcont a:visited{
-  color : #551A8B;
-}
-
-.mailcont1{
-  display:block;
-}
-.nomailcont1{
-  display:block;
-}
-.mailcont2{
-  display:block;
-}
-.nomailcont2{
-  display:block;
-}
-.mailcont3{
-  display:block;
-}
-.nomailcont3{
-  display:block;
-}
-.mailcont4{
-  display:block;
-}
-.nomailcont4{
-  display:block;
-}
-
-.inputline {
-	position: relative;
-	width: 80%;
-	margin: 40px 3%;
-}
-
-.inputline input[type='text'] {
-	font: 15px/24px sans-serif;
-	box-sizing: border-box;
-	width: 70%;
-	padding: 0.3em;
-	transition: 0.3s;
-	letter-spacing: 1px;
-	color: #aaaaaa;
-	border: none;
-	border-bottom: 2px solid #1b2538;
-	background: transparent;
-}
-
-.inputline input[type='text']:focus {
-	border-bottom: 2px solid #da3c41;
-	outline: none;
-}
-
-.inputline input[type='submit']{
-  position:relative;
-  display: inline-block;
-	vertical-align: middle;
-	margin: 0 10px;
-	padding: 6px 25px;
-	color: #F15A24;
-	font-weight: bold;
-	letter-spacing: 0.5pt;
-	text-decoration: none;
-	background-color: #ffffff;
-	border: 1px solid #F15A24;
-	cursor: pointer;
-	transition-duration:0.3s;
-}
-.inputline input[type='submit']:hover{
-  position:relative;
-  display: inline-block;
-  color: #ffffff;
-  background-color: #F15A24;
-}
-.judge{
-	position: relative;
-	width: 80%;
-	margin: 40px 3%;
-  font-size:large;
 }

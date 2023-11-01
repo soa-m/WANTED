@@ -1,0 +1,17 @@
+.container{
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+}
+.video{
+    height:100%;
+    display:block;
+}
+#video1{
+    position: absolute;
+    z-index: 1;
+}
+#video2{
+    position: absolute;
+    display:none;
+}

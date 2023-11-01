@@ -166,7 +166,7 @@
     width: 100%;
     border: 3px solid #00B4CC;
     border-right: none;
-    padding: 5px;
+    padding: 0px;
  
     border-radius: 5px 0 0 5px;
     outline: none;
@@ -374,19 +374,20 @@
   .modal1{
     display : none;
     position : absolute;
-    height: 50%;
-    width: 30%;
-    top: 30%;
-    left: 35%;
-    background-color: #bceaff;
-    border: 1px solid black;
+    height: 70%;
+    width: 50%;
+    top: 23%;
+    left: 22.5%;
+    background-image: url("/itemget.png");
+    background-size : cover;
+  
 
   }
   .closeModal{
-    display: block;
-    font-size : 30px;
-    position : relative;
-    top : -20%;
+    display : none;
+    font-size : 60px;
+    position : absolute;
+    top : 0%;
     left : 92%;
   
   }
@@ -410,12 +411,15 @@
   }
   
   .mystery{
-    display : none;
     position: absolute;
+    background-size:   contain;
     top: 0%;
+    height : 120%;
     left: 0%;
   
   }
+
+
   .FirstMission{
     background-image: url("/QRcodeasearch.png");
     background-size: cover;
@@ -423,10 +427,10 @@
   }
   .ItemImage{
     position: absolute;
-    top : 17%;
-    width : 80%;
-    height : 60%;
-    width : 100%;
+    top : 25%;
+    left:35%;
+    height : 50%;
+    width : 40%;
     
 
   }

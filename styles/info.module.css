@@ -41,68 +41,33 @@
 .btn {
   height:8vh;
   width:10vw;
-  padding: 0px;
   position: absolute;
   text-decoration: none;
-  background: white;
-  border-bottom:1px solid black;
-  border-top:1px solid black;
-  border-right:1px solid black;
-  color: black;
-  font-weight: bold;
-
   display:flex; 
   flex-direction: row;
-  
-  line-height: 8vh;
-  text-align:left;
 }
-.btn .btnname{
-  height:100%;
-  width:80%;
-}
-.btn .btncolor{
-  height:100%;
-  width:20%;
-  background-color: green;
-}
-
 .btn:hover {
   transform-origin: 0% 50%;
   transform:scale(1.1);
 }
-
+#story{
+  background-image: url("/story.png");
+  background-repeat: no-repeat;
+  background-size:contain;
+}
 
 
 .selectedbtn{
   height:10vh;
   width:12vw;
-  padding: 0px;
   position: absolute;
   text-decoration: none;
-  background: #e0ffff;
-  border-bottom:1px solid black;
-  border-top:1px solid black;
-  border-right:1px solid black;
-  color: black;
-  font-weight: bold;
 
   display:flex; 
   flex-direction: row;
   
-  line-height: 10vh;
-  text-align:left;
 }
 
-.selectedbtn .btnname{
-  height:100%;
-  width:80%;
-}
-.selectedbtn .btncolor{
-  height:100%;
-  width:20%;
-  background-color: green;
-}
 
 
 /*
@@ -291,4 +256,33 @@
 
 #canvas {
   width: 100%;
+}
+.bunki{
+  background-color: red;
+  width:400px;
+  height:60px;
+  font-size:larger;
+  line-height: 60px;
+
+}
+#bunki1{
+  position:absolute;
+  display:none;
+  top:37%;
+  left:60%;
+  z-index: 1;
+}
+#bunki2{
+  position:absolute;
+  display:none;
+  top:47%;
+  left:60%;
+  z-index: 1;
+}
+#bunki3{
+  position:absolute;
+  display:none;
+  top:57%;
+  left:60%;
+  z-index: 1;
 }
