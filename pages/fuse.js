@@ -122,7 +122,7 @@ export default function Home() {
     }
   }
   function start() {
-    document.getElementById("fuse").src = "/fuse.png";
+    document.getElementById("background").style.backgroundImage = "url(/fuseon.png)";
     for (var i = 0; i < 5; i++) {
       for (var j = 0; j < 5; j++) {
         var d = "btn";
@@ -130,10 +130,10 @@ export default function Home() {
         d += j;
         var Kairo = document.getElementById(d);
 
-        if (Keytype[i][j] == 1) Kairo.src ='/KAIRO1.png';
-        if (Keytype[i][j] == 2) Kairo.src ='/KAIRO2.png';
-        if (Keytype[i][j] == 3) Kairo.src ='/KAIRO3.png';
-        if (Keytype[i][j] == 4) Kairo.src ='/KAIRO4.png';
+        if (Keytype[i][j] == 1) Kairo.src = '/KAIRO1.png';
+        if (Keytype[i][j] == 2) Kairo.src = '/KAIRO2.png';
+        if (Keytype[i][j] == 3) Kairo.src = '/KAIRO3.png';
+        if (Keytype[i][j] == 4) Kairo.src = '/KAIRO4.png';
 
         Kairo.style.backgroundSize = "cover";
         for (var k = 0; k < KeyRotate[i][j]; k++) {
@@ -198,52 +198,47 @@ export default function Home() {
   return (
 
 
-    <div>
+    <div className={styles.container} id = "background">
       <div className={styles.Kparentsbtn0}>
-        <img onClick={Ontap} id="btn00" className={styles.Kchildimg} />
-        <img onClick={Ontap} id="btn01" className={styles.Kchildimg} />
-        <img onClick={Ontap} id="btn02" className={styles.Kchildimg} />
-        <img onClick={Ontap} id="btn03" className={styles.Kchildimg} />
-        <img onClick={Ontap} id="btn04" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn00" src="KAIRO0.png" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn01" src="KAIRO0.png" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn02" src="KAIRO0.png" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn03" src="KAIRO0.png" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn04" src="KAIRO0.png" className={styles.Kchildimg} />
       </div>
       <div className={styles.Kparentsbtn1}>
-        <img onClick={Ontap} id="btn10"  className={styles.Kchildimg} />
-        <img onClick={Ontap} id="btn11"  className={styles.Kchildimg} />
-        <img onClick={Ontap} id="btn12"  className={styles.Kchildimg} />
-        <img onClick={Ontap} id="btn13"  className={styles.Kchildimg} />
-        <img onClick={Ontap} id="btn14"  className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn10" src="KAIRO0.png" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn11" src="KAIRO0.png" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn12" src="KAIRO0.png" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn13" src="KAIRO0.png" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn14" src="KAIRO0.png" className={styles.Kchildimg} />
       </div>
       <div className={styles.Kparentsbtn2}>
-        <img onClick={Ontap} id="btn20"  className={styles.Kchildimg} />
-        <img onClick={Ontap} id="btn21"  className={styles.Kchildimg} />
-        <img onClick={Ontap} id="btn22"  className={styles.Kchildimg} />
-        <img onClick={Ontap} id="btn23"  className={styles.Kchildimg} />
-        <img onClick={Ontap} id="btn24"  className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn20" src="KAIRO0.png" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn21" src="KAIRO0.png" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn22" src="KAIRO0.png" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn23" src="KAIRO0.png" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn24" src="KAIRO0.png" className={styles.Kchildimg} />
       </div>
       <div className={styles.Kparentsbtn3}>
-        <img onClick={Ontap} id="btn30"  className={styles.Kchildimg} />
-        <img onClick={Ontap} id="btn31"  className={styles.Kchildimg} />
-        <img onClick={Ontap} id="btn32"  className={styles.Kchildimg} />
-        <img onClick={Ontap} id="btn33"  className={styles.Kchildimg} />
-        <img onClick={Ontap} id="btn34"  className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn30" src="KAIRO0.png" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn31" src="KAIRO0.png" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn32" src="KAIRO0.png" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn33" src="KAIRO0.png" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn34" src="KAIRO0.png" className={styles.Kchildimg} />
       </div>
       <div className={styles.Kparentsbtn4}>
-        <img onClick={Ontap} id="btn40" className={styles.Kchildimg} />
-        <img onClick={Ontap} id="btn41" className={styles.Kchildimg} />
-        <img onClick={Ontap} id="btn42" className={styles.Kchildimg} />
-        <img onClick={Ontap} id="btn43" className={styles.Kchildimg} />
-        <img onClick={Ontap} id="btn44" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn40" src="KAIRO0.png" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn41" src="KAIRO0.png" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn42" src="KAIRO0.png" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn43" src="KAIRO0.png" className={styles.Kchildimg} />
+        <img onClick={Ontap} id="btn44" src="KAIRO0.png" className={styles.Kchildimg} />
       </div>
-      <div>
-
-
-      </div>
-      <img className = {styles.fuseput} id  = "fuse" />
+     
       <button onClick={start} type="ansbtn" className={styles.Camerabtn}>ヒューズを置く</button>
-      <p id="cleared" className = {styles.LOCKED}>　Locked</p>
-      <img className = {styles.destination} src = "/destination.png"/>
-    </div>
+      <p id="cleared" className = {styles.LOCKED}>LOCKED</p>
 
+    </div>
 
 
 

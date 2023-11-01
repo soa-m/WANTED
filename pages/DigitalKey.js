@@ -231,7 +231,7 @@ export default function Home() {
     return (
 
 
-        <div className = {styles.Iron}>
+        <div className={styles.container}>
             <div className={styles.Kparentsbtn0}>
                 <button onClick={Ontap} id="btn00" className={styles.Kchildbtn}> </button>
                 <button onClick={Ontap} id="btn01" className={styles.Kchildbtn}> </button>

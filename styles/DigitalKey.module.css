@@ -1,10 +1,13 @@
-.infocontainer{
-    display:flex; 
-    flex-direction: row;
-    background-image: url('/infoback.png');
-    background-size:cover;
+.container{
+
+  width:1366px;
+  height:798px;
+  background-image: url("/gear.gif");
+  background-size: cover;
+  background-repeat : no-repeat;
   }
-  
+
+
   .Initbtn{
     color: black;
     text-decoration: none;

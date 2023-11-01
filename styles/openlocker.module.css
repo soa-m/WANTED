@@ -59,14 +59,15 @@
 }
 .ItemImage{
   position : absolute;
-  width : 50%;
-  top : 22%;
-  left : 29.5%;
+  width : 30%;
+  height : 40%;
+  top : 35%;
+  left : 32.5%;
 }
 .Model_text{
   position : absolute;
   top : 80%;
-  left : 40.5%;
+  left : 41.5%;
   font-size : 200%;
   text-align: center;
 }
@@ -79,14 +80,15 @@
 }
 .ItemImage1{
   position : absolute;
-  width : 100%;
-  top : 0%;
-  left : -0%;
+  width : 20%;
+  height : 30%;
+  top :39%;
+  left : 39%;
 }
 .Model_text1{
   position : absolute;
   top : 80%;
-  left : 37.5%;
+  left : 36.5%;
   font-size : 200%;
   text-align: center;
 }
@@ -94,4 +96,19 @@
   position : absolute;
   top : 50%; 
 
+}
+.letter {
+
+  width: 30%;
+  height : 40%;
+  position : aboslute;
+  top : 54%;
+}
+.recoder {
+
+  width: 30%;
+  height : 40%;
+  position : aboslute;
+  top : 53%;
+  left : 38%;
 }

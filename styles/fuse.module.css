@@ -1,8 +1,10 @@
-.infocontainer{
-    display:flex; 
-    flex-direction: row;
-    background-image: url('/infoback.png');
-    background-size:cover;
+.container{
+
+  width:100vw;
+  height:100vh;
+  background-image: url("/fuseoff.png");
+  background-size: contain;
+  background-repeat : no-repeat;
   }
   
   .Initbtn{
@@ -336,57 +338,66 @@
     
   }
   
-  .Kchildbtn{
-    
-    height : 17%;
-    width : 8%;
-    background-color: black;
-    background-size: cover;
-  }
+
   .Kparentsbtn0{
-    position: absolute;
-    top : 10%;
-    left : 30%;
-    width :  100%;
-    height : 100%;
+  
+    display : flex;
+   
+    top : 5%;
+    position : absolute;
+    left : 25%;
+    width: 44%;
+    height :18%;
+   
+
   }
   .Kparentsbtn1{
-    position: absolute;
-    top : 27%;
-    left : 30%;
-    width :  100%;
-    height : 100%;
+
+    display : flex;
+   
+    top : 23%;
+    position : absolute;
+    left : 25%;
+    width: 44%;
+    height :18%;
+
   }
   .Kparentsbtn2{
-    position: absolute;
-    top : 44%;
-    left : 30%;
-    width :  100%;
-    height : 100%;
+
+    display : flex;
+   
+    top : 40%;
+    position : absolute;
+    left : 25%;
+    width: 44%;
+    height :18%;
   }
   .Kparentsbtn3{
-    position: absolute;
-    top : 61%;
-    left : 30%;
-    width :  100%;
-    height : 100%;
+  
+    display : flex;
+   
+    top : 57%;
+    position : absolute;
+    left : 25%;
+    width: 44%;
+    height :18%;
   }
   .Kparentsbtn4{
-    position: absolute;
-    top : 78%;
-    left : 30%;
-    width :  100%;
-    height : 100%;
+
+    display : flex;
+   
+    top : 75%;
+    position : absolute;
+    left : 25%;
+    width: 44%;
+    height :18%;
   }
-  .KEY{
-    
-    top : 50%;
-    left : 50%;
-  }
+
   .Kchildimg{
+    float: left;
     
-    height : 17%;
-    width : 8%;
+    height : 100%;
+    width : 100%;
     
     background-size: contain;
   }
@@ -511,8 +522,8 @@
 
 .LOCKED{
     position : absolute;
-    top : 50%;
-    left:7%;
+    top : 22%;
+    left:11.5%;
     font-size : 40px;
     color: red;
     text-align: center; 

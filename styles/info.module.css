@@ -55,11 +55,21 @@
   background-repeat: no-repeat;
   background-size:contain;
 }
+#connection{
+  background-image: url("/connection.png");
+  background-repeat: no-repeat;
+  background-size:contain;
+}
+#item{
+  background-image: url("/item.png");
+  background-repeat: no-repeat;
+  background-size:contain;
+}
 
 
 .selectedbtn{
   height:10vh;
-  width:12vw;
+  width:14vw;
   position: absolute;
   text-decoration: none;
 
@@ -258,14 +268,17 @@
   width: 100%;
 }
 .bunki{
-  background-color: red;
-  width:400px;
-  height:60px;
+  width:500px;
+  height:80px;
   font-size:larger;
-  line-height: 60px;
-
+  line-height: 80px;
+  padding:0% 2%;
 }
 #bunki1{
+  background-image: url("/branch.png");
+  background-size:contain;
+  background-position: left;
+  background-repeat: no-repeat;
   position:absolute;
   display:none;
   top:37%;
@@ -273,6 +286,10 @@
   z-index: 1;
 }
 #bunki2{
+  background-image: url("/branch.png");
+  background-size:contain;
+  background-position: left;
+  background-repeat: no-repeat;
   position:absolute;
   display:none;
   top:47%;
@@ -280,6 +297,10 @@
   z-index: 1;
 }
 #bunki3{
+  background-image: url("/branch.png");
+  background-size:contain;
+  background-position: left;
+  background-repeat: no-repeat;
   position:absolute;
   display:none;
   top:57%;

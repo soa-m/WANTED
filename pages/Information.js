@@ -36,17 +36,17 @@ var messageData={
   },
   "M2":{
     "name":"kozy",
-    "text":"nono3",
-    "next":"S0"
+    "text":"nono3あああああああああああああああ",
+    "next":"M3"
   },
   "M3":{
     "name":"kozy",
-    "text":"nono4",
+    "text":"nono4ああああああああああああああああああああああああ",
     "next":"S0"
   },
   "S0":{
     "bunki":[
-      ["ああああああああああああああああああああ","M1"],
+      ["ああああああああああああああああ","M1"],
       ["now","M2"],
       ["pow","M3"]
     ],
@@ -54,7 +54,14 @@ var messageData={
   }
   
 };
+var displayfl = true;
 export async function nextmessage() {
+  if (displayfl){
+    displayfl=false;
+  }
+  else{
+    return;
+  }
   // document.getElementById("messagename");
   // document.getElementById("messagetext");
   var bunki1=document.getElementById(styles.bunki1);
@@ -62,6 +69,7 @@ export async function nextmessage() {
   var bunki3=document.getElementById(styles.bunki3);
   let now=messageData[nowmessage]["next"];
   if (nowmessage.charAt(0)=="S"){
+    displayfl = true;
     return;
   }
   if (now.charAt(0)=="M"){
@@ -69,7 +77,13 @@ export async function nextmessage() {
     bunki2.style.display="none";
     bunki3.style.display="none";
     document.getElementById("messagename").textContent = messageData[now]["name"];
-    document.getElementById("messagetext").textContent = messageData[now]["text"];
+    var thistext = messageData[now]["text"];
+    var s = "";
+    for (let i = 0; i < thistext.length; i++) {
+      s += thistext[i];
+      await new Promise(resolve => setTimeout(resolve, 20))
+      document.getElementById("messagetext").textContent = s;
+    }
     nowmessage=now;
     realmessage=now;
   }
@@ -91,6 +105,7 @@ export async function nextmessage() {
     }
     nowmessage=now;
   }
+  displayfl = true;
   /*
   let fl = true;
   if (displayfl) {
@@ -129,12 +144,16 @@ export async function nextmessage() {
   }
   */
 }
-export function Sbunki(select){
+export async function Sbunki(select){
+  if (displayfl){
+    displayfl=false;
+  }
+  else{
+    return;
+  }
   var bunki1=document.getElementById(styles.bunki1);
   var bunki2=document.getElementById(styles.bunki2);
   var bunki3=document.getElementById(styles.bunki3);
-  console.log(select);
-  console.log(nowmessage)
   realmessage=messageData[nowmessage]["bunki"][select][1];
   nowmessage=messageData[nowmessage]["bunki"][select][1];
   bunki1.style.display="none";
@@ -142,10 +161,16 @@ export function Sbunki(select){
   bunki3.style.display="none";
   let now=nowmessage;
   document.getElementById("messagename").textContent = messageData[now]["name"];
-  document.getElementById("messagetext").textContent = messageData[now]["text"];
+  var thistext = messageData[now]["text"];
+  var s = "";
+  for (let i = 0; i < thistext.length; i++) {
+    s += thistext[i];
+    await new Promise(resolve => setTimeout(resolve, 20))
+    document.getElementById("messagetext").textContent = s;
+  }
+  displayfl = true;
   nowmessage=now;
   realmessage=now;
-  
 }
 export default function Home() {
   return (
@@ -159,7 +184,7 @@ export default function Home() {
           <div className={styles.empty}></div>
 
           <div className={styles.btnbox}>
-            <Link href="/Information" className={styles.selectedbtn} id="story">
+            <Link href="/Information" className={styles.selectedbtn} id={styles.story}>
             </Link>
           </div>
 
@@ -170,9 +195,7 @@ export default function Home() {
             </Link>
           </div>
           <div className={styles.btnbox}>
-            <Link href="/Relations" className={styles.btn}>
-              <div className={styles.btnname}>　関係図　</div>
-              <div className={styles.btncolor}></div>
+            <Link href="/Relations" className={styles.btn} id={styles.connection}>
             </Link>
           </div>
           <div className={styles.btnbox}>
@@ -182,9 +205,7 @@ export default function Home() {
             </Link>
           </div>
           <div className={styles.btnbox}>
-            <Link href="/PastInformation" className={styles.btn}>
-              <div className={styles.btnname}>　過去の情報　</div>
-              <div className={styles.btncolor}></div>
+            <Link href="/item" className={styles.btn} id={styles.item}>
             </Link>
           </div>
         </div>

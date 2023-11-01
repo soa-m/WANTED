@@ -9,8 +9,10 @@ function open() {
   var x = document.getElementById("modal1");
   x.style.display = "block";
   x.animate([{ opacity: '0' }, { opacity: '1' }], 700);
+  document.getElementById("letter").style.display = "none";
 }
-function close() {
+  
+  function close() {
   var x = document.getElementById("modal1");
   x.style.display = 'None';
 }
@@ -18,6 +20,7 @@ function open1() {
   var x = document.getElementById("modal2");
   x.style.display = "block";
   x.animate([{ opacity: '0' }, { opacity: '1' }], 700);
+  document.getElementById("recoder").style.display = "none";
 }
 function close1() {
   var x = document.getElementById("modal2");
@@ -36,11 +39,11 @@ export default function Home() {
 
         <div className={styles.main}>
           <div className={styles.letter}>
-            <Image id = "letter" className = {styles.letter} src="/letter.png" width={150} height={200} onClick={open} />;
+            <img id = "letter" className = {styles.letter} src="/letter.png"  onClick={open} />;
 
           </div>
           <div className={styles.recoder} >
-            <Image id = "recoder" src="/recoder.png" width={100} height={200} onClick={open1} />
+            <img id = "recoder" className = {styles.recoder} src="/recoder.png" onClick={open1} />
           </div>
         </div>
         <div id="modal1" className={styles.modal1}>
@@ -55,7 +58,7 @@ export default function Home() {
           <img id="ItemImag1" className={styles.ItemImage1} src="/recoder.png" />
           <span id="closeModa1" className={styles.closeModal} onClick={close1}>&times;</span>
 
-          <p id="ItemGet1" className={styles.Model_text1}>rを見つけた</p>
+          <p id="ItemGet1" className={styles.Model_text1}>レコーダーを見つけた</p>
         </div>
       </div>
 
