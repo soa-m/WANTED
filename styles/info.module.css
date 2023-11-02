@@ -231,6 +231,7 @@
 
 .messagetext{
   font-size:large;
+  font-weight:bold;
   position: absolute;
   left:5%;
   top:10%;
@@ -240,6 +241,7 @@
 .messagename{
   font-size:large;
   position: absolute;
+  font-weight:bold;
   left:10%;
   top:30%;
   width:80%;

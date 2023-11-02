@@ -72,38 +72,23 @@ export default function Home() {
         <div className={styles.buttons}>
 
           <div className={styles.empty}></div>
-
           <div className={styles.btnbox}>
-            <Link href="/Information" className={styles.btn}>
-              <div class={styles.btnname}>　情報　</div>
-              <div class={styles.btncolor}></div>
-            </Link>
-          </div>
-
-          <div className={styles.btnbox}>
-            <Link href="/Serch" className={styles.selectedbtn}>
-              <div class={styles.btnname}>　移動　</div>
-              <div class={styles.btncolor}></div>
+            <Link href="/Serch" className={styles.btn}>
+              <div className={styles.btnname}>　移動　</div>
+              <div className={styles.btncolor}></div>
             </Link>
           </div>
           <div className={styles.btnbox}>
-            <Link href="/Relations" className={styles.btn}>
-              <div class={styles.btnname}>　関係図　</div>
-              <div class={styles.btncolor}></div>
+            <Link href="/Relations" className={styles.btn} id={styles.connection}>
             </Link>
           </div>
+ 
           <div className={styles.btnbox}>
-            <Link href="/Missions" className={styles.btn}>
-              <div class={styles.btnname}>　ミッション　</div>
-              <div class={styles.btncolor}></div>
+            <Link href="/item" className={styles.selectedbtn} id={styles.item}>
             </Link>
           </div>
-          <div className={styles.btnbox}>
-            <Link href="/PastInformation" className={styles.btn}>
-              <div class={styles.btnname}>　過去の情報　</div>
-              <div class={styles.btncolor}></div>
-            </Link>
-          </div>
+          
+       
         </div>
 
 

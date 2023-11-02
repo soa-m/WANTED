@@ -223,14 +223,10 @@ export default function Home() {
 
           <div className={styles.empty}></div>
 
-          <div className={styles.btnbox}>
-            <Link href="/Information" className={styles.btn} id={styles.story}>
-            </Link>
-          </div>
-
+        
           <div className={styles.btnbox}>
             <Link href="/Serch" className={styles.btn}>
-              <div className={styles.btnname}>　検索　</div>
+              <div className={styles.btnname}>　移動　</div>
               <div className={styles.btncolor}></div>
             </Link>
           </div>
@@ -238,12 +234,7 @@ export default function Home() {
             <Link href="/Relations" className={styles.btn} id={styles.connection}>
             </Link>
           </div>
-          <div className={styles.btnbox}>
-            <Link href="/Missions" className={styles.btn}>
-              <div className={styles.btnname}>　ミッション　</div>
-              <div className={styles.btncolor}></div>
-            </Link>
-          </div>
+ 
           <div className={styles.btnbox}>
             <Link href="/item" className={styles.selectedbtn} id={styles.item}>
             </Link>

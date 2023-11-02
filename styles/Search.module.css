@@ -32,70 +32,74 @@
     height:13%;
   }
   
+  .Initbtn{
+    color: black;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: normal;
+    border: none;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .buttons{
+    width:12vw;
+    height:100vh;
+    position:relative;
+    /*background-color: red;*/
+  }
+  
+  .buttons .empty{
+    position:relative;
+    height:20%;
+  }
+  .buttons .btnbox{
+    position:relative;
+    height:13%;
+  }
+  
   .btn {
     height:8vh;
-    width:10vw;
-    padding: 0px;
+    width:10.5vw;
     position: absolute;
     text-decoration: none;
-    background: white;
-    border-bottom:1px solid black;
-    border-top:1px solid black;
-    border-right:1px solid black;
-    color: black;
-    font-weight: bold;
-  
     display:flex; 
     flex-direction: row;
-    
-    line-height: 8vh;
-    text-align:left;
   }
-  .btn .btnname{
-    height:100%;
-    width:80%;
-  }
-  .btn .btncolor{
-    height:100%;
-    width:20%;
-    background-color: green;
-  }
-  
   .btn:hover {
-    transform-origin: 27% 50%;
+    transform-origin: 0% 50%;
     transform:scale(1.1);
   }
-  
-  
-  
+  #story{
+    background-image: url("/story2.png");
+    background-repeat: no-repeat;
+    background-size:contain;
+  }
+  #connection{
+    background-image: url("/connection2.png");
+    background-repeat: no-repeat;
+    background-size:contain;
+  }
+  #item{
+    background-image: url("/item2.png");
+    background-repeat: no-repeat;
+    background-size:contain;
+  }
   .selectedbtn{
     height:10vh;
     width:12vw;
-    padding: 0px;
     position: absolute;
     text-decoration: none;
-    background: #e0ffff;
-    border-bottom:1px solid black;
-    border-top:1px solid black;
-    border-right:1px solid black;
-    color: black;
-    font-weight: bold;
   
     display:flex; 
     flex-direction: row;
     
-    line-height: 10vh;
-    text-align:left;
-  }
-  
-  .selectedbtn .btnname{
-    height:100%;
-    width:80%;
-  }
-  .selectedbtn .btncolor{
-    height:100%;
-    width:20%;
-    background-color: green;
   }
   
   
