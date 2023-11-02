@@ -40,7 +40,7 @@
 
 .btn {
   height:8vh;
-  width:10vw;
+  width:10.5vw;
   position: absolute;
   text-decoration: none;
   display:flex; 
@@ -51,17 +51,17 @@
   transform:scale(1.1);
 }
 #story{
-  background-image: url("/story.png");
+  background-image: url("/story2.png");
   background-repeat: no-repeat;
   background-size:contain;
 }
 #connection{
-  background-image: url("/connection.png");
+  background-image: url("/connection2.png");
   background-repeat: no-repeat;
   background-size:contain;
 }
 #item{
-  background-image: url("/item.png");
+  background-image: url("/item2.png");
   background-repeat: no-repeat;
   background-size:contain;
 }
@@ -69,7 +69,7 @@
 
 .selectedbtn{
   height:10vh;
-  width:14vw;
+  width:12vw;
   position: absolute;
   text-decoration: none;
 
@@ -77,8 +77,6 @@
   flex-direction: row;
   
 }
-
-
 
 /*
 .btnInformation {
@@ -304,6 +302,17 @@
   position:absolute;
   display:none;
   top:57%;
+  left:60%;
+  z-index: 1;
+}
+#bunki4{
+  background-image: url("/branch.png");
+  background-size:contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  position:absolute;
+  display:none;
+  top:27%;
   left:60%;
   z-index: 1;
 }

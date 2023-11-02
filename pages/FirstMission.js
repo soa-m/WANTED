@@ -89,7 +89,7 @@ var FirstMissionNazo = {
   "真実": 2, "しんじつ": 2, "シンジツ": 2,
   "平等": 1,
 
-  "王国": 2,
+  "国王": 2,
 
   "睡眠": 3, "すいみん": 3,
 
@@ -137,7 +137,7 @@ var FirstMissionNazoID = {
   "spin": 35,
   "真実": 36, "しんじつ": 36, "シンジツ": 36,
   "平等": 37,
-  "王国": 39,
+  "国王": 39,
   "睡眠": 41, "すいみん": 41,
   "磁石": 43,
   "深海": 44, "しんかい": 44,
@@ -324,13 +324,19 @@ export default function Home() {
 
           <div className={styles.btnbox} >
             <Link href="/fuse" onClick={plus} className={styles.btn}>
-              <div class={styles.btnname}>　回路　</div>
+              <div class={styles.btnname}>　　回路　</div>
               <div class={styles.btncolor}></div>
             </Link>
           </div>
           <div className={styles.btnbox}>
             <Link href="/DigitalKey" onClick={plus} className={styles.btn}>
               <div class={styles.btnname}>　電子キー　</div>
+              <div class={styles.btncolor}></div>
+            </Link>
+          </div>
+          <div className={styles.btnbox}>
+            <Link href="/openlocker" onClick={plus} className={styles.btn}>
+              <div class={styles.btnname}>　ロッカー</div>
               <div class={styles.btncolor}></div>
             </Link>
           </div>
@@ -386,6 +392,7 @@ export default function Home() {
         <p id="ItemGet2" className={styles.Model_text2}>ドット絵を見つけた</p>
       </div>
       </div>
+      
 
 
 

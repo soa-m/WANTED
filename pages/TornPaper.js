@@ -66,7 +66,7 @@ export default function Home() {
   return (
 
 
-    <div className = {styles.container}>
+    <div className={styles.container}>
 
       <div >
         <Draggable>
@@ -120,8 +120,19 @@ export default function Home() {
           <div className={styles.search}>
             <input id="inputbox" type="text" className={styles.searchTerm} placeholder="What are you looking for?" />
             <button onClick={answer} type="ansbtn" className={styles.searchButton}>🔑</button>
-            <p id="cleared" className = {styles.LOCKED}>　Locked</p>
+            <p id="cleared" className={styles.LOCKED}>　Locked</p>
           </div>
+        </div>
+      </div>
+      <div className={styles.buttons}>
+
+        <div className={styles.empty}></div>
+
+        <div className={styles.btnbox}>
+          <Link href="/FirstMission" className={styles.btn}>
+            <div class={styles.btnname}>　戻る　</div>
+            <div class={styles.btncolor}></div>
+          </Link>
         </div>
       </div>
 

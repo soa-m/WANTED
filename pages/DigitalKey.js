@@ -5,8 +5,8 @@ import { SearchData } from '../components/MainProgram';
 import Link from 'next/link';
 import { createClient } from '@vercel/kv';
 let kv = createClient({
-  url: process.env.NEXT_PUBLIC_KV_REST_API_URL,
-  token: process.env.NEXT_PUBLIC_KV_REST_API_TOKEN
+    url: process.env.NEXT_PUBLIC_KV_REST_API_URL,
+    token: process.env.NEXT_PUBLIC_KV_REST_API_TOKEN
 });
 
 import { Set, GetID } from '../components/func';
@@ -44,7 +44,7 @@ export default function Home() {
     var trynum = 0;
     var digitalcleared = false;
     function start() {
-        
+
         if (digitalcleared) return;
         trynum = 3;
         started = true;
@@ -74,9 +74,9 @@ export default function Home() {
     function Ontap(place) {
         if (digitalcleared || started == false) return;
         trynum--;
-        
-   
-        
+
+
+
         var x, y;
         var s = place.target.id;
         y = s[4];
@@ -188,16 +188,16 @@ export default function Home() {
             document.getElementById("startbtn").innerHTML = "解読済み";
             x.animate(
                 [
-                  { opacity: 1 },
-                  { opacity: 0 }
+                    { opacity: 1 },
+                    { opacity: 0 }
                 ],
                 {
-                  duration: 100,
-                  iterations : 3,
-                  
-                  direction: 'alternate'
+                    duration: 100,
+                    iterations: 3,
+
+                    direction: 'alternate'
                 }
-              );
+            );
             /*Set("CLEAREDDIGITAL",digitalcleared)*/
         }
         if (started == false || trynum == 0 || digitalcleared) {
@@ -205,16 +205,16 @@ export default function Home() {
             var x = document.getElementById("succes");
             x.animate(
                 [
-                  { opacity: 1 },
-                  { opacity: 0 }
+                    { opacity: 1 },
+                    { opacity: 0 }
                 ],
                 {
-                  duration: 100,
-                  iterations : 3,
-                  
-                  direction: 'alternate'
+                    duration: 100,
+                    iterations: 3,
+
+                    direction: 'alternate'
                 }
-              );
+            );
 
             if (trynum == 0 && digitalcleared == false) {
                 start();
@@ -268,9 +268,20 @@ export default function Home() {
                 <button onClick={Ontap} id="btn44" className={styles.Kchildbtn}> </button>
             </div>
             <div>
-            <button onClick={start} id="startbtn" className={styles.Camerabtn}>暗号解読を始める</button>
-                <p id="succes" className = {styles.LOCKED}>LOCKED</p>
+                <button onClick={start} id="startbtn" className={styles.Camerabtn}>暗号解読を始める</button>
+                <p id="succes" className={styles.LOCKED}>LOCKED</p>
 
+            </div>
+            <div className={styles.buttons}>
+
+                <div className={styles.empty}></div>
+
+                <div className={styles.btnbox}>
+                    <Link href="/FirstMission" className={styles.btn}>
+                        <div class={styles.btnname}>　戻る　</div>
+                        <div class={styles.btncolor}></div>
+                    </Link>
+                </div>
             </div>
         </div>
 

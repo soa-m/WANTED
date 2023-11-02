@@ -1,9 +1,39 @@
 import { useRef, useState, useEffect } from "react"
 import React from "react";
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Search.module.css';
 import { SearchData, FirstItems } from '../components/MainProgram';
 import Link from 'next/link';
 import jsQR from "jsqr";
+
+
+
+
+
+function open() {
+  var x = document.getElementById("modal");
+  x.style.display = "block";
+  x.animate([{ opacity: '0' }, { opacity: '1' }], 700);
+  document.getElementById("closeModal").style.display = "block";
+
+}
+  
+  function close() {
+  var x = document.getElementById("modal");
+  x.style.display = 'None';
+}
+
+function open1() {
+  var x = document.getElementById("modal1");
+  x.style.display = "block";
+  x.animate([{ opacity: '0' }, { opacity: '1' }], 700);
+  document.getElementById("closeModal").style.display = "block";
+
+}
+function close1() {
+  var x = document.getElementById("modal1");
+  x.style.display = 'None';
+}
+
 export default function Home() {
 
 
@@ -13,64 +43,22 @@ export default function Home() {
   //ReturnWord1は表示する返しの言葉を格納
 
   function OnSearch() {
-    var SearchedWord = document.getElementById("SearchBox").value;
-    console.log(SearchedWord);
-    var SearchData_keys = Object.keys(SearchData);
-    var ReturnWord = SearchData_keys.find(function (value) {
-      return value == SearchedWord;
-    })
-
-    if (ReturnWord == undefined) ReturnWord = SearchedWord + "に関する内容は見つかりませんでした";
-    else ReturnWord = FirstSearchData[SearchedWord];
-    document.getElementById("SearchResult").innerHTML = ReturnWord;
-    console.log(ReturnWord);
-
-  };
-  var clickednum = 0;
-  function a() {
-    clickednum++;
-    const video = document.createElement('video');
-    const canvasElement = document.getElementById('canvas');
-    const canvas = canvasElement.getContext('2d');
-    const loading = document.getElementById('loading');
-    let isReadQR = false;
-
-    navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
-      .then((stream) => {
-        video.srcObject = stream;
-        video.setAttribute('playsinline', true);
-        video.play();
-        requestAnimationFrame(tick);
-
-      });
-
-    function tick() {
-      loading.textContent = '⌛ ロード中...';
-      if (video.readyState === video.HAVE_ENOUGH_DATA) {
-        loading.hidden = true;
-        canvasElement.hidden = false;
-        canvasElement.height = video.videoHeight;
-        canvasElement.width = video.videoWidth;
-        canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
-        var imageData = canvas.getImageData(0, 0, canvasElement.width, canvasElement.height);
-        var code = jsQR(imageData.data, imageData.width, imageData.height, {
-          inversionAttempts: 'dontInvert',
-        });
-        if (code && !isReadQR) {
-          document.getElementById('qr-msg').textContent = `QRコード：${code.data}`;
-          isReadQR = false;
-        }
+       var x = document.getElementById("Town").value;
+      
+       var y = document.getElementById("Address").value;
+       
+       var z = document.getElementById("roomnum").value;
+      
+      if((x == "米草" || x == "べいくさ") && ( y== "B4") && z == "304"){
+        open();
       }
-      if (clickednum % 2 == 1) {
-        requestAnimationFrame(tick);
-        document.getElementById("camerabutton").innerHTML = "カメラを停止する";
-      } else {
-        canvasElement.hidden = true;
-        document.getElementById("camerabutton").innerHTML = "カメラを起動する";
+      else{
+        open1();
       }
-    }
+      }
 
-  }
+
+  
   return (
 
 
@@ -90,7 +78,7 @@ export default function Home() {
 
           <div className={styles.btnbox}>
             <Link href="/Serch" className={styles.selectedbtn}>
-              <div class={styles.btnname}>　検索　</div>
+              <div class={styles.btnname}>　移動　</div>
               <div class={styles.btncolor}></div>
             </Link>
           </div>
@@ -113,24 +101,45 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div id="loading">📱 ブラウザのカメラの使用を許可してください。</div>
-        <button id="camerabutton" onClick={a} className={styles.Camerabtn}>カメラを起動する</button>
-        <canvas id="canvas" className={styles.canvas} hidden></canvas>
-        <p id="qr-msg" className={styles.qrmsg}></p>
 
 
+        <div className={styles.wrap}>
+        <div className={styles.search}>
+          <input id="Town" type="text" className={styles.searchTerm} placeholder="町名を入力" />
+          <p className ={styles.ser}>町</p>
+       
+        </div>
+      </div>
+      <div className={styles.wrap1}>
+        <div className={styles.search}>
+          <input id="Address" type="text" className={styles.searchTerm} placeholder="番地を入力" />
+    
+        </div>
+      </div>
+      <div className={styles.wrap2}>
+        <div className={styles.search}>
+          <input id="roomnum" type="text" className={styles.searchTerm} placeholder="号室を入力(任意)" />
+          <p className ={styles.ser}>号室</p>
+        </div>
+      </div>
+      <button id="camerabutton" onClick={OnSearch} className={styles.Camerabtn}>移動する</button>
+      </div>
+      <div id="modal" className={styles.modal}>
 
+        <img id="ItemImage" className={styles.ItemImage} src="/KEYCODES.png" />
+        <span id="closeModal" className={styles.closeModal} onClick={close}>&times;</span>
+
+        <p id="ItemGet" className={styles.Model_text}>複数の紙切れを見つけた</p>
       </div>
       <div >
+      <div id="modal1" className={styles.modal1}>
 
-        <input className={styles.search_bar} id="SearchBox" type="text" placeholder="キーワードを入力"></input>
+        <img id="ItemImage1" className={styles.ItemImage1} src="/fuse.png" />
+        <span id="closeModal" className={styles.closeModal} onClick={close1}>&times;</span>
 
-        <p id="SearchResult" className={styles.SearchReturn} >tinntinn</p>
-
-
-        <input className={styles.search_submit} type="button" value="検索" onClick={OnSearch} /><br />
-
-
+        <p id="ItemGet1" className={styles.Model_text1}>ヒューズを見つけた</p>
+      </div>``
+     
 
 
       </div>

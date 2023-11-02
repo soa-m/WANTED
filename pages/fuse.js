@@ -237,7 +237,18 @@ export default function Home() {
      
       <button onClick={start} type="ansbtn" className={styles.Camerabtn}>ヒューズを置く</button>
       <p id="cleared" className = {styles.LOCKED}>LOCKED</p>
+      <div className={styles.buttons}>
 
+          <div className={styles.empty}></div>
+
+          <div className={styles.btnbox}>
+            <Link href="/FirstMission"  className={styles.btn}>
+              <div class={styles.btnname}>　戻る　</div>
+              <div class={styles.btncolor}></div>
+            </Link>
+          </div>
+        </div>
+        
     </div>
 
 
