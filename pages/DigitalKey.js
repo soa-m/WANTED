@@ -53,15 +53,15 @@ export default function Home() {
             for (var j = 0; j < 5; j++) {
                 if (DigitalKeybool1[i][j]) {
                     var d = "btn";
-                    d += i;
-                    d += j;
+                    d += String(i);
+                    d += String(j);
                     DigitalKeybool[i][j] = true;
                     document.getElementById(d).style.backgroundColor = "yellow";
                 }
                 else {
                     var d = "btn";
-                    d += i;
-                    d += j;
+                    d += String(i);
+                    d += String(j);
                     DigitalKeybool[i][j] = false;
                     document.getElementById(d).style.backgroundColor = "black";
                 }
@@ -96,8 +96,8 @@ export default function Home() {
             nx = x;
             ny = y;
             ny--;
-            d += nx;
-            d += ny;
+            d += String(nx);
+            d += String(ny);
 
             if (DigitalKeybool[nx][ny] == false) {
                 document.getElementById(d).style.backgroundColor = "yellow";
@@ -115,8 +115,8 @@ export default function Home() {
             nx = x;
             ny = y;
             ny++;
-            d += nx;
-            d += ny;
+            d += String(nx);
+            d += String(ny);
 
             if (DigitalKeybool[nx][ny] == false) {
                 document.getElementById(d).style.backgroundColor = "yellow";
@@ -135,8 +135,8 @@ export default function Home() {
             nx = x;
             ny = y;
             nx--;
-            d += nx;
-            d += ny;
+            d += String(nx);
+            d += String(ny);
 
             if (DigitalKeybool[nx][ny] == false) {
                 document.getElementById(d).style.backgroundColor = "yellow";
@@ -156,8 +156,8 @@ export default function Home() {
             nx = x;
             ny = y;
             nx++;
-            d += nx;
-            d += ny;
+            d += String(nx);
+            d += String(ny);
             if (DigitalKeybool[nx][ny] == false) {
                 document.getElementById(d).style.backgroundColor = "yellow";
                 DigitalKeybool[nx][ny] = true;

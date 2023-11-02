@@ -54,7 +54,7 @@ export default function Home() {
   ]
   function Ontap(e) {
     if (fuzecleared) {
-      document.getElementById("cleared").innerHTML = "UNLOCKED";
+      document.getElementById("cleared").textContent = "UNLOCKED";
       return;
 
     }
@@ -101,8 +101,8 @@ export default function Home() {
     for (var i = 0; i < 5; i++) {
       for (var j = 0; j < 5; j++) {
         var d = "btn";
-        d += i;
-        d += j;
+        d += String(i);
+        d += String(j);
         var Kairo = document.getElementById(d);
 
         if (KeyOpen[i][j] == false) Kairo.src = '/KAIRO0.png';
@@ -116,7 +116,7 @@ export default function Home() {
     if (KeyPath[Keytype[0][4] - 1][(-1 * KeyRotate[0][4] + 4) % 4] && KeyOpen[0][4]) {
       fuzecleared = true;
       /*Set("CLEAREDFUZE",fuzecleared);*/
-      document.getElementById("cleared").innerHTML = "UNLOCKED";
+      document.getElementById("cleared").textContent = "UNLOCKED";
 
       document.getElementById("cleared").style.color = "green";
     }
@@ -126,8 +126,8 @@ export default function Home() {
     for (var i = 0; i < 5; i++) {
       for (var j = 0; j < 5; j++) {
         var d = "btn";
-        d += i;
-        d += j;
+        d += String(i);
+        d += String(j);
         var Kairo = document.getElementById(d);
 
         if (Keytype[i][j] == 1) Kairo.src = '/KAIRO1.png';
@@ -176,8 +176,8 @@ export default function Home() {
     for (var i = 0; i < 5; i++) {
       for (var j = 0; j < 5; j++) {
         var d = "btn";
-        d += i;
-        d += j;
+        d += String(i);
+        d += String(j);
         var Kairo = document.getElementById(d);
 
         if (KeyOpen[i][j] == false) Kairo.src = '/KAIRO0.png';

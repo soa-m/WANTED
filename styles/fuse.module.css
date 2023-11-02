@@ -1,7 +1,7 @@
 .container{
 
-  width:100vw;
-  height:100vh;
+  width:1366px;
+  height:798px;
   background-image: url("/fuseoff.png");
   background-size: contain;
   background-repeat : no-repeat;
@@ -343,54 +343,59 @@
   
     display : flex;
    
-    top : 5%;
+    top : 6%;
     position : absolute;
-    left : 25%;
-    width: 44%;
-    height :18%;
+    left : 32%;
+    width: 55%;
+    height :17%;
    
 
   }
   .Kparentsbtn1{
 
+  
     display : flex;
    
     top : 23%;
     position : absolute;
-    left : 25%;
-    width: 44%;
-    height :18%;
-
+    left : 32%;
+    width: 55%;
+    height :17%;
   }
   .Kparentsbtn2{
 
-    display : flex;
    
+    display : flex;
     top : 40%;
     position : absolute;
-    left : 25%;
-    width: 44%;
-    height :18%;
+    left : 32%;
+    width: 55%;
+    height :17%;
+   
   }
   .Kparentsbtn3{
+  
   
     display : flex;
    
     top : 57%;
     position : absolute;
-    left : 25%;
-    width: 44%;
-    height :18%;
+    left : 32%;
+    width: 55%;
+    height :17%;
+   
   }
   .Kparentsbtn4{
 
+   
     display : flex;
    
-    top : 75%;
+    top : 74%;
     position : absolute;
-    left : 25%;
-    width: 44%;
-    height :18%;
+    left : 32%;
+    width: 55%;
+    height :17%;
+   
   }
 
   .Kchildimg{
@@ -398,7 +403,7 @@
     
     height : 100%;
     width : 100%;
-    
+    background-image : url("/KAIRO0");
     background-size: contain;
   }
   .KEYCODE{
@@ -523,7 +528,7 @@
 .LOCKED{
     position : absolute;
     top : 22%;
-    left:11.5%;
+    left:16.5%;
     font-size : 40px;
     color: red;
     text-align: center; 

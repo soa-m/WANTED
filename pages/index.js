@@ -12,6 +12,7 @@ export default function Home() {
 
   return (
     <>
+      
       <div className={styles.container}>
         <button type="button" onClick={() => Init()} className={styles.Initbtn}>
           <Image

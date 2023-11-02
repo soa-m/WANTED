@@ -1,9 +1,9 @@
 .container{
 
   width:1366px;
-  height:798px;
+  height:768px;
   background-image: url("/BackgroundIron.jpg");
-  background-size: contain;
+  background-size: cover;
   background-repeat : no-repeat;
   }
 

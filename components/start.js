@@ -71,5 +71,5 @@ export async function Init() {
     await kv.set("bgraph",bgraph);
     */
     
-    document.location.href = "/Information";
+    document.location.href = "/playername";
 }

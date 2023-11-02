@@ -17,7 +17,7 @@ export default function Home() {
                     vi.style.display="none";
                     vi2.play();
                     vi2.addEventListener('ended', function() {
-                        document.location.href = "/Information";
+                        document.location.href = "/FirstMission";
                     });
                 });
                 

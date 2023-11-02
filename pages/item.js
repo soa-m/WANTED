@@ -72,10 +72,10 @@ let discri=[
     ["αの手記","handwriting",'/handwriting.png',"10年以上前に書かれた古い手記。これを読めばA父について何かわかるかもしれない。"],
     ["銀行の通帳とカード","bankbook,card",'/bank.png',"見れない銀行口座。海外のものらしい。"],
     ["地図","map",'/map.png',"どこか知らない町の地図だ。市役所が番地？？にあるようだ。"],
-    ["ヒューズ","fuse",'/fuse.png',"これはfuseです"],
-    ["ドット絵","DotPic",'/DotPic2.png',"TKの文字が表わされた5x5のドット絵"],
-    ["キーコード","keycodes",'/KEYCODES.png',"これはキーコードです"],
-    ["地図","map",'/map.png','これは地図です'],
+    ["ヒューズ","fuse",'/fuse.png',"どこかに置くことができるかもしれない。"],
+    ["ドット絵","DotPic",'/DotPic2.png',"TKの文字が表わされた5x5のドット絵。"],
+    ["キーコード","keycodes",'/KEYCODES.png',"シュレッダーにかけられていて、元の内容が分からない。"],
+    ["地図","map",'/mapmap.png','どこか知らない町の地図だ。交番が番地G1にあるようだ。'],
 ]
 let discri2=[
   ["","",'hatena.png',""],
@@ -116,7 +116,12 @@ function display(num){
     }
     else{
       console.log(num);
-      if (num==1){
+      if (num==0){
+        letterbtn.onclick=()=>{open0()};
+        console.log(num);
+        letterbtn.style.display="block";
+      }
+      else if (num==1){
         letterbtn.onclick=()=>{diary()};
         console.log(num);
         letterbtn.style.display="block";
@@ -137,6 +142,10 @@ function display(num){
         letterbtn.onclick=()=>{open5()}
         letterbtn.style.display="block";
       }
+      else if (num==6){
+        letterbtn.onclick=()=>{open66()}
+        letterbtn.style.display="block";
+      }
       else if (num==7){
         letterbtn.onclick=()=>{open6()}
         letterbtn.style.display="block";
@@ -147,6 +156,12 @@ function display(num){
       }
     }
     
+}
+function open0(){
+  //nowmessage="M100"
+  //realmessage="M100"
+  console.log("111")
+  document.location.href="./Information"
 }
 function letter(){
     console.log(11);
@@ -171,6 +186,18 @@ function open6(){
   var x=document.getElementById(styles.Modal7);
   x.style.display='block';
 }
+function open66(){
+  var x=document.getElementById(styles.Modal8);
+  x.style.display='block';
+}
+
+function closemodals(){
+  var modals=[document.getElementById(styles.Modal2),document.getElementById(styles.Modal3),document.getElementById(styles.Modal4),document.getElementById(styles.Modal5),document.getElementById(styles.Modal6),document.getElementById(styles.Modal7),document.getElementById(styles.Modal8)]
+  for (let i=0;i<modals.length;i++){
+    modals[i].style.display="none";
+  }
+  
+}
 export default function Home() {
     let imgs=["hatena.png","hatena.png","hatena.png","hatena.png","hatena.png","hatena.png","hatena.png","hatena.png","hatena.png","hatena.png","hatena.png","hatena.png"]
     for(let i=0;i<12;i++){
@@ -179,7 +206,7 @@ export default function Home() {
         }
     }
     useEffect(() => {
-      var modals=[document.getElementById(styles.Modal2),document.getElementById(styles.Modal3),document.getElementById(styles.Modal4),document.getElementById(styles.Modal5),document.getElementById(styles.Modal6),document.getElementById(styles.Modal7)]
+      var modals=[document.getElementById(styles.Modal2),document.getElementById(styles.Modal3),document.getElementById(styles.Modal4),document.getElementById(styles.Modal5),document.getElementById(styles.Modal6),document.getElementById(styles.Modal7),document.getElementById(styles.Modal8)]
       window.addEventListener('click', outsideClose);
       function outsideClose(e) {
         for(let i=0;i<modals.length;i++){
@@ -224,6 +251,18 @@ export default function Home() {
         </div>
             <div className={styles.items}>
                 <div className={styles.itemtab}>
+                    <div className={styles.item} onClick={()=>display(8)}>
+                        <img src={imgs[8]} width={110} className={styles.itemm}/>
+                    </div>
+                    <div className={styles.item} onClick={()=>display(9)}>
+                        <img src={imgs[9]} width={110} className={styles.itemm}/>
+                    </div>
+                    <div className={styles.item} onClick={()=>display(10)}>
+                        <img src={imgs[10]} width={110} className={styles.itemm}/>
+                    </div>
+                    <div className={styles.item} onClick={()=>display(7)}>
+                        <img src={imgs[7]} width={110} className={styles.itemm}/>
+                    </div>
                     <div className={styles.item} onClick={()=>display(0)}>
                         <img src={imgs[0]} width={140} className={styles.itemm}/>
                     </div>
@@ -245,21 +284,6 @@ export default function Home() {
                     <div className={styles.item} onClick={()=>display(6)}>
                         <img src={imgs[6]} width={120} className={styles.itemm}/>
                     </div>
-                    <div className={styles.item} onClick={()=>display(7)}>
-                        <img src={imgs[7]} width={110} className={styles.itemm}/>
-                    </div>
-                    <div className={styles.item} onClick={()=>display(8)}>
-                        <img src={imgs[8]} width={110} className={styles.itemm}/>
-                    </div>
-                    <div className={styles.item} onClick={()=>display(9)}>
-                        <img src={imgs[9]} width={110} className={styles.itemm}/>
-                    </div>
-                    <div className={styles.item} onClick={()=>display(10)}>
-                        <img src={imgs[10]} width={110} className={styles.itemm}/>
-                    </div>
-                    <div className={styles.item} onClick={()=>display(11)}>
-                        <img src={imgs[11]} width={110} className={styles.itemm}/>
-                    </div>
                 </div>
 
             </div>
@@ -271,7 +295,7 @@ export default function Home() {
                 </div>
                 <div className={styles.text} id="text"></div>
                 <div className={styles.letterbtn} id="letterbtn" onClick={()=>{}}>
-                    <button className={styles.letternobtn}>開く</button>
+                    <button className={styles.letternobtn}>中身を見る</button>
                 </div>
             </div>
         </div>
@@ -361,9 +385,10 @@ export default function Home() {
             <p>【10月25日】<br/>{diarycontent[0]}</p><br/>
             <p>【10月26日】<br/>{diarycontent[1]}</p><br/>
             <p>【10月27日】<br/>{diarycontent[2]}</p><br/>
-            <p>【10月28日】<br/>{diarycontent[3]}</p><br/>
+            <p>【10月28日】<br/>{diarycontent[3]}</p>
           </div>
           <div className={styles.modaldiary2}>
+          <div className={styles.batsu2} onClick={()=>closemodals()}>×</div><br/>
             <p>【10月29日】<br/>{diarycontent[4]}</p><br/>
             <p>【10月30日】<br/>{diarycontent[5]}</p><br/>
             <p>【10月31日】<br/>{diarycontent[6]}</p><br/>
@@ -390,6 +415,7 @@ export default function Home() {
       <div id={styles.Modal5} className={styles.modal}>
         <div className={styles.modalcontent4}>
           <div className={styles.modalcontent4text}>
+          <div className={styles.batsu3} onClick={()=>closemodals()}>×</div>
             <p>{memotext[0]}</p>
             <p>{memotext[1]}</p>
             <p>{memotext[2]}</p>
@@ -399,6 +425,7 @@ export default function Home() {
       </div>
       <div id={styles.Modal6} className={styles.modal}>
         <div className={styles.modalcontent5}>
+          <div className={styles.batsu4} onClick={()=>closemodals()}>×</div>
           <div className={styles.modalcontent5text}>
             <p>2007.10.21<br/>{syukitext[0]}</p><br/>
             <p>2007.10.22<br/>{syukitext[1]}</p><br/>
@@ -410,6 +437,12 @@ export default function Home() {
       </div>
       <div id={styles.Modal7} className={styles.modal}>
         <div className={styles.modalcontent6}>
+        </div>
+      </div>
+      <div id={styles.Modal8} className={styles.modal}>
+        <div className={styles.modalcontent7}>
+          <div className={styles.batsu} onClick={()=>closemodals()}>×</div>
+          <input type="text"/>
         </div>
       </div>
       </>

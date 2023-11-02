@@ -49,8 +49,8 @@
   background-image: url("/itemget.png");
   background-size : cover;
   width: 90%;
-  left : 7%;
-  top :-5%;
+  left : 0%;
+  top :0%;
   background-repeat : norepeat;
   height : 100%;
   
@@ -62,33 +62,33 @@
   width : 30%;
   height : 40%;
   top : 35%;
-  left : 32.5%;
+  left : 39.5%;
 }
 .Model_text{
   position : absolute;
   top : 80%;
-  left : 41.5%;
+  left : 46%;
   font-size : 200%;
   text-align: center;
 }
 .closeModal{
   font-size: 300%;
-  left : 67.5%;
+  left : 75.5%;
   top : 8%;
   position : absolute;
 
 }
 .ItemImage1{
   position : absolute;
-  width : 20%;
-  height : 30%;
-  top :39%;
-  left : 39%;
+  width : 25%;
+  height : 35%;
+  top :35%;
+  left : 42%;
 }
 .Model_text1{
   position : absolute;
   top : 80%;
-  left : 36.5%;
+  left : 42.5%;
   font-size : 200%;
   text-align: center;
 }
@@ -99,9 +99,9 @@
 }
 .letter {
 
-  width: 10%;
+  width: 13%;
   height : 15%;
-  top : 77%;
+  top : 72%;
   left: 35%;
 }
 .recoder {
@@ -109,7 +109,7 @@
   width: 10%;
   height : 17%;
   position : absolute;
-  top : 73%;
+  top : 75%;
   left : 48%;
 }
 .map {
@@ -117,6 +117,22 @@
   width: 15%;
   height : 20%;
   position : absolute;
-  top : 45%;
-  left : 38%;
+  top :53%;
+  left : 40%;
+}
+.diary {
+
+  width: 15%;
+  height : 20%;
+  position : absolute;
+  top :54%;
+  left : 26%;
+}
+.album {
+
+  width: 15%;
+  height : 20%;
+  position : absolute;
+  top :73%;
+  left : 27%;
 }

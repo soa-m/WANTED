@@ -16,8 +16,8 @@ function open() {
   document.getElementById("closeModal").style.display = "block";
 
 }
-  
-  function close() {
+
+function close() {
   var x = document.getElementById("modal");
   x.style.display = 'None';
 }
@@ -34,6 +34,10 @@ function close1() {
   x.style.display = 'None';
 }
 
+function onbell(){
+  document.location.href = "/Information";
+}
+
 export default function Home() {
 
 
@@ -43,22 +47,22 @@ export default function Home() {
   //ReturnWord1は表示する返しの言葉を格納
 
   function OnSearch() {
-       var x = document.getElementById("Town").value;
-      
-       var y = document.getElementById("Address").value;
-       
-       var z = document.getElementById("roomnum").value;
-      
-      if((x == "米草" || x == "べいくさ") && ( y== "B4") && z == "304"){
-        open();
-      }
-      else{
-        open1();
-      }
-      }
+    var x = document.getElementById("Town").value;
+
+    var y = document.getElementById("Address").value;
+
+    var z = document.getElementById("roomnum").value;
+
+    if ((x == "米草" || x == "べいくさ") && (y == "B4") && z == "304") {
+      open();
+    }
+    else {
+      open1();
+    }
+  }
 
 
-  
+
   return (
 
 
@@ -104,42 +108,40 @@ export default function Home() {
 
 
         <div className={styles.wrap}>
-        <div className={styles.search}>
-          <input id="Town" type="text" className={styles.searchTerm} placeholder="町名を入力" />
-          <p className ={styles.ser}>町</p>
-       
+          <div className={styles.search}>
+            <input   autocomplete="off" id="Town" type="text" className={styles.searchTerm} placeholder="町名を入力" />
+            <p className={styles.ser}>町</p>
+
+          </div>
         </div>
-      </div>
-      <div className={styles.wrap1}>
-        <div className={styles.search}>
-          <input id="Address" type="text" className={styles.searchTerm} placeholder="番地を入力" />
-    
+        <div className={styles.wrap1}>
+          <div className={styles.search}>
+            <input   autocomplete="off" id="Address" type="text" className={styles.searchTerm} placeholder="番地を入力" />
+
+          </div>
         </div>
-      </div>
-      <div className={styles.wrap2}>
-        <div className={styles.search}>
-          <input id="roomnum" type="text" className={styles.searchTerm} placeholder="号室を入力(任意)" />
-          <p className ={styles.ser}>号室</p>
+        <div className={styles.wrap2}>
+          <div className={styles.search}>
+            <input    autocomplete="off" id="roomnum" type="text" className={styles.searchTerm} placeholder="号室を入力(任意)" />
+            <p className={styles.ser}>号室</p>
+          </div>
         </div>
-      </div>
-      <button id="camerabutton" onClick={OnSearch} className={styles.Camerabtn}>移動する</button>
+        <button id="camerabutton" onClick={OnSearch} className={styles.Camerabtn}>移動する</button>
       </div>
       <div id="modal" className={styles.modal}>
 
-        <img id="ItemImage" className={styles.ItemImage} src="/KEYCODES.png" />
-        <span id="closeModal" className={styles.closeModal} onClick={close}>&times;</span>
-
-        <p id="ItemGet" className={styles.Model_text}>複数の紙切れを見つけた</p>
+        <p id="ItemGet" className={styles.Model_text}>猫田家の前についた</p>
+        <button id ="bell" className= {styles.bell} onClick = {onbell}>呼び鈴を押す</button>
       </div>
       <div >
-      <div id="modal1" className={styles.modal1}>
+        <div id="modal1" className={styles.modal1}>
 
-        <img id="ItemImage1" className={styles.ItemImage1} src="/fuse.png" />
-        <span id="closeModal" className={styles.closeModal} onClick={close1}>&times;</span>
 
-        <p id="ItemGet1" className={styles.Model_text1}>ヒューズを見つけた</p>
-      </div>``
-     
+          <span id="closeModal" className={styles.closeModal} onClick={close1}>&times;</span>
+
+          <p id="ItemGet1" className={styles.Model_text1}>Aはここにはいない</p>
+        </div>``
+
 
 
       </div>

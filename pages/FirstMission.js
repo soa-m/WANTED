@@ -25,7 +25,9 @@ function close3() {
   document.getElementById("closeModal1").style.display = 'none';
 }
 function open3(num) {
-  console.log(num);
+  if(num == 42) num =44;
+  if(num == 41) num =45;
+  else if(num == 45) num = 41; 
   var x = document.getElementById("mystery");
   var y = document.getElementById("mysteryimg");
   document.getElementById("closeModal1").style.display = 'block';
@@ -138,10 +140,10 @@ var FirstMissionNazoID = {
   "真実": 36, "しんじつ": 36, "シンジツ": 36,
   "平等": 37,
   "国王": 39,
-  "睡眠": 41, "すいみん": 41,
+  "睡眠": 45, "すいみん": 45,
   "磁石": 43,
-  "深海": 44, "しんかい": 44,
-  "言葉": 45, "コトバ": 45, "ことば": 45,
+  "深海": 42, "しんかい": 42,
+  "言葉": 41, "コトバ": 41, "ことば": 41,
 }
 
 var groups = [
@@ -355,7 +357,7 @@ export default function Home() {
 
       <div className={styles.wrap}>
         <div className={styles.search}>
-          <input id="SearchBox" type="text" className={styles.searchTerm} placeholder="答えを入力" />
+          <input   autocomplete="off" id="SearchBox" type="text" className={styles.searchTerm} placeholder="答えを入力" />
           <button onClick={OnSearch} type="submit" className={styles.searchButton}>🔍
           </button>
         </div>

@@ -417,15 +417,13 @@
   .modal{
     position : absolute;
     display : none;
-    background-image: url("/itemget.png");
+    background-color:#b1aaaa;
     background-size : contain;
-    width: 60%;
-    left : 22.5%;
+    width: 50%;
+    left : 25%;
     top :24%;
     background-repeat : norepeat;
     height : 70%;
-    
-  
   
   
   }
@@ -443,13 +441,20 @@
   
   
   }
+  .bell{
+    position : absolute;
+    top : 50%;
+    left : 46%;
+
+
+  }
   .modal1{
     position : absolute;
     display : none;
-    background-image: url("/itemget.png");
+    background-color:#b1aaaa;
     background-size : contain;
-    width: 60%;
-    left : 22.5%;
+    width: 50%;
+    left : 25%;
     top :24%;
     background-repeat : norepeat;
     height : 70%;
@@ -459,9 +464,9 @@
   }
   .closeModal{
     position : absolute;
-    font-size: 300%;
-    left : 60%;
-    top : 7%;
+    font-size: 400%;
+    left : 90%;
+    top : 0%;
    
   
   }
@@ -476,7 +481,7 @@
   .Model_text{
     position : absolute;
     top : 66%;
-    left :29.5%;
+    left :40%;
     font-size :150%;
     text-align: center;
   }
@@ -491,9 +496,9 @@
   }
   .Model_text1{
     position : absolute;
-    top : 66%;
-    left :32.5%;
-    font-size :150%;
+    top : 36%;
+    left :20.5%;
+    font-size :300%;
     text-align: center;
     
   }
@@ -522,5 +527,8 @@
     top : 25%; 
   }
   .ser{
-    
+    position: absolute;
+    top : -25%;
+    left: 105%;
+    font-size: 130%;
   }

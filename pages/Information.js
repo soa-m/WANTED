@@ -433,6 +433,18 @@ var messageData={
     "bunki":[
       ["続ける","M36"],["やり直す","M30"]
     ]
+  },
+  "M100":{
+    "name":"初翔",
+    "text":"その...昔のお父さんってどんな感じだったのですか...？",
+    "next":"M101",
+    "back":"3"//もとのつかおう
+  },
+  "M101":{
+    "name":"世貴の友人",
+    "text":"あいつとは中学からの付き合いなんだけどな、ほんとにいい奴だったよ。温厚で、何度相談に乗ってもらったかわからない。だけど、あいつの双子の兄が失踪してしまってからは別人のようになってしまった。小説は書かなくなったし酒癖も悪くなったっていうじゃないか。連絡をとろうとしても返ってこないんだ。やっぱり兄の存在は大きかったのだと思うね。",
+    "next":"M101",
+    "back":"3"//もとのつかおう
   }
 };
 var displayfl = true;
@@ -444,6 +456,10 @@ export async function nextmessage() {
     return;
   }
   if (nowmessage=="M60"){
+    document.location.href="./item"
+    return;
+  }
+  if (nowmessage=="M101"){
     document.location.href="./item"
     return;
   }
