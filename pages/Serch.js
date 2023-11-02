@@ -53,7 +53,7 @@ export default function Home() {
 
     var z = document.getElementById("roomnum").value;
 
-    if ((x == "米草" || x == "べいくさ") && (y == "B4") && z == "304") {
+    if ((x == "米草" || x == "べいくさ") && (y == "B4") && z == "303") {
       open();
     }
     else {
@@ -84,7 +84,7 @@ export default function Home() {
           </div>
  
           <div className={styles.btnbox}>
-            <Link href="/item" className={styles.selectedbtn} id={styles.item}>
+            <Link href="/item" className={styles.btn} id={styles.item}>
             </Link>
           </div>
           
@@ -116,7 +116,8 @@ export default function Home() {
       <div id="modal" className={styles.modal}>
 
         <p id="ItemGet" className={styles.Model_text}>猫田家の前についた</p>
-        <button id ="bell" className= {styles.bell} onClick = {onbell}>呼び鈴を押す</button>
+
+        <button id ="bell" className= {styles.bell} onClick = {onbell}>　</button>
       </div>
       <div >
         <div id="modal1" className={styles.modal1}>
@@ -124,7 +125,7 @@ export default function Home() {
 
           <span id="closeModal" className={styles.closeModal} onClick={close1}>&times;</span>
 
-          <p id="ItemGet1" className={styles.Model_text1}>Aはここにはいない</p>
+          <p id="ItemGet1" className={styles.Model_text1}>ここに初翔の手がかりはない</p>
         </div>``
 
 

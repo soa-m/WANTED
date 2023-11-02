@@ -421,7 +421,7 @@
   .modal{
     position : absolute;
     display : none;
-    background-color:#b1aaaa;
+    background-image: url("/door.png");
     background-size : contain;
     width: 50%;
     left : 25%;
@@ -447,8 +447,10 @@
   }
   .bell{
     position : absolute;
-    top : 50%;
-    left : 46%;
+    top : 32%;
+    left : 81%;
+    border : none;
+    background-color : transparent;
 
 
   }
@@ -485,8 +487,17 @@
   .Model_text{
     position : absolute;
     top : 66%;
-    left :40%;
+    left :34%;
     font-size :150%;
+    font-weight : bold;
+    text-align: center;
+  }
+  .Model_text4{
+    position : absolute;
+    top : 73%;
+    left :31%;
+    font-size :150%;
+    font-weight : bold;
     text-align: center;
   }
 
@@ -501,7 +512,7 @@
   .Model_text1{
     position : absolute;
     top : 36%;
-    left :20.5%;
+    left :5%;
     font-size :300%;
     text-align: center;
     

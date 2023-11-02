@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect } from 'react'
 var lettertexts=[
   "\n10/25(水)\n\n明日は大雨みたいですね。残念です。ところで、\n日曜に家を出て行ったきり、\n私の猫が帰ってきません。\nのら猫になっていないか心配です。\n家族の一員なので、気が気でありません。\nにている猫がいたら、教えてください。\n",
-  "\n10/29(日)\n\nおかげさまで、おととい猫が帰ってきました。\n私は昨日から1週間の帰省をしているので、それまでに帰って来てくれて良かったわ。\n帰ってきたのは嬉しかったのですが、太って体重が2倍になっていてびっくりです。猫は野生化すると太るものなのでしょうか。\nあと、木曜の件はよろしく。",
+  "\n10/20(金)\n\nおかげさまで、おととい猫が帰ってきました。\n私は昨日から1週間の帰省をしているので、それまでに帰って来てくれて良かったわ。\n帰ってきたのは嬉しかったのですが、太って体重が2倍になっていてびっくりです。猫は野生化すると太るものなのでしょうか。\nあと、となりの304号室の村田さんって覚えてる？ \n ほら、あなたが小さい頃、たまに面倒をみててくれた人。 \nどうやら再来月あたりに引っ越しちゃうそうで、一度挨拶しておかない？",
   "\n11/1(水)\n\nよう、我こそは社会正義の執行人、井戸端与太郎だぜ！\n俺は今、君のお父さんについて調べているところだ。\n明日、君んちに取材でお邪魔させてもらうよ〜\n待っててくれ！",
   "\n11/1(水)\n\nあらっ、初翔くん、おはよぉ〜\n明後日からつくこま高校の文化祭ですってね。\n準備で疲れて体調を崩したりしてないかしら。心配だわ…\nおすすめの出し物があったら教えてほしいわ。\n文化祭でお会いしましょ〜",
   "\n10/26(木)\n\nこれは不幸の手紙です。\n受け取った人は、これと同じ文面の手紙を3日以内にあなたの友人5人に送らなければなりません。\nこれを守らなかった場合、あなたはこの世から蒸発してしまうかもしれませんよ。",
@@ -21,7 +21,7 @@ var syukitext=[
 ]
 var diarycontent=[
   "家の蛇口からお湯が出なくなった。どうやらガスを止められたらしい。シャワーはまだ我慢できるけど、料理で水しか使えないのはしんどいな…。まだ寒い季節じゃなかっただけマシ、ってことにしておこう。",
-  "今日は久しぶりに「あの人」のお家へお邪魔した。やっぱり話を聞いて貰える人がいるのはいいね。気分転換になったかな。僕のことを考えて色々な提案をしてくれたのも、本当にありがたかった。けど、今はもう少し自分の力で頑張ってみようかな。本当はもっと長居したかったけど、家族が帰ってきちゃうからって帰された。仕方なし。",
+  "今日は久しぶりに「あの人」のお家へお邪魔した。やっぱり話を聞いて貰える人がいるのはいいね。前の公園も自然豊かで気分転換になったかな。僕のことを考えて色々な提案をしてくれたのも、本当にありがたかった。近所の中学校から帰る部活帰りの中学生の声が聞こえてきたころ、家族が帰ってきちゃうからって帰された。仕方なし。",
   "久しぶりに家のポストを見た。役所から届いたであろう、赤い封筒がギッシリ。中身は見ていないけれど、未払いだの滞納だのが沢山あって大変らしい。母さん、自分は贅沢三昧遊び歩いているのに、家のことはいつまでもだらしないんだな。やっぱり、僕が何とかしないとダメみたい。辛い。",
   "遂に！母さんの旅行が14日目を迎えた。あと二週間耐えれば、母さんがハワイだかグアムだかサイパンだかから帰ってくる。家に帰ってきたら、流石にガスの料金も納めに行くでしょ。そしたら地獄から解放される。先が見えた、気がする。",
   "今日も父さんは部屋から出てこない。思えば、二人で最後に会話したのって何年前だろう。ここ２年くらいは顔も合わせていない気がする。部屋の前に置いた夕食がなくなっていたから、まだ生きてはいるはず。深夜にもう一度部屋の前を通ったら、空になった食器の傍らに、ティッシュへ書かれたメモが残されていた。「米　冷たくて固い」",
@@ -307,8 +307,8 @@ export default function Home() {
 
             <div className={styles.modalmailcont} id={styles.mailcont1}>
               <div className={styles.letterfromto}>
-                <p>From: 猫田真弥華　埼玉県深谷市城北4-37</p>
-                <p>To: 星野初翔　埼玉県深谷市城東2-35</p>
+                <p>From: 猫田真弥華　埼玉県米草町??3号室</p>
+                <p>To: 星野初翔　埼玉県米草町A2</p>
               </div>
               <div className={styles.lettercontent}>
                 {lettertexts[0]}
@@ -318,7 +318,7 @@ export default function Home() {
             <div className={styles.modalmailcont} id={styles.mailcont2}>
               <div className={styles.letterfromto}>
                 <p>From:(差出人及び住所不明)</p>
-                <p>To: 星野初翔　埼玉県深谷市城東2-35</p>
+                <p>To: 星野初翔　埼玉県米草町A2</p>
               </div>
               <div className={styles.lettercontent}>
                 {lettertexts[4]}
@@ -327,8 +327,8 @@ export default function Home() {
             
             <div className={styles.modalmailcont} id={styles.mailcont3}>
               <div className={styles.letterfromto}>
-                <p>From: 実寸大予備学校　群馬県伊勢崎市駿河大4丁目27</p>
-                <p>To: 星野初翔　埼玉県深谷市城東2-35</p>
+                <p>From: 実寸大予備学校　群馬県伊勢崎市B7</p>
+                <p>To: 星野初翔　埼玉県米草町A2</p>
               </div>
               <div className={styles.lettercontent}>
                 {lettertexts[5]}
@@ -337,8 +337,8 @@ export default function Home() {
 
             <div className={styles.modalmailcont} id={styles.mailcont4}>
               <div className={styles.letterfromto}>
-                <p>From: 猫田真弥華　山梨県笛吹市南田374</p>
-                <p>To: 星野初翔　埼玉県深谷市城東2-35</p>
+                <p>From: 猫田真弥華　山梨県笛吹市E3</p>
+                <p>To: 星野初翔　埼玉県米草町A2</p>
               </div>
               <div className={styles.lettercontent}>
                 {lettertexts[1]}
@@ -347,8 +347,8 @@ export default function Home() {
             
             <div className={styles.modalmailcont} id={styles.mailcont5}>
               <div className={styles.letterfromto}>
-                <p>From: 犬飼良美　埼玉県深谷市城西5-19-305</p>
-                <p>To: 星野初翔　埼玉県深谷市城東2-35</p>
+                <p>From: 犬飼良美　埼玉県深谷市城G5</p>
+                <p>To: 星野初翔　埼玉県米草町A2</p>
               </div>
               <div className={styles.lettercontent}>
                 {lettertexts[3]}
@@ -357,8 +357,8 @@ export default function Home() {
             
             <div className={styles.modalmailcont} id={styles.mailcont6}>
               <div className={styles.letterfromto}>
-                <p>From: 『修春』記者 井戸端与太郎　東京都千代田区江戸町1-47</p>
-                <p>To: 星野初翔　埼玉県深谷市城東2-35</p>
+                <p>From: 『修春』記者 井戸端与太郎　東京都千代田区F6</p>
+                <p>To: 星野初翔　埼玉県米草町A2</p>
               </div>
               <div className={styles.lettercontent}>
                 {lettertexts[2]}
