@@ -4,6 +4,7 @@ import styles from '../styles/DigitalKey.module.css';
 import { SearchData } from '../components/MainProgram';
 import Link from 'next/link';
 import { createClient } from '@vercel/kv';
+import {Set2} from '../components/func'
 let kv = createClient({
     url: process.env.NEXT_PUBLIC_KV_REST_API_URL,
     token: process.env.NEXT_PUBLIC_KV_REST_API_TOKEN
@@ -11,12 +12,14 @@ let kv = createClient({
 
 import { Set, GetID } from '../components/func';
 let id = GetID();
-
 /*
 fuzecleared = await kv.get(id + "CLEAREDIGITALKEY");
 console.log(fuzecleared);
-
 */
+
+
+
+
 export default function Home() {
 
     var DigitalKeybool = [
@@ -43,10 +46,21 @@ export default function Home() {
     var started = false;
     var trynum = 0;
     var digitalcleared = false;
-    function start() {
+    async function start() {
 
+        var ITEMUNLCOKED=await kv.get(id+"ITEMUNLCOKED");
+        console.log(ITEMUNLCOKED);
+        if (!ITEMUNLCOKED[2]){
+            return;
+        }
+        else{
+            var x=document.getElementById(styles.displayans);
+            x.style.display="block"
+        }
         if (digitalcleared) return;
         trynum = 3;
+        document.getElementById("NUM").innerHTML = "残りの操作回数は : " + String(trynum);
+        
         started = true;
         document.getElementById("startbtn").innerHTML = "Retry";
         for (var i = 0; i < 5; i++) {
@@ -71,11 +85,11 @@ export default function Home() {
         }
     }
 
-    function Ontap(place) {
+    async function Ontap(place) {
         if (digitalcleared || started == false) return;
         trynum--;
 
-
+        document.getElementById("NUM").innerHTML = "残りの操作回数は : " + String(trynum);
 
         var x, y;
         var s = place.target.id;
@@ -181,6 +195,9 @@ export default function Home() {
         console.log(DigitalKeybool);
         console.log(did);
         if (did) {
+            var firstsolved=await kv.get(id+"firstsolved");
+            firstsolved[2]=true;
+            Set("firstsolved",firstsolved)
             var x = document.getElementById("succes");
             document.getElementById("succes").innerHTML = "UNLOCKED";
             digitalcleared = true;
@@ -227,7 +244,6 @@ export default function Home() {
 
     }
 
-
     return (
 
 
@@ -269,7 +285,14 @@ export default function Home() {
             </div>
             <div>
                 <button onClick={start} id="startbtn" className={styles.Camerabtn}>暗号解読を始める</button>
-                <p id="succes" className={styles.LOCKED}>LOCKED</p>
+                <p id="succes" className={styles.LOCKED}>LOCK</p>
+                <p id="NUM" className={styles.NUM}>残りの操作回数 : </p>
+
+
+            </div>
+            <div className={styles.displaytex}>これに合わせろ！
+            </div>
+            <div id={styles.displayans}>
 
             </div>
             <div className={styles.buttons}>

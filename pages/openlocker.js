@@ -2,6 +2,14 @@ import styles from '../styles/openlocker.module.css';
 import { useEffect } from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
+import { createClient } from '@vercel/kv';
+let kv = createClient({
+  url: process.env.NEXT_PUBLIC_KV_REST_API_URL,
+  token: process.env.NEXT_PUBLIC_KV_REST_API_TOKEN
+});
+
+import { Set, GetID } from '../components/func';
+let id = GetID();
 
 var isitemunlocked = [false, false, false,false,false];
 
@@ -16,6 +24,9 @@ function move(){
   }
 
 }
+let itemfl=[false,false,false,false,false,false,false,false,false,false,false,false];
+itemfl=[false,true,true,true,false,false,false,true,true,true,true,true];
+Set("ITEM",itemfl);
 
 
 function open() {

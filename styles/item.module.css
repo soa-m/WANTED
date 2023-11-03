@@ -236,8 +236,23 @@ background: #4D9BC1; /* 背景色 */
 #Modal8{
   display: none;
 }
+.passsub {
+  position : absolute;
+  top : 60%;
+  left :48%;
 
-
+}
+.sta{
+  position : absolute;
+  left :0%;
+  top : 0%;
+  height : 768px;
+  width : 1366px;
+  text-align : left ;
+  text-align : top;
+  font-size: 500%;
+  z-index : 1;
+}
 .modalcontent {
   background-image: url("/letterdisplay.png");
   background-size:100%;
@@ -606,6 +621,15 @@ background: #4D9BC1; /* 背景色 */
   position: absolute;
   top:-5%;
   left:90%;
+  font-size: 300%;
+  font-weight: bold;
+  width:10%;
+  text-align: right;
+}
+.batsu21{
+  position: absolute;
+  top:2%;
+  left:73%;
   font-size: 300%;
   font-weight: bold;
   width:10%;

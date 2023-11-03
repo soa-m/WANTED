@@ -1,7 +1,7 @@
 .container{
 
-  width:1366px;
-  height:798px;
+  width:100vw;
+  height:100vh;
   background-image: url("/fuseoff.png");
   background-size: contain;
   background-repeat : no-repeat;

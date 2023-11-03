@@ -12,8 +12,13 @@ export function GetID(){
 }
 export async function Set(vari,content){
     let id=GetID();
+    console.log(id+vari);
     await kv.set(id+vari,content);
 }
+export async function Set2(status){
+    Set("status",status);
+}
+
 
 /*
 let id=GetID();

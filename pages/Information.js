@@ -12,7 +12,7 @@ let kv = createClient({
 import { Set, GetID } from '../components/func';
 let id = GetID();
 var selectbool = [false, false, false];
-
+let itemfl = await kv.get(id + "ITEM");
 // 表示するテキストをmessagetextで表示
 /*
 var nowmessage = await kv.get(id + "nowmessage");
@@ -21,9 +21,18 @@ var IsmessageUnlocked = await kv.get(id + "IsmessageUnlocked");
 var messageData = await kv.get("messageData");
 var displayfl = true;
 */
-var nowmessage = "M0";
-var realmessage = "M0"
+console.log(itemfl);
+var nowmessage = await kv.get(id + "NOW");
+
+var realmessage = nowmessage;
+var displayfl = true;
 var messageData = {
+  "M-1": {
+    "name": "",
+    "text": "タップで次に進む",
+    "next": "M1",
+    "back": "0"//玄関
+  },
   "M0": {
     "name": "",
     "text": "（呼び鈴の音）",
@@ -477,12 +486,6 @@ var messageData = {
   "M63": {
     "name": "警察官",
     "text": "はいはい。この前は、なんでしたっけ。杉並区の連続強盗殺人事件の犯人が5歳の子どもだ！　だったかな。こちらも色々と忙しんです。今日はお引き取り願います",
-    "next": "163",
-    "back": "3"//もとのつかおう
-  },
-  "M163": {
-    "name": "プレイヤー",
-    "text": "",
     "next": "S5",
     "back": "3"//もとのつかおう
   },
@@ -512,8 +515,8 @@ var messageData = {
   },
   "M68": {
     "name": "ナレーター",
-    "text": "場が混乱してしまった。一度しきりなおそう",
-    "next": "M65",
+    "text": "場が混乱してしまった",
+    "next": "S6",
     "back": "3"//もとのつかおう
   },
   "M69": {
@@ -524,7 +527,7 @@ var messageData = {
   },
   "M70": {
     "name": "真弥華",
-    "text": "二日前にこのことを彼に話してしまって…",
+    "text": "昨日、このことを彼に話してしまって…",
     "next": "M71",
     "back": "3"//もとのつかおう
   },
@@ -548,17 +551,76 @@ var messageData = {
   },
   "M74": {
     "name": "真弥華",
-    "text": "あぁぁ、私はなんてことを！実はその後、初翔君泣きながらこの家を飛び出していってしまって、",
+    "text": "あぁぁ、私はなんてことを！実はその後、泣きながらこの家を飛び出していってしまって、",
     "next": "M75",
     "back": "3"//もとのつかおう
   },
   "M75": {
     "name": "プレイヤー",
-    "text": "で、初翔はどこにいるんだ…！？",
+    "text": "な、何か手がかりとかはないんですか？",
     "next": "M76",
     "back": "3"//もとのつかおう
   },
-  
+  "M76": {
+    "name": "真弥華",
+    "text": "なにも、、、。あ、でもこんなものが落ちてて、多分初翔のものだと思うんですが。",
+    "next": "M77",
+    "back": "3"//もとのつかおう
+  },
+  "M77": {
+    "name": "",
+    "text": "レコーダーのデータを手に入れた",
+    "next": "M78",
+    "back": "3"//もとのつかおう
+  },
+  "M80": {
+    "name": "",
+    "text": "家に帰ろう",
+    "next": "M80",
+    "back": "3"//もとのつかおう
+  },
+  "M81": {
+    "name": "",
+    "text": "",
+    "next": "M81",
+    "back": "3"//もとのつかおう
+  },
+  "M89": {
+    "name": "",
+    "text": "",
+    "next": "M90",
+    "back": "3"//もとのつかおう
+  },
+  "M90": {
+    "name": " ",
+    "text": "通報により、A父を殺害したA母、X、Yの三人はそれぞれ、殺人罪、遺体遺棄罪の容疑で逮捕された。",
+    "next": "M191",
+    "back": "3"//もとのつかおう
+  },
+  "M191": {
+    "name": "",
+    "text": "著名な小説家が10年以上なりすまされていた、という奇怪な事件は日本中に話題を呼び、事件発覚から一か月が経った今でも、その話題がメディアに取り沙汰されない日はなかった。    ",
+    "next": "M192",
+    "back": "3"//もとのつかおう
+  },
+  "M192": {
+    "name": " ",
+    "text": "都内の弁護士事務所にて",
+    "next": "M91",
+    "back": "3"//もとのつかおう
+  },
+  "M91": {
+    "name": "弁護士",
+    "text": "初翔君、僕は今君にかけるべき言葉が分からない。だからこそ、ただ君にはこれを受け取ってほしい。",
+    "next": "M92",
+    "back": "3"//もとのつかおう
+  },
+  "M92": {
+    "name": "弁護士",
+    "text": "君のお父さんの遺留品だよ。中身は開けていないから安心してくれ。本当に申し訳ないが、僕が今君にできることは、これを渡すことしかできない。",
+    "next": "M92",
+    "back": "3"//もとのつかおう
+  },
   "M101": {
     "name": "世貴の友人",
     "text": "あいつとは中学からの付き合いなんだけどな、ほんとにいい奴だったよ。温厚で、何度相談に乗ってもらったかわからない。だけど、あいつの双子の兄が失踪してしまってからは別人のようになってしまった。小説は書かなくなったし酒癖も悪くなったっていうじゃないか。連絡をとろうとしても返ってこないんだ。やっぱり兄の存在は大きかったのだと思うね。",
@@ -566,16 +628,28 @@ var messageData = {
     "back": "3"//もとのつかおう
   }
 };
-var displayfl = true;
+
+
 export async function nextmessage() {
+  if(nowmessage == "M92"){
+    itemfl[5] = true;
+    itemfl[6] = true;
+    Set("ITEM",itemfl);
+    document.location.href = "./item";
+  }
+  if(nowmessage == "M81"){
+    document.location.href = "./item"
+  }
   if (displayfl) {
     displayfl = false;
   }
   else {
     return;
   }
-  if (nowmessage == "M75") {
+  if (nowmessage == "M77") {
     document.location.href = "./item"
+    itemfl[0] = true;
+    Set("ITEM",itemfl);
     return;
   }
   if (nowmessage == "M101") {
@@ -722,6 +796,7 @@ export async function Sbunki(select) {
   realmessage = now;
 }
 export default function Home() {
+  
   return (
     <>
       <div className={styles.infocontainer}>
@@ -741,7 +816,7 @@ export default function Home() {
           <div className={styles.infoemp0}></div>
           <div className={styles.infoemp01}></div>
           <div className={styles.infoemp02}>
-            <div className={styles.messagename} id="messagename">{messageData[realmessage]["name"]}</div>
+            <div className={styles.messagename} id="messagename">{messageData["M-1"]["name"]}</div>
             <div className={styles.infoemp022}>
             </div>
           </div>
@@ -749,7 +824,7 @@ export default function Home() {
           <div className={styles.infoemp1}></div>
 
           <div className={styles.messagebox} onClick={nextmessage}>
-            <div className={styles.messagetext} id="messagetext">{messageData[realmessage]["text"]}</div>
+            <div className={styles.messagetext} id="messagetext">{messageData["M-1"]["text"]}</div>
             <div className={styles.messagebox2}>
             </div>
           </div>

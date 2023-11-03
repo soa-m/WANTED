@@ -16,19 +16,33 @@ let id = GetID();
 var clearedtorn = false;
 /*clearedtorn = await kv.get(id + "CLEAREDTORNPAPER"); */
 
+var consts=await kv.get(id+"consts");
+
+
+var ITEMUNLCOKED=await kv.get(id+"ITEMUNLCOKED");
+
 export default function Home() {
 
-  function answer() {
+  async function answer() {
     var ans = document.getElementById("inputbox").value;
-    if (ans == "714283") {
+    console.log(1);
+    if (ans == consts["tornpaperans"]) {
+      console.log(1);
+      var firstsolved=await kv.get(id+"firstsolved");
+      firstsolved[0]=true;
+      Set("firstsolved",firstsolved)
       document.getElementById("cleared").innerHTML = "UNLOCKED";
       /* Set("CLEAREDTORN",clearedtorn); */
       document.getElementById("cleared").style.color = "green";
     }
   }
 
-  function start() {
-
+  async function start() {
+    var ITEMUNLCOKED=await kv.get(id+"ITEMUNLCOKED");
+    console.log(ITEMUNLCOKED);
+    if (!ITEMUNLCOKED[0]){
+      return;
+    }
     document.getElementById('btn0').src = "/KEYCODE1.png";
     document.getElementById('btn1').src = "/KEYCODE2.png";
     document.getElementById('btn2').src = "/KEYCODE3.png";
@@ -118,7 +132,7 @@ export default function Home() {
 
         <div className={styles.wrap}>
           <div className={styles.search}>
-            <input id="inputbox" type="text" className={styles.searchTerm} placeholder="What are you looking for?" />
+            <input autoComplete = "off" id="inputbox" type="text" className={styles.searchTerm} placeholder="What are you looking for?" />
             <button onClick={answer} type="ansbtn" className={styles.searchButton}>🔑</button>
             <p id="cleared" className={styles.LOCKED}>　Locked</p>
           </div>

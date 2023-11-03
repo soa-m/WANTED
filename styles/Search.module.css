@@ -511,9 +511,10 @@
   }
   .Model_text1{
     position : absolute;
-    top : 36%;
-    left :5%;
-    font-size :300%;
+    top : 70%;
+    left :28%;
+    font-weight : bold;
+    font-size :200%;
     text-align: center;
     
   }

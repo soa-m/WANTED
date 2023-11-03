@@ -2,6 +2,15 @@ import Link from 'next/link';
 import styles from '../styles/item.module.css';
 import Image from "next/image";
 import { useEffect } from 'react'
+import { createClient } from '@vercel/kv';
+let kv = createClient({
+  url: process.env.NEXT_PUBLIC_KV_REST_API_URL,
+  token: process.env.NEXT_PUBLIC_KV_REST_API_TOKEN
+});
+import { Set, GetID } from '../components/func';
+let id = GetID();
+let itemfl= await kv.get(id + "ITEM");
+
 var lettertexts=[
   "\n10/25(水)\n\n明日は大雨みたいですね。残念です。ところで、\n日曜に家を出て行ったきり、\n私の猫が帰ってきません。\nのら猫になっていないか心配です。\n家族の一員なので、気が気でありません。\nにている猫がいたら、教えてください。\n",
   "\n10/20(金)\n\nおかげさまで、おととい猫が帰ってきました。\n私は昨日から1週間の帰省をしているので、それまでに帰って来てくれて良かったわ。\n帰ってきたのは嬉しかったのですが、太って体重が2倍になっていてびっくりです。猫は野生化すると太るものなのでしょうか。\nあと、となりの304号室の村田さんって覚えてる？ \n ほら、あなたが小さい頃、たまに面倒をみててくれた人。 \nどうやら再来月あたりに引っ越しちゃうそうで、一度挨拶しておかない？",
@@ -12,38 +21,57 @@ var lettertexts=[
 ]
 var memotext=["A母 : 夫が著名な作家であり、金銭的に余裕があるのに、自身や家族にほとんどお金を入れないことに不満を持ち続けており、当時夫との関係も悪化していた。","X : 大学卒業後、職に就くことが出来ず、酒癖もあり、極度にお金に困っていたところ、Yに今回の事件を起こすよう耳打ちされ、長年のA父に対する劣等感なども重なり、実行。殺害後、自らがA父として生き、印税を手に入れることに成功した。","Y : Y妻には伝えていないが、大学生時代からハマっていたFXで大損をしてしまい、相当な借金を抱えていた、Xの双子が著名でお金持ちな小説家であることに目をつけ、今回の犯行を企てた。"]
 var syukitext=[
-  "ここ数日原稿の締め切りに追われる日々であったが、今日にしてとうとう開放された。気づかぬ間に、私の肌に触れる湿気は少なくなり、体が久しく感じていなかった寒気を思い出した。そういえば、明日は(Aの下の名前)を健康診断に連れて行かねば。(Aの下の名前)が歩き出してから数か月が経つが、その足取りの確かさが日々増していく。歩くという目的が、早く向かうという目的に変わりつつある息子の成長を見届けられるこの身は一体どれほど幸福なことなのだろう。しかし、(A妻の下の名前)はなぜあれほどにまで息子に対して無感情なのだろうか。",
-  "(Aの下の名前)の指の動きがすこし鈍いと医者に告げられた。ひと月前に出た高熱の後遺症なのではと疑われ、近いうちに二駅となりの大学病院で検査を行うことになってしまった。どうか、大事でなければいいが。(A妻の下の名前)にこのことを告げたが、相変わらず何も気にしていないようだ。どうやら明日から行く、同好会での集団旅行に対する興味しかないようだ。その興味を少しでも息子に与えられないのだろうか。",
-  "頭が回らない。鼻から目頭に体液が突き抜けるこの気分が永遠に続きそうだ。そして、我に返った時には書斎が荒らされていた。憎いのは医師ではない。分かっている。だが、あの病状を告げた医師の顔を思い出す度に、反吐が出そうになる。20になる息子の姿が見えないと考えるだけで、その先の感情は出てこなかった。",
-  "昨日は一日中、息子を連れて図書館に籠ったが、どこを探しても(架空の病気)についての文献が見当たらない。日本での症例は数件ほどしか確認されてないうえ、治療法が存在しない病気がなぜ、私の息子を選ぶのか。なぜ他をあたってくれないのか。",
-  "再び、病院へと赴いた。息子の検査を待つ間、私は眠ってしまった。前回の検査の日から私は一睡もしていなかったことを思いだした。いまだに鼻から抜けないアルコールの匂いに嫌気がさしながら、あさって帰ってくる妻に、このことをいまだに何も伝えていなかったことを思い出した。",
+  `初翔へ
+
+
+　この手紙を読む頃の君はきっと、たくましさと優しさを兼ね備えた、素敵な大人になってくれていることでしょう。もしかすると私よりも背丈が高くなって、私が君を見上げなければならなくなっているかもしれませんね。
+
+　さて、大人になってくれた初翔なら、今からする話を聞いても、冷静に自分なりの答えへたどり着いてくれると信じて、この手紙を記します。
+
+　私はずっと、君に重大な隠し事をしてきました。実は、君が悩まされてきた「痺れ」や「こり」は、とある大病の予兆なのです。「先天的脳機能後退症候群」…手短に言えば、脳が不均等に成長し、主に体の運動をつかさどる部位が圧迫・損傷され、身体麻痺に繋がる難病です。日本での症例は少なく、2010年の時点で治療に関するノウハウは殆どない、まさに不治の病なのです。このまま放っておけば、君が40歳になるまでに、体の大半が運動機能停止へ陥ってしまうことでしょう。
+
+　しかし、例え現代日本での治療が難しくとも、私は決して諦めません。アメリカでは既に治療法が確立されつつあるという噂もあるくらいですから、もう何年か待てば「先天的脳機能後退症候群」は治せる病気になることでしょう。だから、私は病気の治療を未来の医療へ、未来の初翔へ託そうと思います。
+
+　お金のことは気にしなくて大丈夫。同封した通帳の口座に、君が生まれてきてから貯め続けたお金が入っています（暗証番号は、私にとって最も大事な8桁の数字です。君なら分かると思う）。十分な額を用意した自信はあるので、治療のためにぜひ役立ててください。
+
+　近頃のXについての噂…何やら不穏なことを計画している様子は私も知っていますが、双子の片割れとして、Xのことは最後まで信用してやろうと思っています。もし私のこの判断のせいで、君が辛い思いをすることになってしまったら、その時は本当に申し訳ない。でも君なら、私のこの親バカならぬ「兄弟バカ」も理解してくれるんじゃないか、仮に私がいなくなっても、自分で考えて強く生きていってくれるのではないか、そう甘えたくなってしまったのです。
+
+　初翔へ。生まれてきてくれてありがとう。どうか、君の人生が素晴らしいものでありますように。
+
+
+星野秀吾より`
 
 ]
 var diarycontent=[
-  "家の蛇口からお湯が出なくなった。どうやらガスを止められたらしい。シャワーはまだ我慢できるけど、料理で水しか使えないのはしんどいな…。まだ寒い季節じゃなかっただけマシ、ってことにしておこう。",
-  "今日は久しぶりに「あの人」のお家へお邪魔した。やっぱり話を聞いて貰える人がいるのはいいね。前の公園も自然豊かで気分転換になったかな。僕のことを考えて色々な提案をしてくれたのも、本当にありがたかった。近所の中学校から帰る部活帰りの中学生の声が聞こえてきたころ、家族が帰ってきちゃうからって帰された。仕方なし。",
-  "久しぶりに家のポストを見た。役所から届いたであろう、赤い封筒がギッシリ。中身は見ていないけれど、未払いだの滞納だのが沢山あって大変らしい。母さん、自分は贅沢三昧遊び歩いているのに、家のことはいつまでもだらしないんだな。やっぱり、僕が何とかしないとダメみたい。辛い。",
-  "遂に！母さんの旅行が14日目を迎えた。あと二週間耐えれば、母さんがハワイだかグアムだかサイパンだかから帰ってくる。家に帰ってきたら、流石にガスの料金も納めに行くでしょ。そしたら地獄から解放される。先が見えた、気がする。",
-  "今日も父さんは部屋から出てこない。思えば、二人で最後に会話したのって何年前だろう。ここ２年くらいは顔も合わせていない気がする。部屋の前に置いた夕食がなくなっていたから、まだ生きてはいるはず。深夜にもう一度部屋の前を通ったら、空になった食器の傍らに、ティッシュへ書かれたメモが残されていた。「米　冷たくて固い」",
-  "集金の来客があった。電気料金が半年くらい払われていないらしい。催促されたから、事情を話して帰ってもらった。怒られはしなかったけど、憐れむような目で見られるのが一番辛い。母さんが食費として置いていった3000円がもう無くなりそう。10日くらいなら、何も食べなくても凌げるのだろうか…真弥華さんのところへ行ったら、最低限の寝食は担保されるだろう。要検討。",
-  "もういやだ。",
-  "これ以上は我慢できない。前からの計画を実行する。本当は文化祭に参加したかったけど…まずは安全な環境で衣食住を満たしたい。"
+"家の蛇口からお湯が出なくなった。どうやらガスを止められたらしい。シャワーはまだ我慢できるけど、料理で水しか使えないのはしんどいな…。",
+"今日は久しぶりに「あの人」のお家へお邪魔した。目の前に自然が豊かな公園があってすごく居心地がいい。やっぱり話を聞いて貰える人がいるのはいいね。僕のことを考えて色々な提案をしてくれたのも、本当にありがたかった。けど、今はもう少し自分の力で頑張ってみようかな。目の前の通りから部活帰りらしい中学生の声が聞こえる。本当はもっと長居したかったけど、家族が帰ってきちゃうからって帰された。仕方なし。",
+"遂に！母さんの旅行が14日目を迎えた。あと二週間耐えれば、母さんがハワイだかグアムだかサイパンだかから帰ってくる。そしたらガスの料金も納められるだろうし、地獄から解放される、はず。",
+"今日も父さんは部屋から出てこない。思えば、二人で最後に会話したのは何年前だろう。長いこと顔も見ていない。食事を出したらちゃんと空になるから、生きてはいるんだろうけど。今日は、空になった食器の傍らに、ティッシュへ書かれたメモが残されていた。「米　冷たくて固い」",
+"集金の来客があった。電気料金が半年くらい払われていないらしい。事情を話したら帰ってもらえたけど、憐れむような目で見られるのが一番辛い。母さんが食費として置いていった3000円がもう無くなりそう。10日くらいなら、何も食べなくても凌げるのだろうか…真弥華さんのところへ行ったら、最低限の寝食は担保されるだろう。要検討。",
+"もういやだ。",
+"これ以上は我慢できない。前からの計画を実行する。本当は文化祭に参加したかったけど…まずは安全な環境で衣食住を満たしたい。",
+
+
 ]
 var ismailunlocked=[true, true,true,true];
-
-function open2(){
+function pass(){
+   if(document.getElementById("password").value == "20061024"){
+      document.location.href = "./Final";
+   }
+}
+async function open2(){
   var x=document.getElementById(styles.Modal2);
   x.style.display='block';
 }
-function close2(){
+async  function close2(){
   var x=document.getElementById(styles.Modal2);
   x.style.display='None';
 }
-function open3(){
+async  function open3(){
   var x=document.getElementById(styles.Modal3);
   x.style.display='block';
 }
-function close3(){
+async  function close3(){
   var x=document.getElementById(styles.Modal3);
   x.style.display='None';
 }
@@ -61,21 +89,21 @@ function openmails(eve){
 
 
 
-let itemfl=[false,false,false,false,false,false,false,false,false,false,false,false];
-itemfl=[true,true,true,true,true,true,true,true,true,true,true,true];
+
+
+
 let discri=[
     ["レコーダー","recoder",'/recoder.png',"Aの所持品と思われる黒色のレコーダー。幾つかデータが入ってるようだ。"],
     ["日記","diary",'/diary.png',"Aの名前がついている日記。これを読めばAの所在地がわかるかもしれない。"],
     ["アルバム","album",'/album.png',"沢山の写真が入ってるいるアルバム。どれも古い写真ばかりで、Aの行方を示していそうなものは無い。"],
     ["手紙","letter",'/letter.png',"Aに宛てられたと思われる何枚かの手紙。どれも古いものばかりだ。"],
     ["証言メモ","memo",'/memo.png',"Y妻から得られた証言を紙に起こしたもの。これを使えば事件を明るみにすることができるかもしれない。"],
-    ["αの手記","handwriting",'/handwriting.png',"10年以上前に書かれた古い手記。これを読めばA父について何かわかるかもしれない。"],
+    ["αの手紙","handwriting",'/handwriting.png',"10年以上前に書かれた古い手紙。これを読めばすべての真相がわかるかもしれない。"],
     ["銀行の通帳とカード","bankbook,card",'/bank.png',"見れない銀行口座。海外のものらしい。"],
     ["地図","map",'/map.png',"どこか知らない町の地図だ。市役所が番地？？にあるようだ。"],
     ["ヒューズ","fuse",'/fuse.png',"どこかに置くことができるかもしれない。"],
     ["ドット絵","DotPic",'/DotPic2.png',"TKの文字が表わされた5x5のドット絵。"],
     ["キーコード","keycodes",'/KEYCODES.png',"シュレッダーにかけられていて、元の内容が分からない。"],
-    ["地図","map",'/mapmap.png','どこか知らない町の地図だ。交番が番地G1にあるようだ。'],
 ]
 let discri2=[
   ["","",'hatena.png',""],
@@ -91,7 +119,8 @@ let discri2=[
   ["","",'hatena.png',""],
   ["","",'hatena.png',""],
 ]
-function display(num){
+async  function display(num){
+     console.log(itemfl);
     var name=document.getElementById("name");
     var nameeng=document.getElementById("nameeng");
     var pic=document.getElementById(styles.pic);
@@ -157,11 +186,14 @@ function display(num){
     }
     
 }
+
 function open0(){
   //nowmessage="M100"
   //realmessage="M100"
   console.log("111")
-  document.location.href="./Information"
+  Set("NOW","M80");
+  document.location.href = "/Information";
+  
 }
 function letter(){
     console.log(11);
@@ -198,29 +230,29 @@ function closemodals(){
   }
   
 }
-export default function Home() {
-    let imgs=["hatena.png","hatena.png","hatena.png","hatena.png","hatena.png","hatena.png","hatena.png","hatena.png","hatena.png","hatena.png","hatena.png","hatena.png"]
-    for(let i=0;i<12;i++){
-        if (itemfl[i]){
-            imgs[i]=discri[i][2]
-        }
+let imgs=["hatena.png","hatena.png","hatena.png","hatena.png","hatena.png","hatena.png","hatena.png","hatena.png","hatena.png","hatena.png","hatena.png","hatena.png"]
+function load(){
+  for(let i=0;i<11;i++){
+    if (itemfl[i]){
+      console.log(123);
+        imgs[i]=discri[i][2]
+        document.getElementById("img" + String(i)).src = imgs[i];
+       
     }
-    useEffect(() => {
-      var modals=[document.getElementById(styles.Modal2),document.getElementById(styles.Modal3),document.getElementById(styles.Modal4),document.getElementById(styles.Modal5),document.getElementById(styles.Modal6),document.getElementById(styles.Modal7),document.getElementById(styles.Modal8)]
-      window.addEventListener('click', outsideClose);
-      function outsideClose(e) {
-        for(let i=0;i<modals.length;i++){
-          let modal=modals[i];
-          if (e.target==modal){
-            modal.style.display = 'none';
-          }
-        }
-      }
-    })
+}
+document.getElementById("btnn").style.display = "none";
+}
+export default function Home() {
+ 
+
+
+  console.log(itemfl);
+
+   
     return (
       <>
         <div className={styles.container}><div className={styles.buttons}>
-
+        <button id = "btnn"onClick ={load} className = {styles.sta}>タップでアイテムを読み込む </button>
           <div className={styles.empty}></div>
 
         
@@ -241,40 +273,43 @@ export default function Home() {
           </div>
         </div>
             <div className={styles.items}>
+           
                 <div className={styles.itemtab}>
+                
                     <div className={styles.item} onClick={()=>display(8)}>
-                        <img src={imgs[8]} width={110} className={styles.itemm}/>
+                        <img id = "img8" src={imgs[8]} width={110} className={styles.itemm}/>
                     </div>
                     <div className={styles.item} onClick={()=>display(9)}>
-                        <img src={imgs[9]} width={110} className={styles.itemm}/>
+                        <img id = "img9" src={imgs[9]} width={110} className={styles.itemm}/>
                     </div>
                     <div className={styles.item} onClick={()=>display(10)}>
-                        <img src={imgs[10]} width={110} className={styles.itemm}/>
+                        <img id = "img10" src={imgs[10]} width={110} className={styles.itemm}/>
                     </div>
                     <div className={styles.item} onClick={()=>display(7)}>
-                        <img src={imgs[7]} width={110} className={styles.itemm}/>
+                        <img id = "img7" src={imgs[7]} width={110} className={styles.itemm}/>
                     </div>
                     <div className={styles.item} onClick={()=>display(0)}>
-                        <img src={imgs[0]} width={140} className={styles.itemm}/>
+                        <img  id = "img0" src={imgs[0]} width={140} className={styles.itemm}/>
                     </div>
                     <div className={styles.item} onClick={()=>display(1)}>
-                        <img src={imgs[1]} width={120} className={styles.itemm}/>
+                        <img  id = "img1" src={imgs[1]} width={120} className={styles.itemm}/>
                     </div>
                     <div className={styles.item} onClick={()=>display(2)}>
-                        <img src={imgs[2]} width={100} className={styles.itemm}/>
+                        <img  id = "img2" src={imgs[2]} width={100} className={styles.itemm}/>
                     </div>
                     <div className={styles.item} onClick={()=>display(3)}>
-                        <img src={imgs[3]} width={120} className={styles.itemm}/>
+                        <img id = "img3" src={imgs[3]} width={120} className={styles.itemm}/>
                     </div>
                     <div className={styles.item} onClick={()=>display(4)}>
-                        <img src={imgs[4]} width={120} className={styles.itemm}/>
+                        <img  id = "img4" src={imgs[4]} width={120} className={styles.itemm}/>
                     </div>
                     <div className={styles.item} onClick={()=>display(5)}>
-                        <img src={imgs[5]} width={130} className={styles.itemm}/>
+                        <img  id = "img5" src={imgs[5]} width={130} className={styles.itemm}/>
                     </div>
                     <div className={styles.item} onClick={()=>display(6)}>
-                        <img src={imgs[6]} width={120} className={styles.itemm}/>
+                        <img  id = "img6" src={imgs[6]} width={120} className={styles.itemm}/>
                     </div>
+                    
                 </div>
 
             </div>
@@ -390,16 +425,13 @@ export default function Home() {
       <div id={styles.Modal4} className={styles.modal}>
         <div className={styles.modalcontent2}>
           <div className={styles.modaldiary1}>
-            <p>【10月25日】<br/>{diarycontent[0]}</p><br/>
-            <p>【10月26日】<br/>{diarycontent[1]}</p><br/>
-            <p>【10月27日】<br/>{diarycontent[2]}</p><br/>
-            <p>【10月28日】<br/>{diarycontent[3]}</p><br/>
+          <img src ="/album1.png"/>
+          <img src ="/album2.png"/>
           </div>
+          <div className={styles.batsu21} onClick={()=>closemodals()}>×</div><br/>
           <div className={styles.modaldiary2}>
-            <p>【10月29日】<br/>{diarycontent[4]}</p><br/>
-            <p>【10月30日】<br/>{diarycontent[5]}</p><br/>
-            <p>【10月31日】<br/>{diarycontent[6]}</p><br/>
-            <p>【11月1日】 <br/>{diarycontent[7]}</p><br/>
+          <img src ="/album3.png"/>
+          <img src ="/album4.jpg"/>
           </div>
         </div>
       </div>
@@ -419,10 +451,7 @@ export default function Home() {
           <div className={styles.batsu4} onClick={()=>closemodals()}>×</div>
           <div className={styles.modalcontent5text}>
             <p>2007.10.21<br/>{syukitext[0]}</p><br/>
-            <p>2007.10.22<br/>{syukitext[1]}</p><br/>
-            <p>2007.10.24<br/>{syukitext[2]}</p><br/>
-            <p>2007.10.26<br/>{syukitext[3]}</p><br/>
-            <p>2007.10.27<br/>{syukitext[4]}</p><br/>
+
           </div>
         </div>
       </div>
@@ -433,7 +462,8 @@ export default function Home() {
       <div id={styles.Modal8} className={styles.modal}>
         <div className={styles.modalcontent7}>
           <div className={styles.batsu} onClick={()=>closemodals()}>×</div>
-          <input type="text"/>
+          <input id = "password" className = {styles.password}  type="text"/>
+          <button id = "passsub"className = {styles.passsub}onClick = {pass}>決定</button>
         </div>
       </div>
       </>

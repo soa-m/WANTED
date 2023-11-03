@@ -2,7 +2,20 @@ import Link from 'next/link';
 import styles from '../styles/firstpage.module.css';
 import Image from "next/image";
 import { useEffect } from 'react'
-
+import { createClient } from '@vercel/kv';
+let kv = createClient({
+    url: process.env.NEXT_PUBLIC_KV_REST_API_URL,
+    token: process.env.NEXT_PUBLIC_KV_REST_API_TOKEN
+  });
+  import { Set, GetID } from '../components/func';
+  let id = GetID();
+  let itemfl=[false,false,false,false,false,false,false,false,false,false,false,false];
+  let nowmessage = "M0";
+  Set("NOW", "\"M0\"");
+  Set("ITEM",itemfl);
+  itemfl = await kv.get(id + "ITEM");
+  console.log(itemfl);
+  
 export default function Home() {
     useEffect(() =>{
         var vi=document.getElementById("video");

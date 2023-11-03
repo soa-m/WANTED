@@ -12,16 +12,21 @@ let kv = createClient({
   url: process.env.NEXT_PUBLIC_KV_REST_API_URL,
   token: process.env.NEXT_PUBLIC_KV_REST_API_TOKEN
 });
-
 import { Set, GetID } from '../components/func';
 let id = GetID();
-export default function Home() {
-  function start(){
+
+export default  function Home() {
+
+
+  async function start(){
+
+    
+    
       var playerid = document.getElementById("playernum").value;
-      if(!(playerid >0 && playerid <=14)) return;
+      if(!(playerid >=1 && playerid <=14)) return;
       else {
         /*Set("PLAYERID",playerid);*/
-        document.location.href = "/playername";
+        Init(playerid);
       }
     }
   return (
