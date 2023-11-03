@@ -21,7 +21,7 @@ export default function Home() {
       if(!(playerid >0 && playerid <=14)) return;
       else {
         /*Set("PLAYERID",playerid);*/
-        document.location.href = "/firstpage";
+        document.location.href = "/playername";
       }
     }
   return (
