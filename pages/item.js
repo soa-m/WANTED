@@ -191,7 +191,7 @@ function open0(){
   //nowmessage="M100"
   //realmessage="M100"
   console.log("111")
-  Set("NOW","M80");
+  Set("NOW","M79");
   document.location.href = "/Information";
   
 }

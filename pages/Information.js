@@ -36,7 +36,7 @@ var messageData = {
   "M0": {
     "name": "",
     "text": "（呼び鈴の音）",
-    "next": "M1",
+    "next": "M77",
     "back": "0"//玄関
   },
   "M1": {
@@ -573,6 +573,12 @@ var messageData = {
     "next": "M78",
     "back": "3"//もとのつかおう
   },
+  "M79": {
+    "name": "",
+    "text": "Xの家に行けば、なにかわかるかもしれない。",
+    "next": "M80",
+    "back": "3"//もとのつかおう
+  },
   "M80": {
     "name": "",
     "text": "Xの家に行けば、なにかわかるかもしれない。",
@@ -582,7 +588,7 @@ var messageData = {
   "M81": {
     "name": "",
     "text": "",
-    "next": "M81",
+    "next": "182",
     "back": "3"//もとのつかおう
   },
   "M89": {
@@ -631,15 +637,7 @@ var messageData = {
 
 
 export async function nextmessage() {
-  if(nowmessage == "M92"){
-    itemfl[5] = true;
-    itemfl[6] = true;
-    Set("ITEM",itemfl);
-    document.location.href = "./item";
-  }
-  if(nowmessage == "M81"){
-    document.location.href = "./item"
-  }
+  
   if (displayfl) {
     displayfl = false;
   }
@@ -653,6 +651,16 @@ export async function nextmessage() {
     return;
   }
   if (nowmessage == "M101") {
+    document.location.href = "./item"
+    return;
+  }
+  if(nowmessage == "M92"){
+    itemfl[5] = true;
+    itemfl[6] = true;
+    Set("ITEM",itemfl);
+    document.location.href = "./item";
+  }
+  if(nowmessage == "M80"){
     document.location.href = "./item"
     return;
   }
@@ -712,6 +720,7 @@ export async function nextmessage() {
     nowmessage = now;
   }
   displayfl = true;
+ 
   /*
   let fl = true;
   if (displayfl) {
