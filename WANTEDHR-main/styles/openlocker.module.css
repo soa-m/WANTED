@@ -1,0 +1,138 @@
+.container{
+  display:flex;
+  width:100vw;
+  height:100vh;
+  flex-direction: row;
+  background-image: url('/uselocker.png');
+  background-position: 50% 100%;
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+.buttons{
+  width:12vw;
+  height:100vh;
+  position:relative;
+  /*background-color: red;*/
+}
+.main{
+  width:88vw;
+  height:100vh;
+  position:relative;
+  /*background-image:url("/character-A-1.png");*/
+  background-size: 80vw;
+  background-position:-40% 5%;
+  background-repeat: no-repeat;
+}
+.letter{
+    display: inline-block;
+    position:absolute;
+    left:27%;
+    top:71%;
+}
+
+
+.recoder{
+    display: flex;
+    position:absolute;
+    left:50%;
+    top:80%;
+}
+.letter :hover{
+    transform:scale(1.1);
+}
+.recoder :hover{
+    transform:scale(1.1);
+}
+.modal1{
+  position : absolute;
+  display : none;
+  background-image: url("/itemget.png");
+  background-size : cover;
+  width: 90%;
+  left : 0%;
+  top :0%;
+  background-repeat : norepeat;
+  height : 100%;
+  
+
+
+}
+.ItemImage{
+  position : absolute;
+  width : 30%;
+  height : 40%;
+  top : 35%;
+  left : 39.5%;
+}
+.Model_text{
+  position : absolute;
+  top : 80%;
+  left : 46%;
+  font-size : 200%;
+  text-align: center;
+}
+.closeModal{
+  font-size: 300%;
+  left : 75.5%;
+  top : 8%;
+  position : absolute;
+
+}
+.ItemImage1{
+  position : absolute;
+  width : 25%;
+  height : 35%;
+  top :35%;
+  left : 42%;
+}
+.Model_text1{
+  position : absolute;
+  top : 80%;
+  left : 42.5%;
+  font-size : 200%;
+  text-align: center;
+}
+.letter{
+  position : absolute;
+  top : 50%; 
+
+}
+.letter {
+
+  width: 13%;
+  height : 15%;
+  top : 72%;
+  left: 35%;
+}
+.recoder {
+
+  width: 10%;
+  height : 17%;
+  position : absolute;
+  top : 75%;
+  left : 48%;
+}
+.map {
+
+  width: 15%;
+  height : 20%;
+  position : absolute;
+  top :53%;
+  left : 40%;
+}
+.diary {
+
+  width: 15%;
+  height : 20%;
+  position : absolute;
+  top :54%;
+  left : 26%;
+}
+.album {
+
+  width: 15%;
+  height : 20%;
+  position : absolute;
+  top :73%;
+  left : 27%;
+}

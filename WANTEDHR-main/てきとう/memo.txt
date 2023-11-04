@@ -1,0 +1,14 @@
+_app.js
+_document.js
+が全体に関するやつらしく、
+それ以外のpagesに入ってるjs一つにつき一つページが出来る
+cssはstylesからひっぱってこれる
+publicには静的ファイルを置ける
+
+参考になったサイト↓
+nextjsの†全て†　よめ　https://reffect.co.jp/react/next-js/
+
+githubへのアップロード方法を知らなかったくそざkozyのために　https://qiita.com/JetNel0/items/052e704ff747380a6c33
+
+vercelでのデプロイ　https://zenn.dev/dollaga_saiore/articles/2b9158e5add3c6
+

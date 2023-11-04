@@ -1,0 +1,267 @@
+.buttons{
+  width:12vw;
+  height:100vh;
+  position:relative;
+  /*background-color: red;*/
+}
+
+.buttons .empty{
+  position:relative;
+  height:20%;
+}
+.buttons .btnbox{
+  position:relative;
+  height:13%;
+}
+
+.btn {
+  height:8vh;
+  width:10.5vw;
+  position: absolute;
+  text-decoration: none;
+  display:flex; 
+  flex-direction: row;
+}
+.btn:hover {
+  transform-origin: 0% 50%;
+  transform:scale(1.1);
+}
+#story{
+  background-image: url("/story2.png");
+  background-repeat: no-repeat;
+  background-size:contain;
+}
+#connection{
+  background-image: url("/connection2.png");
+  background-repeat: no-repeat;
+  background-size:contain;
+}
+#item{
+  background-image: url("/item2.png");
+  background-repeat: no-repeat;
+  background-size:contain;
+}
+
+
+.selectedbtn{
+  height:10vh;
+  width:12vw;
+  position: absolute;
+  text-decoration: none;
+
+  display:flex; 
+  flex-direction: row;
+  
+}
+.container{
+  display:flex; 
+  flex-direction: row;
+  background-image: url('/connectionback.png');
+  background-size:cover;
+}
+.main{
+  justify-content: space-between;
+  width:88vw;
+  height:100vh;
+  /*background-color: red;*/
+  position:relative;
+  /*background-image:url("/character-A-1.png");*/
+  background-size: 80vw;
+  background-position:-40% 5%;
+  background-repeat: no-repeat;
+}
+.relpic{
+  position:absolute;
+  width:200px;
+  height:300px;
+}
+.relpic:hover{
+  scale:calc(1.1);
+
+}
+#relpic1{
+  left:20%;
+  top:30%;
+  overflow: hidden;
+  background-image: url("/Rel_1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#ytuma{
+  overflow: hidden;
+  background-image: url("/ytuma.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  left:5%;
+  top:55%;
+}
+#x{
+  overflow: hidden;
+  background-image: url("/x.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  left:15%;
+  top:9%;
+}
+#y{
+  overflow: hidden;
+  background-image: url("/y.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  left:28%;
+  top:55%;
+}
+#Ahaha{
+  overflow: hidden;
+  background-image: url("/Ahaha.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  left:73%;
+  top:9%;
+}
+#Atiti{
+  overflow: hidden;
+  background-image: url("/Atiti.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  left:46%;
+  top:9%;
+}
+#Aman{
+  overflow: hidden;
+  background-image: url("/A.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  left:60%;
+  top:50%;
+}
+
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+#Modal1{
+  display: none;
+}
+#Modal2{
+  display: none;
+}
+#Modal3{
+  display: none;
+}
+#Modal4{
+  display: none;
+}
+#Modal5{
+  display: none;
+}
+#Modal6{
+  display: none;
+}
+
+.modalcontent {
+  background-color: #f4f4f4;
+  margin: 8% auto;
+  width: 70%;
+  height:70%;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+  animation-name: modalopen;
+  animation-duration: 1s;
+}
+
+@keyframes modalopen {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+.modalheader h1 {
+  margin: 1rem 0;
+}
+
+.modalheader {
+  background: #f4f4f4;
+  height:10%;
+  padding: 3px 15px;
+  text-align: right;
+}
+
+.modalClose {
+  font-size: 2rem;
+}
+
+.modalClose:hover {
+  cursor: pointer;
+}
+
+.modalbody{
+  display:flex;
+  flex-direction: row-reverse ;
+  width:100%;
+  height:90%;
+  color: black;
+}
+#modalpic1{
+  width:35%;
+  background-image: url("/chara1_profile.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#modalpic2{
+  width:35%;
+  background-image: url("/Atitistand.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#modalpic3{
+  width:35%;
+  background-image: url("/ahahasatand.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#modalpic4{
+  width:35%;
+  background-image: url("/ystand.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#modalpic5{
+  width:35%;
+  background-image: url("/xstand.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#modalpic6{
+  width:35%;
+  background-image: url("/ytumastand.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.modalline{
+    margin:10px 0px 30px 20px;
+    width:1px;
+    background-color: black;
+}
+.modaltext{
+    width: 60%;
+    height:100%;
+}
+
+.modaltextitle{
+  font-size:32px;
+}
+.modaltexts{
+  font-size:20px;
+}

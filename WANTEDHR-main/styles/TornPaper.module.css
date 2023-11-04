@@ -1,0 +1,522 @@
+.container{
+
+  width:100vw;
+  height:100vh;
+  background-image: url("/BackgroundIron.jpg");
+  background-size: cover;
+  background-repeat : no-repeat;
+  }
+
+  .Initbtn{
+    color: black;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: normal;
+    border: none;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .buttons{
+    width:12vw;
+    height:100vh;
+    position:relative;
+    /*background-color: red;*/
+  }
+  
+  .buttons .empty{
+    position:relative;
+    height:5%;
+  }
+  .buttons .btnbox{
+    position:relative;
+    height:13%;
+  }
+  
+  .btn {
+    height:8vh;
+    width:10vw;
+    padding: 0px;
+    position: absolute;
+    text-decoration: none;
+    background: white;
+    border-bottom:1px solid black;
+    border-top:1px solid black;
+    border-right:1px solid black;
+    color: black;
+    font-weight: bold;
+  
+    display:flex; 
+    flex-direction: row;
+    
+    line-height: 8vh;
+    text-align:left;
+  }
+  .btn .btnname{
+    height:100%;
+    width:80%;
+  }
+  .btn .btncolor{
+    height:100%;
+    width:20%;
+    background-color: green;
+  }
+  
+  .btn:hover {
+    transform-origin: 27% 50%;
+    transform:scale(1.1);
+  }
+  
+  
+  
+  .selectedbtn{
+    height:10vh;
+    width:12vw;
+    padding: 0px;
+    position: absolute;
+    text-decoration: none;
+    background: #e0ffff;
+    border-bottom:1px solid black;
+    border-top:1px solid black;
+    border-right:1px solid black;
+    color: black;
+    font-weight: bold;
+  
+    display:flex; 
+    flex-direction: row;
+    
+    line-height: 10vh;
+    text-align:left;
+  }
+  
+  .selectedbtn .btnname{
+    height:100%;
+    width:80%;
+  }
+  .selectedbtn .btncolor{
+    height:100%;
+    width:20%;
+    background-color: green;
+  }
+  
+  
+  /*
+  .btnInformation {
+    border-radius: 5px;
+    background-color: rgb(78, 8, 8);
+    padding: 10px;
+    position: absolute;
+    top: 5%;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .btnSearch {
+    border-radius: 5px;
+    background-color: rgb(78, 8, 8);
+    padding: 0px;
+    position: absolute;
+    top: 28%;
+    text-decoration: none;
+    color: white;
+  }
+  .btnRelations {
+    border-radius: 5px;
+    background-color: rgb(78, 8, 8);
+    padding: 10px;
+    position: absolute;
+    top: 47%;
+    text-decoration: none;
+    color: white;
+  }
+  .btnMissions {
+    border-radius: 5px;
+    background-color: rgb(78, 8, 8);
+    padding: 10px;
+    position: absolute;
+    top: 66%;
+    text-decoration: none;
+    color: white;
+  }
+  .btnPastInformation {
+    border-radius: 5px;
+    background-color: rgb(78, 8, 8);
+    padding: 10px;
+    position: absolute;
+    top: 85%;
+    text-decoration: none;
+    color: white;
+  }
+  */
+  
+  
+  .search_bar{
+    height: 5%;
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    width: 13.5%;
+    
+    border-radius: 50px 0px 0px 50px;
+    background-color: #ddd;
+    box-shadow:0px 4px 6px 0px rgb(48, 138, 133);
+    background: #a4e6fa; /*入力部分の背景色*/
+    padding: 0 10px;
+    border-color : pink;
+    outline: 2px solid pink;
+    font-size: 16px;
+  }
+  .search_submit {
+    width: 5%; /*ボタン部分の長さ*/
+    background: #fd30ca; /*ボタン部分の背景色*/
+    color: #ffffff; /*アイコンの色*/
+    position: absolute;
+  
+    box-shadow:0px 4px 6px 0px #c4c4c4;
+    border-color: pink;
+    top: 14.5%;
+    left: 33.5%;
+    height: 6.32%;
+    font-size: 20px; /*アイコンの大きさ*/
+    cursor: pointer;
+    line-height: 20px; /*検索窓の高さ*/
+    border-radius: 0 50px 50px 0; /*右上、右下のみ角丸*/
+    padding: 0%;
+  }
+  
+  .messagebox{
+    position: relative;
+    width:70%;
+    height:30%;
+    background:rgba(135,206,235,0.91);
+    color:white;
+    padding: 1rem 1rem 1rem 1.5rem;
+  }
+  .messagebox::before {
+    content: '';
+    width: 10%;
+    height: 0;
+    
+    border-bottom: 30px solid #fff;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top-color: transparent;
+    border-left-color: white;
+    position: absolute;
+    top: -10%;
+    left: 27%;
+  }
+  
+  
+  .infoemp0{
+    position: relative;
+    width:100%;
+    height:60%;
+  }
+  
+  .infoemp01{
+    position: relative;
+    width:5%;
+    height:6%;
+  }
+  
+  .infoemp02{
+    position: relative;
+    background:rgba(255,255,255,0.7);
+    width:25%;
+    height:6%;
+    clip-path: polygon(0% 100%, 100% 100%, 90% 0%,10% 0%);
+  }
+  .infoemp022{
+    position: relative;
+    background-color: #544F97;
+    width:100%;
+    height:100%;
+    clip-path: polygon(0% 100%, 10% 0% , 90% 0% ,100% 100%,97.5% 100%,89% 12%,11% 12%,2.5% 100%);
+    text-align: center;
+  }
+  .infoemp03{
+    position: relative;
+    width:70%;
+    height:6%;
+  }
+  .infoemp1{
+    width:5%;
+    height:30%;
+  }
+  .infoemp12{
+    width:15%;
+    height:30%;
+  }
+  .infoemp2{
+    width:100%;
+    height:4%;
+  }
+  
+  
+  
+  .messagetext{
+    font-size:large;
+    position: absolute;
+    left:5%;
+    top:10%;
+    width:80%;
+    height:70%;
+  }
+  .messagename{
+    font-size:large;
+    position: absolute;
+    left:10%;
+    top:30%;
+    width:80%;
+    height:70%;
+    text-align: center;
+  }
+  .infomain{
+    display:flex;
+    flex-direction: row; 
+    flex-wrap:wrap;
+    justify-content: space-between;
+    width:88vw;
+    height:100vh;
+    /*background-color: red;*/
+    position:relative;
+    /*background-image:url("/character-A-1.png");*/
+    background-size: 80vw;
+    background-position:-40% 5%;
+    background-repeat: no-repeat;
+  }
+  
+  .canvas {
+    position: absolute;
+    width: 20%;
+    height: 40%;
+    top: 45%;
+    left: 17%;
+  }
+  
+  .SearchReturn{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    font-size : 130%;
+  }
+  
+  .Camerabtn{
+      display: block;
+      text-align: center;
+      vertical-align: middle;
+      text-decoration: none;
+      width: 120px;
+      margin: auto;
+      padding: 1rem 0rem;
+      font-weight: bold;
+      border-radius: 0.3rem;
+      border-bottom: 7px solid #0686b2;
+      background: #27acd9;
+      color: #fff;
+    position : absolute;
+    top : 90%;
+    left : 23%;
+  
+  }
+  .Camerabtn:hover {
+      margin-top: 6px;
+      border-bottom: 1px solid #0686b2;
+      color: #fff;
+  }
+  .qrmsg{
+    position: absolute;
+    top: 84%;
+    left: 25%;
+    
+  }
+  
+  .Kchildbtn{
+    
+    height : 17%;
+    width : 8%;
+    background-color: black;
+    background-size: contain;
+  }
+  .Kparentsbtn0{
+    position: absolute;
+    top : 10%;
+    left : 30%;
+    width :  100%;
+    height : 100%;
+  }
+  .Kparentsbtn1{
+    position: absolute;
+    top : 27%;
+    left : 30%;
+    width :  100%;
+    height : 100%;
+  }
+  .Kparentsbtn2{
+    position: absolute;
+    top : 44%;
+    left : 30%;
+    width :  100%;
+    height : 100%;
+  }
+  .Kparentsbtn3{
+    position: absolute;
+    top : 61%;
+    left : 30%;
+    width :  100%;
+    height : 100%;
+  }
+  .Kparentsbtn4{
+    position: absolute;
+    top : 78%;
+    left : 30%;
+    width :  100%;
+    height : 100%;
+  }
+  .KEY{
+    
+    top : 50%;
+    left : 50%;
+  }
+  .Kchildimg{
+    
+    height : 17%;
+    width : 8%;
+    
+    background-size: contain;
+  }
+  .KEYCODE{
+    position : absolute;
+    top : 0%;
+    box-shadow: black;
+    left : 0%;
+    box-shadow: 10px 5px 5px rgb(70, 69, 69);
+  }
+  
+  
+  
+  .modal1{
+    display : none;
+    position : absolute;
+    height: 50%;
+    width: 30%;
+    top: 30%;
+    left: 35%;
+    background-image: url("/frame.png");
+    background-size : cover;
+  }
+  .closeModal{
+    display: block;
+    font-size : 30px;
+    position : relative;
+    top : 10%;
+    left : 10%;
+  
+  }
+  .Model_text{
+    
+    text-align: center;
+    position:relative;
+    top:70%;
+    
+   
+  }
+  
+  .mystery{
+    display : none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+  
+  }
+  .FirstMission{
+    background-image: url("/QRcodeasearch.png");
+    background-size: cover;
+    background-repeat : no-repeat;
+  }
+  .start{
+    display: block;
+    text-align: center;
+  left: 45%;
+    text-decoration: none;
+    width:10%;
+    margin: auto;
+    padding: 1rem 0rem;
+    font-weight: bold;
+    border-radius: 0.3rem;
+    border-bottom: 7px solid #0686b2;
+    background: #27acd9;
+    color: #fff;
+  position : absolute;
+  top : 90%;
+  
+
+}
+.start:hover {
+    margin-top: 6px;
+    border-bottom: 1px solid #0686b2;
+    color: #fff;
+}
+  
+.search {
+    width: 100%;
+    height : 30%;
+    position: relative;
+    display: flex;
+    
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+ 
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+    height : 100%;
+  }
+  
+  .searchTerm:focus{
+    color: #00B4CC;
+    
+  }
+  
+  .searchButton {
+    width: 30%;
+    height : 100%;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /*Resize the wrap to see the search bar change!*/
+  .wrap{
+    width: 30%;
+    height: 20%;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.LOCKED{
+    position : absolute;
+    top : 50%;
+    left:22%;
+    font-size : 40px;
+    color: red;
+    text-align: center; 
+}
