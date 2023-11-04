@@ -14,11 +14,11 @@ let id = GetID();
 
 var dx = [0, -1, 0, 1];
 var dy = [1, 0, -1, 0];
-var ITEMUNLCOKED=await kv.get(id+"ITEMUNLCOKED");
+
 
 var firstsolved=await kv.get(id+"firstsolved");
 var PlayerID=await kv.get(id+"PlayerID");
-var start = false;
+
 /*
 fuzecleared = await kv.get(id + "CLEAREDFUZE");
 console.log(fuzecleared);
@@ -56,10 +56,7 @@ export default function Home() {
 
 
   ]
-
   async function Ontap(e) {
-    if(ITEMUNLCOKED[1] == false) return;
-    if(start == false) return;
     var firstsolved=await kv.get(id+"firstsolved");
     if (firstsolved[1]) {
       document.getElementById("cleared").textContent = "UNLOCKED";
@@ -133,7 +130,6 @@ export default function Home() {
     }
   }
   async function start() {
-    start = true;
     var ITEMUNLCOKED=await kv.get(id+"ITEMUNLCOKED");
     console.log(ITEMUNLCOKED);
     if (!ITEMUNLCOKED[1]){
