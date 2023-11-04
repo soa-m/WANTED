@@ -43,6 +43,7 @@ export default function Home() {
         [false, false, true, true, false],
         [false, false, true, false, true],
     ]
+    
     var started = false;
     var trynum = 0;
     var digitalcleared = false;
@@ -89,7 +90,7 @@ export default function Home() {
         if (digitalcleared || started == false) return;
         trynum--;
 
-        document.getElementById("NUM").innerHTML = "残りの操作回数は : " + String(trynum);
+        document.getElementById("NUM").innerHTML = "リセットまでの回数 : " + String(trynum);
 
         var x, y;
         var s = place.target.id;
@@ -286,7 +287,7 @@ export default function Home() {
             <div>
                 <button onClick={start} id="startbtn" className={styles.Camerabtn}>暗号解読を始める</button>
                 <p id="succes" className={styles.LOCKED}>LOCK</p>
-                <p id="NUM" className={styles.NUM}>残りの操作回数 : </p>
+                <p id="NUM" className={styles.NUM}>リセットまでの回数 : </p>
 
 
             </div>

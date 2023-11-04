@@ -628,6 +628,15 @@ background: #4D9BC1; /* 背景色 */
 }
 .batsu21{
   position: absolute;
+  top: 30%;
+  left:90%;
+  font-size: 300%;
+  font-weight: bold;
+  width:10%;
+  text-align: right;
+}
+.batsu21{
+  position: absolute;
   top:2%;
   left:73%;
   font-size: 300%;

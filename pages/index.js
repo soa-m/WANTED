@@ -21,7 +21,10 @@ export default  function Home() {
   async function start(){
 
     
-    
+      var items = [false,false,false];
+      var sol = [false,false,false];
+      Set("ITEMUNLCOKED",items);
+      Set("SOLVED",sol);
       var playerid = document.getElementById("playernum").value;
       if(!(playerid >=1 && playerid <=14)) return;
       else {

@@ -12,7 +12,7 @@ let id = GetID();
 let itemfl= await kv.get(id + "ITEM");
 
 var lettertexts=[
-  "\n10/25(水)\n\n明日は大雨みたいですね。残念です。ところで、\n日曜に家を出て行ったきり、\n私の猫が帰ってきません。\nのら猫になっていないか心配です。\n家族の一員なので、気が気でありません。\nにている猫がいたら、教えてください。\n",
+  "\n10/25(水)\n\n今日で1週間の帰省の5日目。\n家に残ってる猫のことが心配になってきたわ…\nあと、となりの304号室の村田さんって覚えてる？ \nほら、あなたが小さい頃、たまに面倒をみててくれた人。 \nどうやら再来月あたりに引っ越しちゃうそうで、一度挨拶しておかない？",
   "\n10/20(金)\n\nおかげさまで、おととい猫が帰ってきました。\n私は昨日から1週間の帰省をしているので、それまでに帰って来てくれて良かったわ。\n帰ってきたのは嬉しかったのですが、太って体重が2倍になっていてびっくりです。猫は野生化すると太るものなのでしょうか。\nあと、となりの304号室の村田さんって覚えてる？ \n ほら、あなたが小さい頃、たまに面倒をみててくれた人。 \nどうやら再来月あたりに引っ越しちゃうそうで、一度挨拶しておかない？",
   "\n11/1(水)\n\nよう、我こそは社会正義の執行人、井戸端与太郎だぜ！\n俺は今、君のお父さんについて調べているところだ。\n明日、君んちに取材でお邪魔させてもらうよ〜\n待っててくれ！",
   "\n11/1(水)\n\nあらっ、初翔くん、おはよぉ〜\n明後日からつくこま高校の文化祭ですってね。\n準備で疲れて体調を崩したりしてないかしら。心配だわ…\nおすすめの出し物があったら教えてほしいわ。\n文化祭でお会いしましょ〜",
@@ -55,7 +55,7 @@ var diarycontent=[
 ]
 var ismailunlocked=[true, true,true,true];
 function pass(){
-   if(document.getElementById("password").value == "20061024"){
+   if(document.getElementById("password").value == "20061014"){
       document.location.href = "./Final";
    }
 }
@@ -252,7 +252,7 @@ export default function Home() {
     return (
       <>
         <div className={styles.container}><div className={styles.buttons}>
-        <button id = "btnn"onClick ={load} className = {styles.sta}>タップでアイテムを読み込む </button>
+        <button id = "btnn" onClick ={load} className = {styles.sta}>タップでアイテムを読み込む </button>
           <div className={styles.empty}></div>
 
         
@@ -330,6 +330,7 @@ export default function Home() {
         <div id={styles.Modal2} className={styles.modal}>
         <div className={styles.modalcontent}>
           <div className={styles.modalbody}>
+          <div className={styles.batsu2} onClick={()=>closemodals()}>×</div><br/>
             <div className={styles.modalmails}>
 
             <div className={styles.mailicon} id={styles.mailicon1} onClick={()=>openmails(0)}></div>
@@ -456,6 +457,7 @@ export default function Home() {
         </div>
       </div>
       <div id={styles.Modal7} className={styles.modal}>
+      <div className={styles.batsu21} onClick={()=>closemodals()}>×</div><br/>
         <div className={styles.modalcontent6}>
         </div>
       </div>

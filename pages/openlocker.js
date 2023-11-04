@@ -25,7 +25,7 @@ function move(){
 
 }
 let itemfl=[false,false,false,false,false,false,false,false,false,false,false,false];
-itemfl=[false,true,true,true,false,false,false,true,true,true,true,true];
+itemfl=[false,true,true,true,true,false,false,true,true,true,true,true];
 Set("ITEM",itemfl);
 
 

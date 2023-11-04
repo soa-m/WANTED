@@ -74,16 +74,16 @@ export default function Home() {
 
     var z = document.getElementById("roomnum").value;
 
-    if ((x == "米草" || x == "べいくさ") && (y == "B4") && z == "303") {
+    if ((x == "米草" || x == "べいくさ") && (y == "D4") && z == "303") {
       open();
     }
-    else if ((x == "米草") && (y == "B4") && z == "303") {
+    else if ((x == "米草") && (y == "D4") && z == "303") {
       open();
     }
-    else if ((x == "米草" || x == "べいくさ") && (y == "B2")) {
+    else if ((x == "米草" || x == "べいくさ") && (y == "G1")) {
       open2();
     }
-    else if ((x == "米草" ) && (y == "B2")) {
+    else if ((x == "米草" ) && (y == "G1")) {
       open2();
     }
     else {
